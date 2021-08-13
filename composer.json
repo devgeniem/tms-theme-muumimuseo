@@ -1,0 +1,51 @@
+{
+    "name": "devgeniem/tms-theme-muumimuseo",
+    "type": "wordpress-theme",
+    "description": "Tampere Multisite Muumimuseo Theme",
+    "authors": [
+        {
+            "name": "Ville Viklund",
+            "email": "ville.viklund@geniem.com",
+            "homepage": "https://geniem.com/",
+            "role": "Lead Developer"
+        },
+        {
+            "name": "Ismo Vuorinen",
+            "email": "ismo.vuorinen@geniem.com",
+            "homepage": "https://geniem.com/",
+            "role": "Developer"
+        },
+        {
+            "name": "Viljami Hirvonen",
+            "email": "viljami.hirvonen@geniem.com",
+            "homepage": "https://geniem.com/",
+            "role": "Developer"
+        }
+    ],
+    "keywords": [
+        "wordpress",
+        "dustpress",
+        "theme"
+    ],
+    "license": "GPL-3.0-or-later",
+    "minimum-stability": "stable",
+    "scripts": {
+        "lint": "vendor/bin/phpcs --standard=phpcs.xml ./lib/ ./models/ -s --warning-severity=0",
+        "lint-all": "vendor/bin/phpcs --standard=phpcs.xml ./lib/ ./models/",
+        "lint-fix": "vendor/bin/phpcbf --standard=phpcs.xml --basepath=. ./lib/ ./models/"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "require": {
+        "php": ">=7.4|^8.0",
+        "devgeniem/dustpress": ">=1.33.0",
+        "composer/installers": "^1.0.12"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-latest",
+        "devgeniem/geniem-rules-codesniffer": "^1.0.7",
+        "devgeniem/acf-codifier": "*"
+    }
+}
+
