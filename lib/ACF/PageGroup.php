@@ -34,7 +34,7 @@ class PageGroup {
      */
     protected function register_fields() : void {
         try {
-            $group_title = 'Siuvn asetukset';
+            $group_title = 'Sivun asetukset';
 
             $field_group = ( new Group( $group_title ) )
                 ->set_key( 'fg_page_settings' );
