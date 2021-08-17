@@ -13,14 +13,14 @@ use TMS\Theme\Base\Logger;
 use TMS\Theme\Muumimuseo\PostType;
 
 /**
- * Class PostGroup
+ * Class ArtistGroup
  *
- * @package TMS\Theme\Base\ACF
+ * @package TMS\Theme\Muumimuseo\ACF
  */
 class ArtistGroup {
 
     /**
-     * PageGroup constructor.
+     * ArtistGroup constructor.
      */
     public function __construct() {
         add_action(
@@ -125,7 +125,9 @@ class ArtistGroup {
             ->set_wrapper_width( 50 )
             ->set_instructions( $strings['last_name']['instructions'] );
 
-        $additional_information_repeater = ( new Field\Repeater( $strings['additional_information']['title'] ) )
+        $additional_information_repeater = ( new Field\Repeater(
+            $strings['additional_information']['title']
+        ) )
             ->set_key( "${key}_additional_information" )
             ->set_name( 'additional_information' )
             ->set_layout( 'block' )
@@ -185,6 +187,7 @@ class ArtistGroup {
             ->set_name( 'artwork' )
             ->set_post_types( [ PostType\Artwork::SLUG ] )
             ->allow_multiple()
+            ->set_default_value( null )
             ->allow_null()
             ->set_instructions( $strings['artwork']['instructions'] );
 

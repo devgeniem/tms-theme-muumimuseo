@@ -20,7 +20,7 @@ use TMS\Theme\Muumimuseo\PostType;
 class ArtworkGroup {
 
     /**
-     * PageGroup constructor.
+     * ArtworkGroup constructor.
      */
     public function __construct() {
         add_action(
@@ -130,10 +130,12 @@ class ArtworkGroup {
 
         $additional_information_group = ( new Field\Group( $strings['additional_information']['group']['title'] ) )
             ->set_key( "${key}_additional_information_group" )
-            ->set_name( '_additional_information_group' )
+            ->set_name( 'additional_information_group' )
             ->set_instructions( $strings['additional_information']['group']['instructions'] );
 
-        $additional_information_title = ( new Field\Text( $strings['additional_information']['item']['label']['title'] ) )
+        $additional_information_title = ( new Field\Text(
+            $strings['additional_information']['item']['label']['title']
+        ) )
             ->set_key( "${key}_additional_information_title" )
             ->set_name( 'additional_information_title' )
             ->set_wrapper_width( 50 )
@@ -145,8 +147,14 @@ class ArtworkGroup {
             ->set_wrapper_width( 50 )
             ->set_instructions( $strings['additional_information']['item']['value']['instructions'] );
 
-        $additional_information_group->add_fields( [ $additional_information_title, $additional_information_text ] );
-        $additional_information_repeater->add_field( $additional_information_group );
+        $additional_information_group->add_fields( [
+            $additional_information_title,
+            $additional_information_text,
+        ] );
+
+        $additional_information_repeater->add_field(
+            $additional_information_group
+        );
 
         $tab->add_fields( [
             $year_field,

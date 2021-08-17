@@ -118,24 +118,26 @@ class Artwork implements PostType {
         ];
 
         $args = [
-            'label'         => $labels['name'],
-            'description'   => '',
-            'labels'        => $labels,
-            'supports'      => [
+            'label'           => $labels['name'],
+            'description'     => '',
+            'labels'          => $labels,
+            'supports'        => [
                 'title',
                 'thumbnail',
                 'excerpt',
             ],
-            'hierarchical'  => false,
-            'public'        => false,
-            'menu_position' => $this->menu_order,
-            'menu_icon'     => $this->icon,
-            'show_in_menu'  => true,
-            'show_ui'       => true,
-            'can_export'    => false,
-            'has_archive'   => false,
-            'rewrite'       => $rewrite,
-            'show_in_rest'  => false,
+            'hierarchical'    => false,
+            'public'          => false,
+            'menu_position'   => $this->menu_order,
+            'menu_icon'       => $this->icon,
+            'show_in_menu'    => true,
+            'show_ui'         => true,
+            'can_export'      => false,
+            'has_archive'     => false,
+            'rewrite'         => $rewrite,
+            'show_in_rest'    => false,
+            'capability_type' => 'artwork',
+            'map_meta_cap'    => true,
         ];
 
         register_post_type( static::SLUG, $args );

@@ -20,7 +20,7 @@ use TMS\Theme\Muumimuseo\Taxonomy\ArtworkLocation;
 class ArtworkLocationGroup {
 
     /**
-     * PageGroup constructor.
+     * ArtworkLocationGroup constructor.
      */
     public function __construct() {
         add_action(
