@@ -135,7 +135,7 @@ class ArtistGroup {
 
         $additional_information_group = ( new Field\Group( $strings['additional_information']['group']['title'] ) )
             ->set_key( "${key}_additional_information_group" )
-            ->set_name( '_additional_information_group' )
+            ->set_name( 'additional_information_group' )
             ->set_instructions( $strings['additional_information']['group']['instructions'] );
 
         $additional_information_title = ( new Field\Text( $strings['additional_information']['item']['label']['title'] ) )
