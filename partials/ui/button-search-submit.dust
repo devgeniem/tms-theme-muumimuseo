@@ -1,5 +1,0 @@
-<button class="button is-primary button--icon is-small is-borderless ml-2" type="submit">
-    {text|s}
-
-    {>"ui/icon" icon="search" class="is-primary-invert" /}
-</button>

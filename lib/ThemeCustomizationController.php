@@ -49,6 +49,51 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         );
 
         add_filter(
+            'tms/plugin-materials/page_materials/submit_button_classes',
+            fn() => 'is-primary is-borderless'
+        );
+
+        add_filter(
+            'tms/plugin-materials/page_materials/material_page_item_classes',
+            fn() => ''
+        );
+
+        add_filter(
+            'tms/plugin-materials/page_materials/material_page_item_text_classes',
+            fn() => 'has-text-white'
+        );
+
+        add_filter(
+            'tms/plugin-materials/page_materials/material_page_item_button_classes',
+            fn() => 'is-primary'
+        );
+
+        add_filter(
+            'tms/theme/share_links/link_class',
+            fn() => 'has-background-accent'
+        );
+
+        add_filter(
+            'tms/theme/share_links/icon_class',
+            fn() => 'is-black'
+        );
+
+        add_filter(
+            'tms/theme/layout_events/item_bg_class',
+            fn() => 'has-background-light'
+        );
+
+        add_filter(
+            'tms/theme/layout_events/item_text_class',
+            fn() => 'has-text-black'
+        );
+
+        add_filter(
+            'tms/theme/layout_events/item_icon_class',
+            fn() => 'is-black'
+        );
+
+        add_filter(
             'tms/theme/page_events_calendar/item_classes',
             \Closure::fromCallable( [ $this, 'event_item_classes' ] )
         );
