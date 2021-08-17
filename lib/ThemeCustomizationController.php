@@ -6,7 +6,7 @@
 namespace TMS\Theme\Muumimuseo;
 
 /**
- * Class PostTypeController
+ * Class ThemeCustomizationController
  *
  * @package TMS\Theme\Base
  */
