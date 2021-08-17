@@ -3,10 +3,10 @@
  * Copyright (c) 2021. Geniem Oy
  */
 
-namespace TMS\Theme\Base\Taxonomy;
+namespace TMS\Theme\Muumimuseo\Taxonomy;
 
 use \TMS\Theme\Base\Interfaces\Taxonomy;
-use TMS\Theme\Base\PostType\Artwork;
+use TMS\Theme\Muumimuseo\PostType\Artwork;
 use TMS\Theme\Base\Traits\Categories;
 
 /**

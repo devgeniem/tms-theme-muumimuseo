@@ -3,14 +3,14 @@
  * Copyright (c) 2021. Geniem Oy
  */
 
-namespace TMS\Theme\Base\ACF;
+namespace TMS\Theme\Muumimuseo\ACF;
 
 use Geniem\ACF\Exception;
 use Geniem\ACF\Group;
 use Geniem\ACF\RuleGroup;
 use Geniem\ACF\Field;
 use TMS\Theme\Base\Logger;
-use TMS\Theme\Base\PostType;
+use TMS\Theme\Muumimuseo\PostType;
 
 /**
  * Class PostGroup

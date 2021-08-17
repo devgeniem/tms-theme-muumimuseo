@@ -3,7 +3,7 @@
  * Copyright (c) 2021. Geniem Oy
  */
 
-namespace TMS\Theme\Base\PostType;
+namespace TMS\Theme\Muumimuseo\PostType;
 
 use TMS\Theme\Base\Interfaces\PostType;
 
