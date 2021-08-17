@@ -19,6 +19,7 @@ class ThemeController extends \TMS\Theme\Base\ThemeController {
         $classes = [
             ACFController::class,
             PostTypeController::class,
+            Localization::class,
         ];
 
         array_walk( $classes, function ( $class ) {
