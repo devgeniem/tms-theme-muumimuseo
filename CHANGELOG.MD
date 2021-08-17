@@ -7,4 +7,5 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 ### Added
+- TMS-133: Artist CPT & Artwork CPT #3
 - TMS-143: Add use overlay setting for pages #2
