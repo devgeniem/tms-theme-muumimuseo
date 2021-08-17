@@ -3,6 +3,9 @@
  *  Copyright (c) 2021. Geniem Oy
  */
 
+/**
+ * The Page class.
+ */
 class Page extends PageExtend {
 
     /**
