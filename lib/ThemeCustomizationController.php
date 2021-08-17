@@ -29,8 +29,13 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         );
 
         add_filter(
-            'tms/theme/page_event/hero_info_classes',
+            'tms/theme/event/hero_info_classes',
             fn() => 'has-background-white has-text-secondary-invert'
+        );
+
+        add_filter(
+            'tms/theme/event/hero_icon_classes',
+            fn() => 'is-primary'
         );
 
         add_filter(
@@ -42,6 +47,16 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
             'tms/theme/event/info_button_classes',
             fn() => 'is-primary'
         );
+
+        add_filter(
+            'tms/theme/page_events_calendar/item_classes',
+            \Closure::fromCallable( [ $this, 'event_item_classes' ] )
+        );
+
+        add_filter(
+            'tms/theme/event/group_title',
+            \Closure::fromCallable( [ $this, 'event_info_group_title_classes' ] )
+        );
     }
 
     /**
@@ -51,7 +66,7 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
      *
      * @return array
      */
-    public function error404_search_link( $link ) {
+    public function error404_search_link( $link ) : array {
         $link['classes'] = 'is-primary-invert is-outlined';
 
         return $link;
@@ -64,9 +79,47 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
      *
      * @return array
      */
-    public function error404_home_link( $link ) {
+    public function error404_home_link( $link ) : array {
         $link['classes'] = 'is-primary';
 
         return $link;
+    }
+
+    /**
+     * Override event item classes.
+     *
+     * @param array $classes Classes.
+     *
+     * @return array
+     */
+    public function event_item_classes( $classes ) : array {
+        $classes['list'] = [
+            'item'        => 'has-background-light',
+            'meta_label'  => 'has-text-black',
+            'icon'        => 'is-primary',
+            'description' => 'has-text-black',
+        ];
+
+        $classes['grid'] = [
+            'item'       => 'has-background-light',
+            'item_inner' => 'has-text-black',
+            'icon'       => 'is-primary',
+        ];
+
+        return $classes;
+    }
+
+    /**
+     * Override event item classes.
+     *
+     * @param array $classes Classes.
+     *
+     * @return array
+     */
+    public function event_info_group_title_classes( $classes ) : array {
+        $classes['title'] = 'has-background-gray';
+        $classes['icon']  = 'is-primary';
+
+        return $classes;
     }
 }
