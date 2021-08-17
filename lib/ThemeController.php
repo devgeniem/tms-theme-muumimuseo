@@ -19,6 +19,7 @@ class ThemeController extends \TMS\Theme\Base\ThemeController {
         $classes = [
             Assets::class,
             PostTypeController::class,
+            ThemeCustomizationController::class,
         ];
 
         array_walk( $classes, function ( $class ) {
