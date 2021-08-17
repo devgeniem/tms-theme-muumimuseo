@@ -27,6 +27,21 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
             'tms/theme/error404/home_link',
             \Closure::fromCallable( [ $this, 'error404_home_link' ] )
         );
+
+        add_filter(
+            'tms/theme/page_event/hero_info_classes',
+            fn() => 'has-background-white has-text-secondary-invert'
+        );
+
+        add_filter(
+            'tms/theme/event/info_group_classes',
+            fn() => 'has-background-light has-text-secondary-invert'
+        );
+
+        add_filter(
+            'tms/theme/event/info_button_classes',
+            fn() => 'is-primary'
+        );
     }
 
     /**
