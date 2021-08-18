@@ -127,7 +127,7 @@ class ArtistGroup {
             ->set_wrapper_width( 50 )
             ->set_instructions( $strings['last_name']['instructions'] );
 
-        $additional_information_repeater = ( new Field\Repeater(
+        $additional_info_repeater = ( new Field\Repeater(
             $strings['additional_information']['title']
         ) )
             ->set_key( "${key}_additional_information" )
@@ -135,30 +135,30 @@ class ArtistGroup {
             ->set_layout( 'block' )
             ->set_button_label( $strings['additional_information']['button'] );
 
-        $additional_information_group = ( new Field\Group( $strings['additional_information']['group']['title'] ) )
+        $additional_info_group = ( new Field\Group( $strings['additional_information']['group']['title'] ) )
             ->set_key( "${key}_additional_information_group" )
             ->set_name( 'additional_information_group' )
             ->set_instructions( $strings['additional_information']['group']['instructions'] );
 
-        $additional_information_title = ( new Field\Text( $strings['additional_information']['item']['label']['title'] ) )
+        $additional_info_title = ( new Field\Text( $strings['additional_information']['item']['label']['title'] ) )
             ->set_key( "${key}_additional_information_title" )
             ->set_name( 'additional_information_title' )
             ->set_wrapper_width( 50 )
             ->set_instructions( $strings['additional_information']['item']['label']['instructions'] );
 
-        $additional_information_text = ( new Field\Text( $strings['additional_information']['item']['value']['title'] ) )
+        $additional_info_text = ( new Field\Text( $strings['additional_information']['item']['value']['title'] ) )
             ->set_key( "${key}_additional_information_text" )
             ->set_name( 'additional_information_text' )
             ->set_wrapper_width( 50 )
             ->set_instructions( $strings['additional_information']['item']['value']['instructions'] );
 
-        $additional_information_group->add_fields( [ $additional_information_title, $additional_information_text ] );
-        $additional_information_repeater->add_field( $additional_information_group );
+        $additional_info_group->add_fields( [ $additional_info_title, $additional_info_text ] );
+        $additional_info_repeater->add_field( $additional_info_group );
 
         $tab->add_fields( [
             $first_name_field,
             $last_name_field,
-            $additional_information_repeater,
+            $additional_info_repeater,
         ] );
 
         return $tab;

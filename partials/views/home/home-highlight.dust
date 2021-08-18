@@ -1,0 +1,34 @@
+{?highlight}
+    <div class="highlight-article columns is-desktop is-gapless">
+        <div class="highlight-article__image-container column is-8-desktop is-relative">
+            <div class="highlight-article__image is-absolute-tablet has-top-0-tablet has-right-0-tablet has-bottom-0-tablet has-left-0-tablet has-background-cover" {@inlinebg id=highlight.featured_image size="large" /}>
+                <div class="image is-16by9 is-hidden-tablet">
+                    {@image id=highlight.featured_image size="fullhd" class="objecfit-image" /}
+                </div>
+            </div>
+        </div>
+
+        <div class="column is-4-desktop has-background-light has-text-secondary-invert">
+            <div class="highlight-article__fields p-5 pt-9-desktop pr-6-desktop pb-9-desktop pl-6-desktop">
+                {?highlight.post_title}
+                    <h2 class="mt-0 mt-3-desktop mb-4 mb-5-desktop">
+                        <a href="{highlight.permalink}" class="has-text-black">
+                            {highlight.post_title|s}
+                        </a>
+                    </h2>
+                {/highlight.post_title}
+
+                {?highlight.category}
+                    <a href="{category.permalink|s}" class="pill">
+                        {highlight.category.name|s}
+                    </a>
+                {/highlight.category}
+
+                <div class="entry__excerpt mt-4 mt-5-desktop mb-5-desktop">
+                    <span class="is-block has-text-weight-bold">{@strtodate value=highlight.post_date /}</span>
+                    {highlight.excerpt|s}
+                </div>
+            </div>
+        </div>
+    </div>
+{/highlight}

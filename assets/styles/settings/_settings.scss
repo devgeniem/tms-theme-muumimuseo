@@ -1,0 +1,53 @@
+// Defaults for all themes (see assets/styles/theme-*.scss).
+$colors: (
+    "primary": $colors-palette-primary,
+    "secondary": $colors-palette-secondary,
+    "white": ($color-white, $color-black),
+    "black": ($color-black, $color-white),
+) !default;
+
+$button-colors: (
+    "primary": ($primary, $color-white, $text, $text),
+    "secondary": ($secondary, $secondary-invert, $color-white, $color-black),
+) !default;
+
+$navbar-colors: (
+    "primary": $colors-palette-primary
+) !default;
+
+// Font sizes
+// Default sizes: https://bulma.io/documentation/modifiers/typography-helpers/
+// ****************************************************************************
+$size-8: .75rem;
+$sizes: $size-1 $size-2 $size-3 $size-4 $size-5 $size-6 $size-7 $size-8;
+
+// Image dimensions
+// Default sizes: https://bulma.io/documentation/elements/image/
+$dimensions: 64 180;
+
+// Spacing
+// ****************************************************************************
+$theme-spacing: 1rem;
+
+$theme-spacing-quarter: $theme-spacing * .25;
+$theme-spacing-half: $theme-spacing * .5;
+$theme-spacing-three-quarters: $theme-spacing * .75;
+$theme-spacing-oneandhalf: $theme-spacing * 1.5;
+$theme-spacing-two: $theme-spacing * 2;
+$theme-spacing-twoandhalf: $theme-spacing * 2.5;
+$theme-spacing-three: $theme-spacing * 3;
+$theme-spacing-threeandhalf: $theme-spacing * 3.5;
+$theme-spacing-four: $theme-spacing * 4;
+$theme-spacing-fourandhalf: $theme-spacing * 4.5;
+$theme-spacing-five: $theme-spacing * 5;
+$theme-spacing-six: $theme-spacing * 6;
+
+// For Bulma spacing helpers, see https://bulma.io/documentation/helpers/spacing-helpers/
+
+// Overrides
+$modal-background-background-color: $modal-overlay-background;
+$navbar-item-active-background-color: transparent;
+$navbar-dropdown-item-hover-background-color: transparent;
+
+$navbar-item-color: $color-black !default;
+$navbar-item-hover-color: $color-black !default;
