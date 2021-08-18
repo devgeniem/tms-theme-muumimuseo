@@ -6,6 +6,7 @@
 namespace TMS\Theme\Muumimuseo\PostType;
 
 use TMS\Theme\Base\Interfaces\PostType;
+use TMS\Theme\Muumimuseo\Taxonomy\ArtistCategory;
 
 /**
  * Artist CPT
@@ -113,8 +114,7 @@ class Artist implements PostType {
         $rewrite = [
             'slug'       => static::SLUG,
             'with_front' => false,
-            'pages'      => false,
-            'feeds'      => false,
+            'pages'      => true,
         ];
 
         $args = [
@@ -127,15 +127,15 @@ class Artist implements PostType {
                 'excerpt',
             ],
             'hierarchical'    => false,
-            'public'          => false,
+            'public'          => true,
             'menu_position'   => $this->menu_order,
             'menu_icon'       => $this->icon,
             'show_in_menu'    => true,
             'show_ui'         => true,
-            'can_export'      => false,
-            'has_archive'     => false,
+            'can_export'      => true,
+            'has_archive'     => true,
             'rewrite'         => $rewrite,
-            'show_in_rest'    => false,
+            'show_in_rest'    => true,
             'capability_type' => 'artist',
             'map_meta_cap'    => true,
         ];

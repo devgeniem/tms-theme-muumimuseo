@@ -19,7 +19,9 @@ class ThemeController extends \TMS\Theme\Base\ThemeController {
         $classes = [
             ACFController::class,
             PostTypeController::class,
+            TaxonomyController::class,
             Localization::class,
+            ThemeSupports::class,
         ];
 
         array_walk( $classes, function ( $class ) {
@@ -28,6 +30,10 @@ class ThemeController extends \TMS\Theme\Base\ThemeController {
             if ( $instance instanceof Interfaces\Controller ) {
                 $instance->hooks();
             }
+        } );
+
+        add_action( 'init', function () {
+            \ArchiveArtist::hooks();
         } );
     }
 }
