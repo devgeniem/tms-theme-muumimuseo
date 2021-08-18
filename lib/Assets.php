@@ -38,11 +38,24 @@ class Assets extends \TMS\Theme\Base\Assets implements \TMS\Theme\Base\Interface
         }, 10, 2 );
     }
 
+    /**
+     * Get theme name.
+     *
+     * @return string
+     */
     public function theme_name() : string {
         return 'muumimuseo';
     }
 
-    public function theme_asset_path( $full_path, $file ) : string {
+    /**
+     * Get theme asset path.
+     *
+     * @param string $full_path Asset path.
+     * @param string $file File name.
+     *
+     * @return string
+     */
+    public function theme_asset_path( $full_path, $file ) : string { // // phpcs:ignore
         return get_stylesheet_directory_uri() . '/assets/dist/' . $file;
     }
 }
