@@ -1,0 +1,54 @@
+/*--------------------------------------------------------------
+# Overrides - Define parent theme variable overrides here.
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+Common
+--------------------------------------------------------------*/
+$link: $color-veden-vari;
+$link-hover: bulmaLighten($link, 15);
+$link-active: bulmaLighten($link, 15);
+
+/*--------------------------------------------------------------
+# ui-components/header/_secondary-nav.scss
+--------------------------------------------------------------*/
+$secondary-navbar-item-navbar-link-color: $color-muumipeikon-valkoinen;
+$secondary-navbar-item-navbar-link-color-hover: $color-muumipeikon-valkoinen;
+
+/*--------------------------------------------------------------
+assets/styles/ui-components/_breadcrumbs.scss
+--------------------------------------------------------------*/
+$tms-breadcrumb-item-color-link: $primary;
+$tms-breadcrumb-item-color-hover: $primary-dark;
+$tms-breadcrumb-item-color-active: $primary-light;
+$tms-breadcrumb-item-color-separator: $color-black;
+
+/*--------------------------------------------------------------
+assets/styles/ui-components/_breadcrumbs.scss
+--------------------------------------------------------------*/
+$tms-breadcrumb-item-color-link: $link;
+$tms-breadcrumb-item-color-hover: $link-hover;
+$tms-breadcrumb-item-color-active: $link-active;
+$tms-breadcrumb-item-color-separator: $color-muumipeikon-valkoinen;
+
+/*--------------------------------------------------------------
+assets/styles/ui-components/_pill.scss
+--------------------------------------------------------------*/
+$pill-background-color: $color-muumi-haalea;
+$pill-color: $black;
+
+$pill-outlined-color: $color-muumi-haalea;
+$pill-outlined-color-hover: $color-muumi-haalea;
+
+$pill-background-active-focus: $primary-dark !default;
+$pill-background-color-hover: opacify($secondary-light, .75) !default;
+$pill-background-color-focus: $secondary-light !default;
+$pill-background-color-active: $dark !default;
+$pill-background-color-focus: $dark !default;
+
+$pill-border-color-focus: $black !default;
+
+/*--------------------------------------------------------------
+assets/styles/ui-components/_pagination.scss
+--------------------------------------------------------------*/
+$pagination-item-background-color: $color-muumipeikon-valkoinen !default;
