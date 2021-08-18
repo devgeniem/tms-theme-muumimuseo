@@ -99,7 +99,7 @@ const allModules = {
             ],
         },
         {
-            test: /\.(eot|svg|ttf|woff(2)?)(\?[a-z0-9=\.]+)?$/,
+            test: /\.(eot|svg|ttf|otf|woff(2)?)(\?[a-z0-9=\.]+)?$/,
             exclude: [ /assets\/images/, /assets\/icons/, /node_modules/ ],
             use: 'file-loader?name=[name].[ext]',
         },
