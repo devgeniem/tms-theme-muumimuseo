@@ -29,8 +29,6 @@ class PostTypeController extends \TMS\Theme\Base\PostTypeController implements P
      * @return array
      */
     protected function get_post_type_files() : array {
-        return [];
-
         return array_diff( scandir( __DIR__ . '/PostType' ), [ '.', '..' ] );
     }
 }
