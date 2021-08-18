@@ -1,8 +1,8 @@
 {
-  "name": "tms-theme-base",
+  "name": "tms-theme-muumimuseo",
   "author": "Geniem",
   "version": "0.0.0",
-  "description": "Tampere Multisite Theme Base",
+  "description": "Tampere Multisite Muumimuseo Theme",
   "private": true,
   "dependencies": {
     "@accessible360/accessible-slick": "^1.0.1",
