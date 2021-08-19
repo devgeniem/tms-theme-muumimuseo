@@ -46,12 +46,16 @@
                         <div class="column is-12 is-6-tablet is-3-desktop">
                             {?image}
                                 <div class="image is-4by3">
-                                    {@image id=image size="large" class="objectfit-image" /}
+                                    <a href="{permalink}" aria-hidden="true" tabindex="-1">
+                                        {@image id=image size="large" class="objectfit-image" /}
+                                    </a>
                                 </div>
                             {/image}
 
                             <h2 class="h4 mt-6 mb-4 has-line-height-tight">
-                                {post_title|s}
+                                <a href="{permalink}" class="has-text-paragraph">
+                                    {post_title|s}
+                                </a>
                             </h2>
 
                             <div class="has-text-small">
