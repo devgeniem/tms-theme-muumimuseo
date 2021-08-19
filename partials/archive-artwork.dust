@@ -1,7 +1,7 @@
 {>"shared/base" /}
 
 {<content}
-    {#ArchiveArtist}
+    {#ArchiveArtwork}
         <main class="main-content section" id="main-content">
             <div class="container">
                 <div class="columns mb-8 mb-9-desktop">
@@ -32,7 +32,8 @@
                             </div>
                         </div>
 
-                        <form class="pt-2 pb-7 mb-6 has-border-bottom-1 has-border-gray--dark" action="{search.action|s}"
+                        <form class="pt-2 pb-7 mb-6 has-border-bottom-1 has-border-gray--dark"
+                              action="{search.action|s}"
                               method="get" role="search">
                             {>"ui/input-text" label=strings.search.label name=search.input_search_name value=search.current_search placeholder=strings.search.input_placeholder /}
                             {>"ui/button-search-submit" text=strings.search.submit_value /}
@@ -42,35 +43,32 @@
 
                 <div class="columns is-multiline is-variable is-6-desktop">
                     {#results}
-                        <div class="column is-12 is-6-desktop">
-                            <div class="columns is-mobile is-variable is-4-desktop">
-                                {?image}
-                                    <div class="column is-4">
-                                        <div class="image is-3by4">
-                                            {@image id=image size="large" class="objectfit-image" /}
-                                        </div>
-                                    </div>
-                                {/image}
-
-                                <div class="column">
-                                    <h2 class="h3 mt-4 mb-4 has-line-height-tight">
-                                        {fields.first_name|s}
-                                        {fields.last_name|s}
-                                    </h2>
-
-                                    <div class="mt-4 mb-4 has-text-small">
-                                        {strings.art_categories|s}: {categories|s}
-                                    </div>
-
-                                    {?post_excerpt}
-                                        <div class="mt-4 mb-4 is-family-secondary">
-                                            {post_excerpt|s}
-                                        </div>
-                                    {/post_excerpt}
-
-                                    {>"ui/button-link" classes="is-primary-invert is-outlined mt-4" icon=link.icon icon_classes=link.icon_classes /}
+                        <div class="column is-12 is-6-tablet is-3-desktop">
+                            {?image}
+                                <div class="image is-4by3">
+                                    {@image id=image size="large" class="objectfit-image" /}
                                 </div>
+                            {/image}
+
+                            <h2 class="h4 mt-6 mb-4 has-line-height-tight">
+                                {post_title|s}
+                            </h2>
+
+                            <div class="has-text-small">
+                                {fields.year|s}
                             </div>
+
+                            <div class="has-text-small">
+                                {artist|s}
+                            </div>
+
+                            <div class="has-text-small">
+                                {locations|s}
+                            </div>
+
+                            <span class="pill mt-4">
+                                {types|s}
+                            </span>
                         </div>
                     {/results}
                 </div>
@@ -84,5 +82,5 @@
                 {/pagination}
             </div>
         </main>
-    {/ArchiveArtist}
+    {/ArchiveArtwork}
 {/content}
