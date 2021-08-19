@@ -32,7 +32,8 @@
                             </div>
                         </div>
 
-                        <form class="pt-2 pb-7 mb-6 has-border-bottom-1 has-border-gray" action="{search.action|s}" method="get" role="search">
+                        <form class="pt-2 pb-7 mb-6 has-border-bottom-1 has-border-gray--dark" action="{search.action|s}"
+                              method="get" role="search">
                             {>"ui/input-text" label=strings.search.label name=search.input_search_name value=search.current_search placeholder=strings.search.input_placeholder /}
                             {>"ui/button-search-submit" text=strings.search.submit_value /}
                         </form>
@@ -61,11 +62,13 @@
                                         {strings.art_categories|s}: {categories|s}
                                     </div>
 
-                                    <div class="mt-4 mb-4">
-                                        {post_excerpt|s}
-                                    </div>
+                                    {?post_excerpt}
+                                        <div class="mt-4 mb-4 is-family-secondary">
+                                            {post_excerpt|s}
+                                        </div>
+                                    {/post_excerpt}
 
-                                    {>"ui/button-link" classes="is-outlined mt-4" icon=link.icon icon_classes=link.icon_classes /}
+                                    {>"ui/button-link" classes="is-primary-invert is-outlined mt-4" icon=link.icon icon_classes=link.icon_classes /}
                                 </div>
                             </div>
                         </div>
