@@ -19,7 +19,7 @@
 
                             <div class="column is-8">
                                 <h3 class="mt-0 mb-5">
-                                    {post_title|s}
+                                    <a href="{permalink}" class="has-text-primary-invert">{post_title|s}</a>
                                 </h3>
 
                                 {?post_excerpt}
@@ -30,8 +30,9 @@
 
                                 {?artwork_type}
                                     <div>
-                                        <a href="{artwork_type_link}"
-                                           class="button is-primary is-size-7 pt-1 pr-4 pb-1 pl-4 has-border-radius-small">{artwork_type|s}</a>
+                                        <span class="pill is-family-primary has-text-weight-normal">
+                                            {artwork_type|s}
+                                        </span>
                                     </div>
                                 {/artwork_type}
                             </div>

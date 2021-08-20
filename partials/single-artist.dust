@@ -26,8 +26,8 @@
 
                                 <div class="column is-4 is-offset-2">
                                     {?content.image}
-                                        <div class="entry__figure">
-                                            {@image id=content.image.id size="medium_vertical" /}
+                                        <div class="entry__figure image is-3by4">
+                                            {@image id=content.image.id size="large" class="objectfit-image" /}
                                         </div>
                                     {/content.image}
 
