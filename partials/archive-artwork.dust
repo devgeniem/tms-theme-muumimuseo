@@ -28,17 +28,23 @@
                                 {fields.year|s}
                             </div>
 
-                            <div class="has-text-small">
-                                {artist|s}
-                            </div>
+                            {?artist}
+                                <div class="has-text-small">
+                                    {artist|s}
+                                </div>
+                            {/artist}
 
-                            <div class="has-text-small">
-                                {locations|s}
-                            </div>
+                            {?locations}
+                                <div class="has-text-small">
+                                    {locations|s}
+                                </div>
+                            {/locations}
 
-                            <span class="pill mt-4">
-                                {types|s}
-                            </span>
+                            {?types}
+                                <span class="pill mt-4">
+                                    {types|s}
+                                </span>
+                            {/types}
                         </div>
                     {/results}
                 </div>

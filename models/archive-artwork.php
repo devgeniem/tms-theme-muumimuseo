@@ -3,6 +3,7 @@
  *  Copyright (c) 2021. Geniem Oy
  */
 
+use TMS\Theme\Base\Settings;
 use TMS\Theme\Muumimuseo\PostType\Artist;
 use TMS\Theme\Muumimuseo\PostType\Artwork;
 use TMS\Theme\Muumimuseo\Taxonomy\ArtworkLocation;
@@ -175,9 +176,11 @@ class ArchiveArtwork extends ArchiveArtist {
      * @return array
      */
     protected function format_posts( array $posts ) : array {
-        $artist_map = $this->get_artist_map();
+        $display_location = Settings::get_setting( 'artwork_archive_display_location' );
+        $display_artist   = Settings::get_setting( 'artwork_archive_display_artist' );
+        $artist_map       = $display_artist ? $this->get_artist_map() : [];
 
-        return array_map( function ( $item ) use ( $artist_map ) {
+        return array_map( function ( $item ) use ( $artist_map, $display_artist, $display_location ) {
             if ( has_post_thumbnail( $item->ID ) ) {
                 $item->image = get_post_thumbnail_id( $item->ID );
             }
@@ -185,17 +188,19 @@ class ArchiveArtwork extends ArchiveArtist {
             $item->permalink = get_the_permalink( $item->ID );
             $item->fields    = get_fields( $item->ID );
 
-            $locations       = wp_get_post_terms( $item->ID, ArtworkLocation::SLUG, [ 'fields' => 'names' ] );
-            $item->locations = ! empty( $locations ) && ! is_wp_error( $locations )
-                ? implode( ', ', $locations )
-                : false;
+            if ( $display_location ) {
+                $locations       = wp_get_post_terms( $item->ID, ArtworkLocation::SLUG, [ 'fields' => 'names' ] );
+                $item->locations = ! empty( $locations ) && ! is_wp_error( $locations )
+                    ? implode( ', ', $locations )
+                    : false;
+            }
 
             $types       = wp_get_post_terms( $item->ID, ArtworkType::SLUG, [ 'fields' => 'names' ] );
             $item->types = ! empty( $types ) && ! is_wp_error( $types )
                 ? implode( ', ', $types )
                 : false;
 
-            if ( isset( $artist_map[ $item->ID ] ) ) {
+            if ( $display_artist && isset( $artist_map[ $item->ID ] ) ) {
                 $item->artist = implode( ', ', $artist_map[ $item->ID ] );
             }
 
