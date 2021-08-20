@@ -63,6 +63,12 @@ class Artist implements PostType {
      */
     public function hooks() : void {
         add_action( 'init', \Closure::fromCallable( [ $this, 'register' ] ), 15 );
+        add_filter(
+            'tms/gutenberg/blocks',
+            \Closure::fromCallable( [ $this, 'allowed_blocks' ] ),
+            10,
+            1
+        );
     }
 
     /**
@@ -125,9 +131,10 @@ class Artist implements PostType {
                 'title',
                 'thumbnail',
                 'excerpt',
+                'editor',
             ],
             'hierarchical'    => false,
-            'public'          => false,
+            'public'          => true,
             'menu_position'   => $this->menu_order,
             'menu_icon'       => $this->icon,
             'show_in_menu'    => true,
@@ -135,11 +142,31 @@ class Artist implements PostType {
             'can_export'      => false,
             'has_archive'     => false,
             'rewrite'         => $rewrite,
-            'show_in_rest'    => false,
+            'show_in_rest'    => true,
             'capability_type' => 'artist',
             'map_meta_cap'    => true,
         ];
 
         register_post_type( static::SLUG, $args );
+    }
+
+    /**
+     * Set allowed blocks.
+     *
+     * @param array $blocks Block list.
+     */
+    public function allowed_blocks( $blocks ) {
+        $allowed_blocks = [
+            'acf/image',
+            'acf/video',
+            'acf/material',
+            'acf/quote',
+        ];
+
+        foreach ( $allowed_blocks as $block ) {
+            $blocks[ $block ]['post_types'][] = self::SLUG;
+        }
+
+        return $blocks;
     }
 }
