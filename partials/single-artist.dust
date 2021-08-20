@@ -15,7 +15,7 @@
                                         </h1>
                                     </header>
 
-                                    <div class="entry__content keep-vertical-spacing has-text-small">
+                                    <div class="entry__content keep-vertical-spacing is-family-sans-serif">
                                         {@content /}
                                     </div>
 
