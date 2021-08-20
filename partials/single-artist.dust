@@ -1,0 +1,57 @@
+{>"shared/base" /}
+
+{<content}
+    <main class="main-content" id="main-content">
+        {#SingleArtist}
+            <section class="section pb-12">
+                <div class="container">
+                    <div class="columns">
+                        <div class="column is-10 is-offset-1">
+                            <article class="entry columns">
+                                <div class="column is-6">
+                                    <header class="entry__header">
+                                        <h1 class="entry__title mt-0 mb-6 has-line-height-tight">
+                                            {@title /}
+                                        </h1>
+                                    </header>
+
+                                    <div class="entry__content keep-vertical-spacing is-family-sans-serif">
+                                        {@content /}
+                                    </div>
+
+                                    {?content.fields.additional_information}
+                                        {>"shared/additional-info-list" data=content.fields.additional_information /}
+                                    {/content.fields.additional_information}
+                                </div>
+
+                                <div class="column is-4 is-offset-2">
+                                    {?content.image}
+                                        <div class="entry__figure image is-3by4">
+                                            {@image id=content.image.id size="large" class="objectfit-image" /}
+                                        </div>
+                                    {/content.image}
+
+                                    {?share_links}
+                                        <div class="entry__share-links has-text-right">
+                                            <h2 class="h6 mt-6 mb-6">
+                                                {Strings.s.share.share_to_social_media|s}
+                                            </h2>
+
+                                            {>"ui/share-links" share_links=share_links align="right" /}
+                                        </div>
+                                    {/share_links}
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {?artwork}
+                {>"shared/artwork-list" artwork=artwork title="Related artwork" /}
+            {/artwork}
+        {/SingleArtist}
+
+        {>"ui/components" components=Page.components /}
+    </main>
+{/content}
