@@ -4,9 +4,9 @@
             <div class="columns">
                 <div class="column is-6-tablet is-flex is-align-items-center">
                     <div class="filters mb-4">
-                                        <span class="is-block h6 mb-3">
-                                            {strings.filter|s}
-                                        </span>
+                        <span class="is-block h6 mb-3">
+                            {strings.filter|s}
+                        </span>
 
                         <div class="filters__list">
                             {#filters}

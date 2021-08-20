@@ -44,7 +44,6 @@
                 </div>
 
                 {>"shared/archive-pagination" /}
-
             </div>
         </main>
     {/ArchiveArtwork}
