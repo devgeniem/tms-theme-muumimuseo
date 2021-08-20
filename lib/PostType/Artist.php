@@ -87,10 +87,10 @@ class Artist implements PostType {
      */
     private function register() {
         $labels = [
-            'name'                  => 'Artistit',
-            'singular_name'         => 'Artisti',
-            'menu_name'             => 'Artistit',
-            'name_admin_bar'        => 'Artistit',
+            'name'                  => 'Taiteilijat',
+            'singular_name'         => 'Taiteilija',
+            'menu_name'             => 'Taiteilijat',
+            'name_admin_bar'        => 'Taiteilijat',
             'archives'              => 'Arkistot',
             'attributes'            => 'Ominaisuudet',
             'parent_item_colon'     => 'Vanhempi:',
