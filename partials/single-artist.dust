@@ -37,7 +37,7 @@
                                                 {Strings.s.share.share_to_social_media|s}
                                             </h2>
 
-                                            {>"ui/share-links" share_links=share_links align="right" /}
+                                            {>"ui/share-links" ul_class="is-justify-content-flex-end" li_class="ml-4" /}
                                         </div>
                                     {/share_links}
                                 </div>
