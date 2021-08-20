@@ -63,12 +63,7 @@ class Artist implements PostType {
      */
     public function hooks() : void {
         add_action( 'init', \Closure::fromCallable( [ $this, 'register' ] ), 15 );
-        add_filter(
-            'tms/gutenberg/blocks',
-            \Closure::fromCallable( [ $this, 'allowed_blocks' ] ),
-            10,
-            1
-        );
+        add_filter( 'tms/gutenberg/blocks', \Closure::fromCallable( [ $this, 'allowed_blocks' ] ), 10, 1 );
         add_filter(
             'tms/base/breadcrumbs/before_prepare',
             \Closure::fromCallable( [ $this, 'format_single_breadcrumbs' ] ),
