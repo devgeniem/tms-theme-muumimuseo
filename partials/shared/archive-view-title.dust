@@ -1,0 +1,7 @@
+<div class="columns mb-8 mb-9-desktop">
+    <div class="column is-10 is-offset-1 pt-0 pb-0 has-text-centered">
+        <h1 class="mt-0 mb-0">
+            {page_title|s}
+        </h1>
+    </div>
+</div>
