@@ -70,8 +70,14 @@ class AlterCallToActionLayout {
      * @return array
      */
     public function alter_format( array $layout ) : array {
-        if ( isset( $layout['round_image'] ) && true === $layout['round_image'] ) {
-            $layout['image_class'] = 'has-round-mask';
+        if ( empty( $layout['rows'] ) ) {
+            return $layout;
+        }
+
+        foreach ( $layout['rows'] as $key => $row ) {
+            if ( isset( $row['round_image'] ) && true === $row['round_image'] ) {
+                $layout['rows'][ $key ]['image_class'] = 'has-round-mask';
+            }
         }
 
         return $layout;
