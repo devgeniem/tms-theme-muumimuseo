@@ -69,6 +69,12 @@ class Artist implements PostType {
             10,
             1
         );
+        add_filter(
+            'tms/base/breadcrumbs/before_prepare',
+            \Closure::fromCallable( [ $this, 'format_single_breadcrumbs' ] ),
+            10,
+            3
+        );
     }
 
     /**
@@ -140,7 +146,7 @@ class Artist implements PostType {
             'show_in_menu'    => true,
             'show_ui'         => true,
             'can_export'      => false,
-            'has_archive'     => false,
+            'has_archive'     => true,
             'rewrite'         => $rewrite,
             'show_in_rest'    => true,
             'capability_type' => 'artist',
@@ -168,5 +174,39 @@ class Artist implements PostType {
         }
 
         return $blocks;
+    }
+
+    /**
+     * Format single view breadcrumbs.
+     *
+     * @param array  $breadcrumbs  Default breadcrumbs.
+     * @param string $current_type Post type.
+     * @param string $current_id   Current post ID.
+     *
+     * @return array[]
+     */
+    public function format_single_breadcrumbs( $breadcrumbs, $current_type, $current_id ) {
+        if ( $current_type !== self::SLUG ) {
+            return $breadcrumbs;
+        }
+
+        return [
+            'home' => [
+                'title'     => _x( 'Home', 'Breadcrumbs', 'tms-theme-base' ),
+                'permalink' => trailingslashit( get_home_url() ),
+                'icon'      => '',
+            ],
+            [
+                'title'     => _x( 'Artists', 'Breadcrumb text', 'tms-theme-base' ),
+                'permalink' => get_post_type_archive_link( self::SLUG ),
+                'icon'      => false,
+            ],
+            [
+                'title'     => get_the_title( $current_id ),
+                'permalink' => false,
+                'icon'      => false,
+                'is_active' => true,
+            ],
+        ];
     }
 }
