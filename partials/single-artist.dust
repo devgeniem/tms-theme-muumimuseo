@@ -48,7 +48,7 @@
             </section>
 
             {?artwork}
-                {>"shared/artwork-list" artwork=artwork title="Artwork title TODO: Translate me" /}
+                {>"shared/artwork-list" artwork=artwork title="Related artwork" /}
             {/artwork}
         {/SingleArtist}
 
