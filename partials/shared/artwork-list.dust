@@ -1,0 +1,44 @@
+<section class="section related-artwork has-background-secondary-invert">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-10 is-offset-1">
+                <h2 class="mt-0 mb-8">
+                    {title|s}
+                </h2>
+
+                {#artwork}
+                    <div class="related-artwork__item container mb-4">
+                        <div class="columns">
+                            <div class="column is-4">
+                                {?image_id}
+                                    <div class="entry__figure">
+                                        {@image id=image_id size="medium" /}
+                                    </div>
+                                {/image_id}
+                            </div>
+
+                            <div class="column is-8">
+                                <h3 class="mt-0 mb-5">
+                                    {post_title|s}
+                                </h3>
+
+                                {?post_excerpt}
+                                    <p class="mt-0 mb-5">
+                                        {post_excerpt|s}
+                                    </p>
+                                {/post_excerpt}
+
+                                {?artwork_type}
+                                    <div>
+                                        <a href="{artwork_type_link}"
+                                           class="button is-primary is-size-7 pt-1 pr-4 pb-1 pl-4 has-border-radius-small">{artwork_type|s}</a>
+                                    </div>
+                                {/artwork_type}
+                            </div>
+                        </div>
+                    </div>
+                {/artwork}
+            </div>
+        </div>
+    </div>
+</section>
