@@ -1,16 +1,8 @@
 <div class="additional-information-list mt-6 has-text-small">
     {#data}
-        <div class="columns pt-1 pb-1 has-border-bottom-1 has-border-gray--dark">
-            <div class="column is-3">
-                <p class="m-0 is-uppercase has-text-weight-light">
-                    {additional_information_group.additional_information_title|s}
-                </p>
-            </div>
-
-            <div class="column is-9 is-family-sans-serif">
-                <p class="m-0">
-                    {additional_information_group.additional_information_text|s}
-                </p>
+        <div class="columns is-gapless mb-3">
+            <div class="column">
+                {>"shared/additional-info-row" title=additional_information_group.additional_information_title text=additional_information_group.additional_information_text /}
             </div>
         </div>
     {/data}
