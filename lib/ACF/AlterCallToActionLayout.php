@@ -6,6 +6,9 @@
 use Geniem\ACF\Field;
 use TMS\Theme\Base\Logger;
 
+/**
+ * Alter Call to Action Layout
+ */
 class AlterCallToActionLayout {
 
     /**
