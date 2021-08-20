@@ -34,7 +34,7 @@
                                     {?share_links}
                                         <div class="entry__share-links has-text-right">
                                             <h2 class="h6 mt-6 mb-6">
-                                                {Strings.s.share.share_to_some|s}
+                                                {Strings.s.share.share_to_social_media|s}
                                             </h2>
 
                                             {>"ui/share-links" share_links=share_links align="right" /}
