@@ -63,6 +63,14 @@ class Artwork implements PostType {
      */
     public function hooks() : void {
         add_action( 'init', \Closure::fromCallable( [ $this, 'register' ] ), 15 );
+        add_filter( 'tms/gutenberg/blocks', \Closure::fromCallable( [ $this, 'allowed_blocks' ] ), 10, 1 );
+
+        add_filter(
+            'tms/base/breadcrumbs/before_prepare',
+            \Closure::fromCallable( [ $this, 'format_single_breadcrumbs' ] ),
+            10,
+            3
+        );
     }
 
     /**
@@ -125,6 +133,7 @@ class Artwork implements PostType {
                 'title',
                 'thumbnail',
                 'excerpt',
+                'editor',
             ],
             'hierarchical'    => false,
             'public'          => true,
@@ -141,5 +150,60 @@ class Artwork implements PostType {
         ];
 
         register_post_type( static::SLUG, $args );
+    }
+
+    /**
+     * Set allowed blocks.
+     *
+     * @param array $blocks Block list.
+     */
+    public function allowed_blocks( $blocks ) {
+        $allowed_blocks = [
+            'acf/image',
+            'acf/video',
+            'acf/material',
+            'acf/quote',
+            'acf/map',
+        ];
+
+        foreach ( $allowed_blocks as $block ) {
+            $blocks[ $block ]['post_types'][] = self::SLUG;
+        }
+
+        return $blocks;
+    }
+
+    /**
+     * Format single view breadcrumbs.
+     *
+     * @param array  $breadcrumbs  Default breadcrumbs.
+     * @param string $current_type Post type.
+     * @param string $current_id   Current post ID.
+     *
+     * @return array[]
+     */
+    public function format_single_breadcrumbs( $breadcrumbs, $current_type, $current_id ) {
+        if ( $current_type !== self::SLUG ) {
+            return $breadcrumbs;
+        }
+
+        return [
+            'home' => [
+                'title'     => _x( 'Home', 'Breadcrumbs', 'tms-theme-base' ),
+                'permalink' => trailingslashit( get_home_url() ),
+                'icon'      => '',
+            ],
+            [
+                'title'     => _x( 'Artwork', 'Breadcrumb text', 'tms-theme-base' ),
+                'permalink' => get_post_type_archive_link( self::SLUG ),
+                'icon'      => false,
+            ],
+            [
+                'title'     => get_the_title( $current_id ),
+                'permalink' => false,
+                'icon'      => false,
+                'is_active' => true,
+            ],
+        ];
     }
 }
