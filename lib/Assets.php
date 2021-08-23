@@ -48,7 +48,7 @@ class Assets extends \TMS\Theme\Base\Assets implements \TMS\Theme\Base\Interface
     }
 
     /**
-     * Get theme name.
+     * Get theme JS file name.
      *
      * @return string
      */
