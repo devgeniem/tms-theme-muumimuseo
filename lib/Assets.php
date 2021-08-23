@@ -22,7 +22,7 @@ class Assets extends \TMS\Theme\Base\Assets implements \TMS\Theme\Base\Interface
         add_filter( 'tms/theme/theme_selected', [ $this, 'theme_name' ] );
 
         add_filter( 'tms/theme/theme_css_path', [ $this, 'theme_asset_path' ], 10, 2 );
-        add_filter( 'tms/theme/theme_js_path', [ $this, 'theme_asset_path' ], 10, 2 );
+        add_filter( 'tms/theme/theme_js_file', [ $this, 'theme_js_name' ], 10, 2 );
 
         add_filter( 'tms/theme/asset_mod_time', function ( $mod_time, $filename ) {
             if ( false !== strpos( $filename, 'muumimuseo' ) ) {
@@ -45,6 +45,15 @@ class Assets extends \TMS\Theme\Base\Assets implements \TMS\Theme\Base\Interface
      */
     public function theme_name() : string {
         return 'muumimuseo';
+    }
+
+    /**
+     * Get theme JS file name.
+     *
+     * @return string
+     */
+    public function theme_js_name() : string {
+        return 'main.js';
     }
 
     /**
