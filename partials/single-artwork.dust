@@ -1,0 +1,62 @@
+{>"shared/base" /}
+
+{<content}
+    <main class="main-content" id="main-content">
+        {#SingleArtwork}
+            <section class="section pb-12">
+                <div class="container">
+                    <div class="columns">
+                        <div class="column is-10 is-offset-1">
+                            <article class="entry columns is-multiline">
+                                <div class="column is-full">
+                                    <header class="entry__header">
+                                        <h1 class="entry__title mt-0 mb-6 has-line-height-tight">
+                                            {@title /}
+                                        </h1>
+
+                                        {?content.image}
+                                            <div class="entry__figure pt-2">
+                                                {@image id=content.image.id size="single" /}
+                                            </div>
+                                        {/content.image}
+
+                                        {>"shared/artwork-gallery" gallery_data=image_gallery /}
+                                    </header>
+                                </div>
+
+                                <div class="column is-6">
+                                    <div class="mr-3-tablet">
+                                        {?content.fields.additional_information}
+                                            {>"shared/additional-info-list" data=content.fields.additional_information /}
+                                        {/content.fields.additional_information}
+
+                                        {?artist_permalink}
+                                            <a href="{artist_permalink}"
+                                               class="button is-primary-invert is-outlined button--icon mt-6">
+                                                {Strings.s.artwork.artist_link|s}
+
+                                                {>"ui/icon" icon="chevron-right" class="is-primary icon--large mr-1" /}
+                                            </a>
+                                        {/artist_permalink}
+                                    </div>
+                                </div>
+
+                                <div class="column is-6">
+                                    <div class="entry__content ml-3-tablet keep-vertical-spacing is-family-sans-serif">
+                                        {@content /}
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {?artwork}
+                {>"shared/artwork-list" artwork=artwork title=Strings.s.artwork.related_art /}
+            {/artwork}
+        {/SingleArtwork}
+
+        {>"ui/components" components=Page.components /}
+    </main>
+{/content}

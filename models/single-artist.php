@@ -1,6 +1,6 @@
 <?php
 /**
- * Define the generic Page class.
+ * Define the SingleArtist class.
  */
 
 use DustPress\Query;
@@ -27,6 +27,14 @@ class SingleArtist extends BaseModel {
         return $single;
     }
 
+    /**
+     * Get artwork.
+     *
+     * @return mixed
+     */
+    protected function get_artwork() {
+        return get_field( 'artwork' );
+    }
 
     /**
      * Get related artwork
@@ -51,6 +59,8 @@ class SingleArtist extends BaseModel {
             $item->image_id = has_post_thumbnail( $item->ID )
                 ? get_post_thumbnail_id( $item->ID )
                 : Images::get_default_image_id();
+
+            $item->permalink = get_post_permalink( $item->ID );
 
             if ( ! has_excerpt( $item->ID ) ) {
                 $item->post_excerpt = $this->get_artwork_excerpt( $item );
