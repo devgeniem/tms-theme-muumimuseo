@@ -1,5 +1,5 @@
 {?image}
-    <div class="animation section pt-4 pb-4">
+    <div class="animation section pt-4 pb-4 has-text-centered">
         <div class="container">
             <div class="columns">
                 <div class="column">
