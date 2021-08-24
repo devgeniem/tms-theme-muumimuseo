@@ -9,7 +9,7 @@
 
                 <div class="columns is-multiline is-variable is-6-desktop">
                     {#results}
-                        <div class="column is-12 is-6-tablet is-3-desktop">
+                        <div class="column is-6-tablet is-3-desktop">
                             {?image}
                                 <div class="image is-4by3">
                                     <a href="{permalink}" aria-hidden="true" tabindex="-1">
