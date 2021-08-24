@@ -1,0 +1,88 @@
+{>"shared/base" /}
+
+{<content}
+    {#ArchiveArtist}
+        <main class="main-content section" id="main-content">
+            <div class="container">
+                <div class="columns mb-8 mb-9-desktop">
+                    <div class="column is-10 is-offset-1 pt-0 pb-0 has-text-centered">
+                        <h1 class="mt-0 mb-0">
+                            {page_title|s}
+                        </h1>
+                    </div>
+                </div>
+
+                <div class="columns">
+                    <div class="column">
+                        <div class="filters mb-4">
+                            <span class="is-block h6 mb-3">
+                                {strings.filter|s}
+                            </span>
+
+                            <div class="filters__list">
+                                {#filters}
+                                    <a href="{url}" class="pill mr-2 mb-2 {?is_active}is-active{/is_active}">
+                                        {?is_active}
+                                            {>"ui/icon" icon="checkmark" class="icon--medium mr-2 is-primary-invert" /}
+                                        {/is_active}
+
+                                        {name|s}
+                                    </a>
+                                {/filters}
+                            </div>
+                        </div>
+
+                        <form class="pt-2 pb-7 mb-6 has-border-bottom-1 has-border-gray--dark" action="{search.action|s}"
+                              method="get" role="search">
+                            {>"ui/input-text" label=strings.search.label name=search.input_search_name value=search.current_search placeholder=strings.search.input_placeholder /}
+                            {>"ui/button-search-submit" text=strings.search.submit_value /}
+                        </form>
+                    </div>
+                </div>
+
+                <div class="columns is-multiline is-variable is-6-desktop">
+                    {#artists}
+                        <div class="column is-12 is-6-desktop">
+                            <div class="columns is-mobile is-variable is-4-desktop">
+                                {?image}
+                                    <div class="column is-4">
+                                        <div class="image is-3by4">
+                                            {@image id=image size="large" class="objectfit-image" /}
+                                        </div>
+                                    </div>
+                                {/image}
+
+                                <div class="column">
+                                    <h2 class="h3 mt-4 mb-4 has-line-height-tight">
+                                        {fields.first_name|s}
+                                        {fields.last_name|s}
+                                    </h2>
+
+                                    <div class="mt-4 mb-4 has-text-small">
+                                        {strings.art_categories|s}: {categories|s}
+                                    </div>
+
+                                    {?post_excerpt}
+                                        <div class="mt-4 mb-4 is-family-secondary">
+                                            {post_excerpt|s}
+                                        </div>
+                                    {/post_excerpt}
+
+                                    {>"ui/button-link" classes="is-primary-invert is-outlined mt-4" icon=link.icon icon_classes=link.icon_classes /}
+                                </div>
+                            </div>
+                        </div>
+                    {/artists}
+                </div>
+
+                {?pagination}
+                    <div class="columns mt-8 mb-4">
+                        <div class="column has-text-centered">
+                            {@pagination page=pagination.page per_page=pagination.per_page items=pagination.items page_var="paged" /}
+                        </div>
+                    </div>
+                {/pagination}
+            </div>
+        </main>
+    {/ArchiveArtist}
+{/content}
