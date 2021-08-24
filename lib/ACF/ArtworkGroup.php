@@ -80,8 +80,8 @@ class ArtworkGroup {
                 'title'        => 'Kuvat',
                 'instructions' => '',
             ],
-            'artists'                => [
-                'title'        => 'Taiteilijat',
+            'year'                   => [
+                'title'        => 'Valmistumisvuosi',
                 'instructions' => '',
             ],
             'additional_information' => [
@@ -150,41 +150,6 @@ class ArtworkGroup {
         $tab->add_fields( [
             $images_field,
             $additional_info_repeater,
-        ] );
-
-        return $tab;
-    }
-
-    /**
-     * Get writer tab
-     *
-     * @param string $key Field group key.
-     *
-     * @return Field\Tab
-     * @throws Exception In case of invalid option.
-     */
-    protected function get_artwork_tab( string $key ) : Field\Tab {
-        $strings = [
-            'tab'     => 'Teokset',
-            'artwork' => [
-                'title'        => 'Taideteokset',
-                'instructions' => '',
-            ],
-        ];
-
-        $tab = ( new Field\Tab( $strings['tab'] ) )
-            ->set_placement( 'left' );
-
-        $artwork_field = ( new Field\PostObject( $strings['artwork']['title'] ) )
-            ->set_key( "${key}_artwork" )
-            ->set_name( 'artwork' )
-            ->set_post_types( [ PostType\Artwork::SLUG ] )
-            ->allow_multiple()
-            ->allow_null()
-            ->set_instructions( $strings['artwork']['instructions'] );
-
-        $tab->add_fields( [
-            $artwork_field,
         ] );
 
         return $tab;
