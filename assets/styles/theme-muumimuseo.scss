@@ -30,7 +30,11 @@ $accent-light-invert: $color-white;
 $accent-dark: bulmaDarken($accent, 10);
 $accent-dark-invert: $color-white;
 
-$text: $white;
+$accent-secondary: $color-veden-vari;
+$accent-secondary-invert: $black;
+
+$text: $color-muumipeikon-valkoinen;
+$text-strong: $color-muumipeikon-valkoinen;
 $link: $primary;
 
 $colors-palette-primary: ($primary, $primary-invert, $primary-dark, $primary-light);
@@ -41,17 +45,18 @@ $colors: (
     "secondary": $colors-palette-secondary,
     "white": ($color-white, $color-black),
     "black": ($color-black, $color-white),
-    "accent": ($accent, $accent-dark),
+    "accent": ($accent, $accent-invert, $accent-dark, $accent-light),
+    "accent-secondary": ($accent-secondary, $accent-secondary-invert),
     "light": ($color-muumipeikon-valkoinen, $color-black),
 );
 
 $button-colors: (
     "primary": ($primary, $color-white, $primary, $color-white),
-    "secondary": ($secondary, $secondary-invert, $color-white, $color-black),
+    "secondary": ($primary, $color-white, $primary, $color-white),
 );
 
 $color-background-primary-light--opaque-light: $secondary;
 
-@import "overrides";
+@import "color_overrides";
 @import "../../../tms-theme-base/assets/styles/main";
 @import "main";
