@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 ### Added
+- TMS-138: Add Animation layout #13
 - TMS-141: Add round image option to Call to Action layout #12
 - TMS-192: Add style assets #1
 - TMS-133: Artist CPT & Artwork CPT #3
