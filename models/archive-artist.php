@@ -190,14 +190,10 @@ class ArchiveArtist extends BaseModel {
     /**
      * View results
      *
-     * @return array|bool
+     * @return array
      */
     public function results() {
         global $wp_query;
-
-        if ( empty( $wp_query->posts ) ) {
-            return [];
-        }
 
         $this->set_pagination_data( $wp_query );
 

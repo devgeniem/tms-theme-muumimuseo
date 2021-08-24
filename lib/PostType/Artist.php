@@ -64,6 +64,17 @@ class Artist implements PostType {
      */
     public function hooks() : void {
         add_action( 'init', \Closure::fromCallable( [ $this, 'register' ] ), 15 );
+        add_filter( 'tms/gutenberg/blocks', \Closure::fromCallable( [ $this, 'allowed_blocks' ] ), 10, 1 );
+        add_filter(
+            'tms/base/breadcrumbs/before_prepare',
+            \Closure::fromCallable( [ $this, 'format_single_breadcrumbs' ] ),
+            10,
+            3
+        );
+
+        add_action( 'acf/save_post', [ $this, 'update_related_artwork' ] );
+        add_action( 'wp_trash_post', [ $this, 'delete_related_artwork' ] );
+        add_action( 'before_delete_post', [ $this, 'delete_related_artwork' ] );
     }
 
     /**
@@ -141,5 +152,134 @@ class Artist implements PostType {
         ];
 
         register_post_type( static::SLUG, $args );
+    }
+
+    /**
+     * Set allowed blocks.
+     *
+     * @param array $blocks Block list.
+     */
+    public function allowed_blocks( $blocks ) {
+        $allowed_blocks = [
+            'acf/image',
+            'acf/video',
+            'acf/material',
+            'acf/quote',
+        ];
+
+        foreach ( $allowed_blocks as $block ) {
+            $blocks[ $block ]['post_types'][] = self::SLUG;
+        }
+
+        return $blocks;
+    }
+
+    /**
+     * Format single view breadcrumbs.
+     *
+     * @param array  $breadcrumbs  Default breadcrumbs.
+     * @param string $current_type Post type.
+     * @param string $current_id   Current post ID.
+     *
+     * @return array[]
+     */
+    public function format_single_breadcrumbs( $breadcrumbs, $current_type, $current_id ) {
+        if ( $current_type !== self::SLUG ) {
+            return $breadcrumbs;
+        }
+
+        return [
+            'home' => [
+                'title'     => _x( 'Home', 'Breadcrumbs', 'tms-theme-base' ),
+                'permalink' => trailingslashit( get_home_url() ),
+                'icon'      => '',
+            ],
+            [
+                'title'     => _x( 'Artists', 'Breadcrumb text', 'tms-theme-base' ),
+                'permalink' => get_post_type_archive_link( self::SLUG ),
+                'icon'      => false,
+            ],
+            [
+                'title'     => get_the_title( $current_id ),
+                'permalink' => false,
+                'icon'      => false,
+                'is_active' => true,
+            ],
+        ];
+    }
+
+    /**
+     * Update related artwork for search results
+     *
+     * @param int $post_id \WP_Post ID.
+     */
+    public function update_related_artwork( $post_id ) {
+        if ( self::get_post_type() !== \get_post_type( $post_id ) ) {
+            return;
+        }
+
+        $artworks = get_field( 'artwork', $post_id );
+
+        if ( empty( $artworks ) ) {
+            return;
+        }
+
+        $artist_name = $this->get_artist_name( $post_id );
+
+        foreach ( $artworks as $artwork ) {
+            $artist_field = get_the_content( null, false, $artwork->ID );
+
+            if ( false === strpos( $artist_field, $artist_name ) ) {
+                $artist_field = $artist_field . ' ' . $artist_name;
+
+                wp_update_post( [
+                    'ID'           => $artwork->ID,
+                    'post_content' => $artist_field,
+                ] );
+            }
+        }
+    }
+
+    /**
+     * Delete related artwork from search results
+     *
+     * @param int $post_id \WP_Post ID.
+     */
+    public function delete_related_artwork( $post_id ) {
+        if ( self::get_post_type() !== \get_post_type( $post_id ) ) {
+            return;
+        }
+
+        $artworks = get_field( 'artwork', $post_id );
+
+        if ( empty( $artworks ) ) {
+            return;
+        }
+
+        $artist_name = $this->get_artist_name( $post_id );
+
+        foreach ( $artworks as $artwork ) {
+            $artist_field = get_the_content( null, false, $artwork->ID );
+
+            if ( false !== strpos( $artist_field, $artist_name ) ) {
+                $artist_field = str_replace( $artist_name, ' ', $artist_field );
+
+                wp_update_post( [
+                    'ID'           => $artwork->ID,
+                    'post_content' => $artist_field,
+                ] );
+            }
+        }
+    }
+
+    /**
+     * Get artist name
+     *
+     * @param int $post_id \WP_Post ID.
+     *
+     * @return string
+     */
+    public function get_artist_name( $post_id ) {
+        return get_field( 'first_name', $post_id ) . ' ' . get_field( 'last_name', $post_id );
     }
 }
