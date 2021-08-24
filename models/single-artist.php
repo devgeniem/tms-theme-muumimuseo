@@ -76,7 +76,7 @@ class SingleArtist extends BaseModel {
      * @param WP_Post $item           Related post item.
      * @param int     $excerpt_length Target excerpt length.
      */
-    protected function get_artwork_excerpt( WP_Post $item, int $excerpt_length = 10 ) : string {
+    protected function get_artwork_excerpt( WP_Post $item, int $excerpt_length = 25 ) : string {
         $item_excerpt = get_the_excerpt( $item->ID );
 
         return strlen( $item_excerpt ) > $excerpt_length
