@@ -41,9 +41,11 @@
                             {/locations}
 
                             {?types}
-                                <span class="pill mt-4">
-                                    {types|s}
-                                </span>
+                                {#types}
+                                    <span class="pill mt-4 mr-2">
+                                        {.|s}
+                                    </span>
+                                {/types}
                             {/types}
                         </div>
                     {/results}
