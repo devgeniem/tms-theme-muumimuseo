@@ -1,7 +1,7 @@
 <div class="has-border-bottom-1 has-border-gray--dark">
-    <div class="columns is-gapless mb-3">
-        <div class="column is-4">
-            <p class="m-0 is-uppercase has-text-weight-light">
+    <div class="columns is-multiline is-gapless mb-3">
+        <div class="column is-12 is-4-desktop">
+            <p class="m-0 is-uppercase has-text-weight-light has-text-small">
                 {title|s}
             </p>
         </div>
