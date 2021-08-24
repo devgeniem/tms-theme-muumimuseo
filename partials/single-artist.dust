@@ -32,7 +32,7 @@
 
                                 <div class="column is-4 is-offset-2">
                                     {?content.image}
-                                        <div class="entry__figure image is-3by4">
+                                        <div class="entry__figure image is-4by3 is-3by4-desktop">
                                             {@image id=content.image.id size="large" class="objectfit-image" /}
                                         </div>
                                     {/content.image}
