@@ -116,12 +116,14 @@ class ArtistGroup {
         $first_name_field = ( new Field\Text( $strings['first_name']['title'] ) )
             ->set_key( "${key}_first_name" )
             ->set_name( 'first_name' )
+            ->redipress_include_search()
             ->set_wrapper_width( 50 )
             ->set_instructions( $strings['first_name']['instructions'] );
 
         $last_name_field = ( new Field\Text( $strings['last_name']['title'] ) )
             ->set_key( "${key}_last_name" )
             ->set_name( 'last_name' )
+            ->redipress_include_search()
             ->set_wrapper_width( 50 )
             ->set_instructions( $strings['last_name']['instructions'] );
 

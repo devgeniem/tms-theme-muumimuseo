@@ -6,7 +6,7 @@
 namespace TMS\Theme\Muumimuseo\Taxonomy;
 
 use \TMS\Theme\Base\Interfaces\Taxonomy;
-use TMS\Theme\Base\PostType\Artist;
+use TMS\Theme\Muumimuseo\PostType\Artist;
 use TMS\Theme\Base\Traits\Categories;
 
 /**
