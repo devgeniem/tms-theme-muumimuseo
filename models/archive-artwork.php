@@ -195,10 +195,7 @@ class ArchiveArtwork extends ArchiveArtist {
                     : false;
             }
 
-            $types       = wp_get_post_terms( $item->ID, ArtworkType::SLUG, [ 'fields' => 'names' ] );
-            $item->types = ! empty( $types ) && ! is_wp_error( $types )
-                ? implode( ', ', $types )
-                : false;
+            $item->types = wp_get_post_terms( $item->ID, ArtworkType::SLUG, [ 'fields' => 'names' ] );
 
             if ( $display_artist && isset( $artist_map[ $item->ID ] ) ) {
                 $item->artist = implode( ', ', $artist_map[ $item->ID ] );
