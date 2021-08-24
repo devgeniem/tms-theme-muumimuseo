@@ -30,6 +30,9 @@ $accent-light-invert: $color-white;
 $accent-dark: bulmaDarken($accent, 10);
 $accent-dark-invert: $color-white;
 
+$accent-secondary: $color-veden-vari;
+$accent-secondary-invert: $black;
+
 $text: $black;
 $link: $primary;
 
@@ -42,6 +45,7 @@ $colors: (
     "white": ($color-white, $color-black),
     "black": ($color-black, $color-white),
     "accent": ($accent, $accent-dark),
+    "accent-secondary": ($accent-secondary, $accent-secondary-invert),
     "light": ($color-muumipeikon-valkoinen, $color-black),
 );
 
