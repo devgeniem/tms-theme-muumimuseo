@@ -33,7 +33,7 @@ class SingleArtwork extends SingleArtist {
      * @return array
      */
     public function image_gallery() {
-        $gallery_field = get_field( 'images' );
+        $gallery_field = ! empty( get_field( 'images' ) ) ? get_field( 'images' ) : [];
 
         if ( has_post_thumbnail() ) {
             array_unshift( $gallery_field, $this->get_featured_media_gallery_item() );
