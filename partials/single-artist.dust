@@ -54,7 +54,7 @@
             </section>
 
             {?artwork}
-                {>"shared/artwork-list" artwork=artwork title=Strings.s.artist.related_artwork /}
+                {>"shared/artwork-list" title=Strings.s.artist.related_artwork /}
             {/artwork}
         {/SingleArtist}
 
