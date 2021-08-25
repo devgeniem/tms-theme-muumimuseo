@@ -42,9 +42,9 @@ class SingleArtist extends BaseModel {
      * @return array|null
      */
     public function artwork() : ?array {
-        $artwork_field = get_field( 'artwork' );
+        $artwork_items = $this->get_artwork();
 
-        if ( empty( $artwork_field ) ) {
+        if ( empty( $artwork_items ) ) {
             return null;
         }
 
@@ -67,7 +67,7 @@ class SingleArtist extends BaseModel {
             }
 
             return $item;
-        }, $artwork_field );
+        }, $artwork_items );
     }
 
     /**
