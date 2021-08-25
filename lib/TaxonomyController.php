@@ -8,14 +8,14 @@ namespace TMS\Theme\Muumimuseo;
 use TMS\Theme\Base\Interfaces\Controller;
 
 /**
- * Class PostTypeController
+ * Class TaxonomyController
  *
- * @package TMS\Theme\Base
+ * @package TMS\Theme\Muumimuseo
  */
-class TaxonomyController extends \TMS\Theme\Base\TaxonomyController implements Controller {
+class TaxonomyController extends \TMS\Theme\Base\TaxonomyController implements \TMS\Theme\Base\Interfaces\Controller {
 
     /**
-     * Get namespace for CPT instances
+     * Get namespace for taxonomy instances
      *
      * @return string
      */
