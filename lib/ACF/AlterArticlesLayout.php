@@ -3,8 +3,8 @@
  *  Copyright (c) 2021. Geniem Oy
  */
 
-use Geniem\ACF\Field;
 use TMS\Theme\Base\Logger;
+use TMS\Theme\Muumimuseo\ACF\Field\AccentColorField;
 use TMS\Theme\Muumimuseo\ThemeCustomizationController;
 
 /**
@@ -38,21 +38,9 @@ class AlterArticlesLayout {
      * @return array
      */
     public function alter_fields( array $fields, string $key ) : array {
-        $strings = [
-            'accent_color' => [
-                'label'        => 'Taustaväri',
-                'instructions' => '',
-            ],
-        ];
 
         try {
-            $accent_color_field = ( new Field\Select( $strings['accent_color']['label'] ) )
-                ->set_key( "${key}_accent_color" )
-                ->set_name( 'accent_color' )
-                ->use_ui()
-                ->set_choices( apply_filters( 'tms/theme/accent_colors', [] ) )
-                ->set_wrapper_width( 50 )
-                ->set_instructions( $strings['accent_color']['instructions'] );
+            $accent_color_field = AccentColorField::field( $key );
 
             $fields[] = $accent_color_field;
         }
