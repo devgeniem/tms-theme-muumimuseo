@@ -53,7 +53,7 @@
             </section>
 
             {?artwork}
-                {>"shared/artwork-list" artwork=artwork title=Strings.s.artwork.related_art /}
+                {>"shared/artwork-list" title=Strings.s.artwork.related_art /}
             {/artwork}
         {/SingleArtwork}
 
