@@ -56,7 +56,5 @@
                 {>"shared/artwork-list" title=Strings.s.artwork.related_art /}
             {/artwork}
         {/SingleArtwork}
-
-        {>"ui/components" components=Page.components /}
     </main>
 {/content}
