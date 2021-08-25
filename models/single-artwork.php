@@ -35,6 +35,10 @@ class SingleArtwork extends SingleArtist {
     public function image_gallery() {
         $gallery_field = get_field( 'images' );
 
+        if ( has_post_thumbnail() ) {
+            array_unshift( $gallery_field, $this->get_featured_media_gallery_item() );
+        }
+
         $data['rows'] = array_map( static function ( $item ) {
             $item['meta'] = ImageFormatter::format( [
                 'is_clickable' => true,
@@ -50,6 +54,24 @@ class SingleArtwork extends SingleArtist {
         $data['translations'] = ( new \Strings() )->s()['gallery'] ?? [];
 
         return $data;
+    }
+
+    /**
+     * Get featured media formatted for use in as a gallery item.
+     *
+     * @return array|WP_Post|null
+     */
+    protected function get_featured_media_gallery_item() {
+        $featured_media_id = get_post_thumbnail_id();
+        $img_src           = wp_get_attachment_image_src( $featured_media_id, 'fullhd' );
+        $img_post          = get_post( $featured_media_id, ARRAY_A );
+        $img_post['sizes'] = [
+            'fullhd'        => $img_src[0],
+            'fullhd-width'  => $img_src[1],
+            'fullhd-height' => $img_src[2],
+        ];
+
+        return $img_post;
     }
 
     /**
