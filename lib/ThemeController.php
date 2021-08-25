@@ -19,6 +19,7 @@ class ThemeController extends \TMS\Theme\Base\ThemeController {
         $classes = [
             Assets::class,
             PostTypeController::class,
+            TaxonomyController::class,
             ThemeCustomizationController::class,
             ACFController::class,
             PostTypeController::class,

@@ -1,0 +1,15 @@
+<div class="has-border-bottom-1 has-border-gray--dark">
+    <div class="columns is-gapless mb-3">
+        <div class="column is-4">
+            <p class="m-0 is-uppercase has-text-weight-light">
+                {title|s}
+            </p>
+        </div>
+
+        <div class="column">
+            <p class="m-0">
+                {additional_information_group.additional_information_text|s}
+            </p>
+        </div>
+    </div>
+</div>
