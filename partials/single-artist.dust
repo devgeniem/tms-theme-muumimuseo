@@ -7,15 +7,21 @@
                 <div class="container">
                     <div class="columns">
                         <div class="column is-10 is-offset-1">
+                            <header class="entry__header">
+                                <h1 class="entry__title mt-0 mb-6 has-line-height-tight">
+                                    {@title /}
+                                </h1>
+                            </header>
+
                             <article class="entry columns">
                                 <div class="column is-6">
-                                    <header class="entry__header">
-                                        <h1 class="entry__title mt-0 mb-6 has-line-height-tight">
-                                            {@title /}
-                                        </h1>
-                                    </header>
-
                                     <div class="entry__content keep-vertical-spacing is-family-sans-serif">
+                                        {?content.post_excerpt}
+                                            <p>
+                                                {content.post_excerpt|s}
+                                            </p>
+                                        {/content.post_excerpt}
+
                                         {@content /}
                                     </div>
 
@@ -26,7 +32,7 @@
 
                                 <div class="column is-4 is-offset-2">
                                     {?content.image}
-                                        <div class="entry__figure image is-3by4">
+                                        <div class="entry__figure image is-4by3 is-3by4-desktop">
                                             {@image id=content.image.id size="large" class="objectfit-image" /}
                                         </div>
                                     {/content.image}
@@ -48,10 +54,8 @@
             </section>
 
             {?artwork}
-                {>"shared/artwork-list" artwork=artwork title=Strings.s.artist.related_artwork /}
+                {>"shared/artwork-list" title=Strings.s.artist.related_artwork /}
             {/artwork}
         {/SingleArtist}
-
-        {>"ui/components" components=Page.components /}
     </main>
 {/content}
