@@ -6,6 +6,7 @@
 namespace TMS\Theme\Muumimuseo;
 
 use TMS\Theme\Base\Interfaces\Taxonomy;
+use TMS\Theme\Base\Interfaces\Controller;
 
 /**
  * Class TaxonomyController
