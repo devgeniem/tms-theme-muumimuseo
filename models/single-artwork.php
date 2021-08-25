@@ -7,6 +7,7 @@ use DustPress\Query;
 use TMS\Theme\Base\Formatters\ImageFormatter;
 use TMS\Theme\Base\Traits;
 use TMS\Theme\Muumimuseo\PostType\Artist;
+use TMS\Theme\Muumimuseo\PostType\Artwork;
 
 /**
  * The SingleArtwork class.
@@ -39,9 +40,9 @@ class SingleArtwork extends SingleArtist {
             $artists      = get_field( 'artists' );
             $artist_names = [];
 
-            foreach ( $artists as $artist ) {
-                $first_name = get_field( 'first_name', $artist->ID );
-                $last_name  = get_field( 'last_name', $artist->ID );
+            foreach ( $artists as $artist_id ) {
+                $first_name = get_field( 'first_name', $artist_id );
+                $last_name  = get_field( 'last_name', $artist_id );
 
                 if ( ! empty( $first_name ) || ! empty( $last_name ) ) {
                     $artist_names[] = trim( $first_name . ' ' . $last_name );
@@ -116,12 +117,12 @@ class SingleArtwork extends SingleArtist {
     }
 
     /**
-     * Returns artist link details.
+     * Returns artist link.
      */
     public function artist_permalink() {
-        $artist_id = $this->get_artist_id();
+        $artists = get_field( 'artists' );
 
-        return get_permalink( $artist_id );
+        return ! empty( $artists ) ? get_permalink( $artists[0] ) : false;
     }
 
     /**
@@ -129,67 +130,28 @@ class SingleArtwork extends SingleArtist {
      *
      * @return mixed|null
      */
-    protected function get_artist_id() {
-        $artists_map = $this->get_artist_map();
-        $current_id  = get_the_ID();
-
-        return $artists_map[ $current_id ][0] ?? null;
-    }
-
-    /**
-     * Get artwork.
-     *
-     * @return mixed
-     */
     protected function get_artwork() {
-        $artist_id = $this->get_artist_id();
-        $artwork   = get_field( 'artwork', $artist_id );
+        $artists = get_field( 'artists' );
 
-        if ( empty( $artwork ) ) {
+        if ( empty( $artists ) ) {
             return [];
         }
 
-        $current_id = get_the_ID();
+        $related_artwork_ids = [];
+        $current_id          = get_the_ID();
 
-        return array_filter( $artwork, function ( $artwork_item ) use ( $current_id ) {
-            return $artwork_item->ID !== $current_id;
-        } );
-    }
+        foreach ( $artists as $artist ) {
+            $artist_artwork = get_field( 'artwork', $artist );
 
-    /**
-     * Get artworks artists map.
-     *
-     * @return array
-     */
-    protected function get_artist_map() : array {
-        $the_query = new WP_Query( [
-            'post_type'      => Artist::SLUG,
-            'posts_per_page' => 200, // phpcs:ignore
-            'no_found_rows'  => true,
-        ] );
-
-        if ( ! $the_query->have_posts() ) {
-            return [];
-        }
-
-        $map = [];
-
-        foreach ( $the_query->posts as $artist ) {
-            $artworks = get_field( 'artwork', $artist->ID );
-
-            if ( empty( $artworks ) ) {
-                continue;
-            }
-
-            foreach ( $artworks as $artwork ) {
-                if ( ! isset( $map[ $artwork->ID ] ) ) {
-                    $map[ $artwork->ID ] = [];
+            if ( ! empty( $artist_artwork ) ) {
+                foreach ( $artist_artwork as $artwork_item ) {
+                    if ( $artwork_item->ID !== $current_id ) {
+                        $related_artwork_ids[] = $artwork_item;
+                    }
                 }
-
-                $map[ $artwork->ID ][] = $artist->ID;
             }
         }
 
-        return $map;
+        return $related_artwork_ids;
     }
 }

@@ -119,6 +119,7 @@ class ArtworkGroup {
             ->set_post_types( [ PostType\Artist::SLUG ] )
             ->allow_multiple()
             ->allow_null()
+            ->set_return_format( 'id' )
             ->set_instructions( $strings['artists']['instructions'] );
 
         $additional_info_repeater = ( new Field\Repeater( $strings['additional_information']['title'] ) )
