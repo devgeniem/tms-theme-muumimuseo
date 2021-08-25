@@ -28,6 +28,47 @@ class SingleArtwork extends SingleArtist {
     }
 
     /**
+     * Get additional info.
+     *
+     * @return array|mixed
+     */
+    public function additional_info() {
+        $info_rows = ! empty( get_field( 'additional_information' ) ) ? get_field( 'additional_information' ) : [];
+
+        if ( ! empty( get_field( 'artists' ) ) ) {
+            $artists      = get_field( 'artists' );
+            $artist_names = [];
+
+            foreach ( $artists as $artist ) {
+                $first_name = get_field( 'first_name', $artist->ID );
+                $last_name  = get_field( 'last_name', $artist->ID );
+
+                if ( ! empty( $first_name ) || ! empty( $last_name ) ) {
+                    $artist_names[] = trim( $first_name . ' ' . $last_name );
+                }
+            }
+
+            if ( ! empty( $artist_names ) ) {
+                $row_title = count( $artist_names ) > 1
+                    ? _x( 'Artists', 'theme-frontend', 'tms-theme-base' )
+                    : _x( 'Artist', 'theme-frontend', 'tms-theme-base' );
+
+                array_unshift(
+                    $info_rows,
+                    [
+                        'additional_information_group' => [
+                            'additional_information_title' => $row_title,
+                            'additional_information_text'  => implode( ', ', $artist_names ),
+                        ],
+                    ]
+                );
+            }
+        }
+
+        return $info_rows;
+    }
+
+    /**
      * Return image gallery data.
      *
      * @return array

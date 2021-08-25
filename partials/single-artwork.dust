@@ -26,9 +26,9 @@
 
                                 <div class="column is-6">
                                     <div class="mr-3-tablet">
-                                        {?content.fields.additional_information}
-                                            {>"shared/additional-info-list" data=content.fields.additional_information /}
-                                        {/content.fields.additional_information}
+                                        {?additional_info}
+                                            {>"shared/additional-info-list" data=additional_info /}
+                                        {/additional_info}
 
                                         {?artist_permalink}
                                             <a href="{artist_permalink}"
