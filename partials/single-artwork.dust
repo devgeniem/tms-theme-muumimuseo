@@ -22,7 +22,7 @@
                                     {>"shared/artwork-gallery" gallery_data=image_gallery /}
                                 </header>
 
-                                <div class="columns">
+                                <div class="columns is-desktop">
                                     <div class="column is-6-desktop">
                                         <div class="mr-3-tablet">
                                             {?additional_info}
@@ -31,7 +31,7 @@
 
                                             {?artist_permalink}
                                                 <a href="{artist_permalink}"
-                                                   class="button is-primary-invert is-outlined button--icon mt-6">
+                                                   class="button is-primary-invert is-outlined button--icon mt-4 mt-6-desktop">
                                                     {Strings.s.artwork.artist_link|s}
 
                                                     {>"ui/icon" icon="chevron-right" class="is-primary icon--large mr-1" /}
