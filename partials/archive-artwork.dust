@@ -9,7 +9,7 @@
 
                 <div class="columns is-multiline is-variable is-6-desktop">
                     {#results}
-                        <div class="column is-6-tablet is-3-desktop">
+                        <div class="column is-6 is-3-desktop">
                             {?image}
                                 <div class="image is-4by3">
                                     <a href="{permalink}" aria-hidden="true" tabindex="-1">
@@ -47,6 +47,10 @@
                                     </span>
                                 {/types}
                             {/types}
+                        </div>
+                    {:else}
+                        <div class="column pt-8 pb-8 is-text-centered is-size-5">
+                            {Strings.s.home.no_results|s}
                         </div>
                     {/results}
                 </div>
