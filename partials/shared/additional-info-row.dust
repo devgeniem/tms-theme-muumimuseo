@@ -7,7 +7,7 @@
         </div>
 
         <div class="column">
-            <p class="m-0 ml-3 is-family-sans-serif">
+            <p class="m-0 ml-3-desktop is-family-sans-serif">
                 {additional_information_group.additional_information_text|s}
             </p>
         </div>
