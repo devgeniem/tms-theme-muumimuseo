@@ -135,7 +135,7 @@ class SingleArtwork extends SingleArtist {
      *
      * @return array
      */
-    public function image_gallery() {
+    public function image_gallery() : array {
         $gallery_field = ! empty( get_field( 'images' ) ) ? get_field( 'images' ) : [];
 
         if ( has_post_thumbnail() ) {
@@ -189,9 +189,9 @@ class SingleArtwork extends SingleArtist {
     /**
      * Get artwork artist ID.
      *
-     * @return mixed|null
+     * @return array
      */
-    protected function get_artwork() {
+    protected function get_artwork() : array {
         $artists = get_field( 'artists' );
 
         if ( empty( $artists ) ) {
