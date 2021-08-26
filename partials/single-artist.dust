@@ -26,7 +26,7 @@
                                     </div>
 
                                     {?content.fields.additional_information}
-                                        {>"shared/additional-info-list" data=content.fields.additional_information /}
+                                        {>"shared/additional-info-list" list_class="mt-6" data=content.fields.additional_information /}
                                     {/content.fields.additional_information}
                                 </div>
 

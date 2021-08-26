@@ -1,4 +1,4 @@
-<div class="additional-information-list mt-6">
+<div class="additional-information-list {list_class|s}">
     {#data}
         <div class="columns is-gapless mb-3">
             <div class="column">
