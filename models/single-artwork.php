@@ -86,28 +86,28 @@ class SingleArtwork extends SingleArtist {
      * @return array[]|null
      */
     protected function get_info_group_artist_name() : ?array {
-        $row = null;
+        $row        = null;
+        $artist_ids = array_keys( $this->get_artist_map() );
 
-        if ( ! empty( get_field( 'artists' ) ) ) {
-            $artists      = get_field( 'artists' );
-            $artist_names = [];
+        if ( empty( $artist_ids ) ) {
+            return null;
+        }
 
-            foreach ( $artists as $artist_id ) {
-                $first_name = get_field( 'first_name', $artist_id );
-                $last_name  = get_field( 'last_name', $artist_id );
+        foreach ( $artist_ids as $artist_id ) {
+            $first_name = get_field( 'first_name', $artist_id );
+            $last_name  = get_field( 'last_name', $artist_id );
 
-                if ( ! empty( $first_name ) || ! empty( $last_name ) ) {
-                    $artist_names[] = trim( $first_name . ' ' . $last_name );
-                }
+            if ( ! empty( $first_name ) || ! empty( $last_name ) ) {
+                $artist_names[] = trim( $first_name . ' ' . $last_name );
             }
+        }
 
-            if ( ! empty( $artist_names ) ) {
-                $row_title = count( $artist_names ) > 1
-                    ? _x( 'Artists', 'theme-frontend', 'tms-theme-muumimuseo' )
-                    : _x( 'Artist', 'theme-frontend', 'tms-theme-muumimuseo' );
+        if ( ! empty( $artist_names ) ) {
+            $row_title = count( $artist_names ) > 1
+                ? _x( 'Artists', 'theme-frontend', 'tms-theme-muumimuseo' )
+                : _x( 'Artist', 'theme-frontend', 'tms-theme-muumimuseo' );
 
-                $row = $this->format_info_group( $row_title, implode( ', ', $artist_names ) );
-            }
+            $row = $this->format_info_group( $row_title, implode( ', ', $artist_names ) );
         }
 
         return $row;
@@ -181,7 +181,7 @@ class SingleArtwork extends SingleArtist {
      * Returns artist link.
      */
     public function artist_permalink() {
-        $artists = get_field( 'artists' );
+        $artists = array_keys( $this->get_artist_map() );
 
         return ! empty( $artists ) ? get_permalink( $artists[0] ) : false;
     }
@@ -192,42 +192,68 @@ class SingleArtwork extends SingleArtist {
      * @return array
      */
     protected function get_artwork() : array {
-        $artists = get_field( 'artists' );
+        $map     = $this->get_artist_map();
+        $artwork = [];
 
-        if ( empty( $artists ) ) {
-            return [];
-        }
-
-        $query_args = [
-            'post_type'              => Artist::SLUG,
-            'posts_per_page'         => count( $artists ),
-            'update_post_term_cache' => false,
-            'meta_key'               => 'last_name',
-            'orderby'                => [ 'last_name' => 'ASC' ],
-            'no_found_rows'          => true,
-        ];
-
-        $query = new WP_Query( $query_args );
-
-        if ( ! $query->have_posts() ) {
-            return [];
-        }
-
-        $related_artwork_ids = [];
-        $current_id          = get_the_ID();
-
-        foreach ( $query->posts as $artist ) {
-            $artist_artwork = get_field( 'artwork', $artist );
-
-            if ( ! empty( $artist_artwork ) ) {
-                foreach ( $artist_artwork as $artwork_item ) {
-                    if ( $artwork_item->ID !== $current_id ) {
-                        $related_artwork_ids[] = $artwork_item;
-                    }
+        foreach ( $map as $map_artworks ) {
+            foreach ( $map_artworks as $map_artwork ) {
+                if ( ! in_array( $map_artwork, $artwork ) ) { // phpcs:ignore
+                    $artwork[] = $map_artwork;
                 }
             }
         }
 
-        return $related_artwork_ids;
+        return $artwork;
+    }
+
+    /**
+     * Get artworks artists map
+     *
+     * @return array
+     */
+    protected function get_artist_map() : array {
+        $the_query = new WP_Query( [
+            'post_type'              => Artist::SLUG,
+            'posts_per_page'         => 200, // phpcs:ignore
+            'update_post_term_cache' => false,
+            'meta_key'               => 'last_name',
+            'orderby'                => [ 'last_name' => 'ASC' ],
+            'no_found_rows'          => true,
+        ] );
+
+        if ( ! $the_query->have_posts() ) {
+            return [];
+        }
+
+        $map        = [];
+        $current_id = get_the_ID();
+
+        foreach ( $the_query->posts as $artist ) {
+            $artworks = get_field( 'artwork', $artist->ID );
+
+            if ( empty( $artworks ) ) {
+                continue;
+            }
+
+            $artwork_ids = array_map( function ( $artwork_item ) {
+                return $artwork_item->ID;
+            }, $artworks );
+
+            if ( in_array( $current_id, $artwork_ids, true ) ) {
+                foreach ( $artworks as $artwork ) {
+                    if ( $artwork->ID === $current_id ) {
+                        continue;
+                    }
+
+                    if ( ! isset( $map[ $artist->ID ] ) ) {
+                        $map[ $artist->ID ] = [];
+                    }
+
+                    $map[ $artist->ID ][] = $artwork;
+                }
+            }
+        }
+
+        return $map;
     }
 }
