@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 - TMS-205: Remove theme color settings #17
+- TMS-133: Single Artist #11
 - TMS-136: Add artist archive #4
 - TMS-138: Add Animation layout #13
 - TMS-141: Add round image option to Call to Action layout #12
