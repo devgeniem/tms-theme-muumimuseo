@@ -13,8 +13,8 @@
                                 </h1>
                             </header>
 
-                            <article class="entry columns">
-                                <div class="column is-6">
+                            <article class="entry columns is-desktop">
+                                <div class="column is-6-desktop">
                                     <div class="entry__content keep-vertical-spacing is-family-sans-serif">
                                         {?content.post_excerpt}
                                             <p>
@@ -26,11 +26,11 @@
                                     </div>
 
                                     {?content.fields.additional_information}
-                                        {>"shared/additional-info-list" data=content.fields.additional_information /}
+                                        {>"shared/additional-info-list" list_class="mt-6" data=content.fields.additional_information /}
                                     {/content.fields.additional_information}
                                 </div>
 
-                                <div class="column is-4 is-offset-2">
+                                <div class="column is-4-desktop is-offset-2-desktop">
                                     {?content.image}
                                         <div class="entry__figure image is-4by3 is-3by4-desktop">
                                             {@image id=content.image.id size="large" class="objectfit-image" /}
@@ -54,10 +54,8 @@
             </section>
 
             {?artwork}
-                {>"shared/artwork-list" artwork=artwork title=Strings.s.artist.related_artwork /}
+                {>"shared/artwork-list" title=Strings.s.artist.related_artwork /}
             {/artwork}
         {/SingleArtist}
-
-        {>"ui/components" components=Page.components /}
     </main>
 {/content}

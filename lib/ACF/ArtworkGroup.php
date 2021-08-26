@@ -113,6 +113,15 @@ class ArtworkGroup {
             ->set_name( 'images' )
             ->set_instructions( $strings['images']['instructions'] );
 
+        $artists_field = ( new Field\PostObject( $strings['artists']['title'] ) )
+            ->set_key( "${key}_artists" )
+            ->set_name( 'artists' )
+            ->set_post_types( [ PostType\Artist::SLUG ] )
+            ->allow_multiple()
+            ->allow_null()
+            ->set_return_format( 'id' )
+            ->set_instructions( $strings['artists']['instructions'] );
+
         $additional_info_repeater = ( new Field\Repeater( $strings['additional_information']['title'] ) )
             ->set_key( "${key}_additional_information" )
             ->set_name( 'additional_information' )
@@ -149,6 +158,7 @@ class ArtworkGroup {
 
         $tab->add_fields( [
             $images_field,
+            $artists_field,
             $additional_info_repeater,
         ] );
 
