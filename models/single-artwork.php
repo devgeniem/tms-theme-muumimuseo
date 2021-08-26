@@ -198,10 +198,25 @@ class SingleArtwork extends SingleArtist {
             return [];
         }
 
+        $query_args = [
+            'post_type'              => Artist::SLUG,
+            'posts_per_page'         => count( $artists ),
+            'update_post_term_cache' => false,
+            'meta_key'               => 'last_name',
+            'orderby'                => [ 'last_name' => 'ASC' ],
+            'no_found_rows'          => true,
+        ];
+
+        $query = new WP_Query( $query_args );
+
+        if ( ! $query->have_posts() ) {
+            return [];
+        }
+
         $related_artwork_ids = [];
         $current_id          = get_the_ID();
 
-        foreach ( $artists as $artist ) {
+        foreach ( $query->posts as $artist ) {
             $artist_artwork = get_field( 'artwork', $artist );
 
             if ( ! empty( $artist_artwork ) ) {
