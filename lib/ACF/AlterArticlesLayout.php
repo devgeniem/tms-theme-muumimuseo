@@ -60,7 +60,7 @@ class AlterArticlesLayout {
      */
     public function alter_format( array $layout ) : array {
         $layout['accent_color'] = ( new ThemeCustomizationController() )->get_theme_accent_color_by_key(
-            $layout['accent_color']
+            $layout['accent_color'] ?? ''
         );
 
         return $layout;
