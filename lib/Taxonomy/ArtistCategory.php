@@ -6,8 +6,8 @@
 namespace TMS\Theme\Muumimuseo\Taxonomy;
 
 use \TMS\Theme\Base\Interfaces\Taxonomy;
-use TMS\Theme\Muumimuseo\PostType\Artist;
 use TMS\Theme\Base\Traits\Categories;
+use TMS\Theme\Muumimuseo\PostType\Artist;
 
 /**
  * This class defines the taxonomy.

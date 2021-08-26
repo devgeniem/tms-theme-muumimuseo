@@ -71,7 +71,6 @@ class Artist implements PostType {
             10,
             3
         );
-
         add_action( 'acf/save_post', [ $this, 'update_related_artwork' ] );
         add_action( 'wp_trash_post', [ $this, 'delete_related_artwork' ] );
         add_action( 'before_delete_post', [ $this, 'delete_related_artwork' ] );
@@ -93,10 +92,10 @@ class Artist implements PostType {
      */
     private function register() {
         $labels = [
-            'name'                  => 'Artistit',
-            'singular_name'         => 'Artisti',
-            'menu_name'             => 'Artistit',
-            'name_admin_bar'        => 'Artistit',
+            'name'                  => 'Taiteilijat',
+            'singular_name'         => 'Taiteilija',
+            'menu_name'             => 'Taiteilijat',
+            'name_admin_bar'        => 'Taiteilijat',
             'archives'              => 'Arkistot',
             'attributes'            => 'Ominaisuudet',
             'parent_item_colon'     => 'Vanhempi:',
@@ -136,6 +135,7 @@ class Artist implements PostType {
                 'title',
                 'thumbnail',
                 'excerpt',
+                'editor',
             ],
             'hierarchical'    => false,
             'public'          => true,
