@@ -1,4 +1,4 @@
-<div class="image-gallery is-align-full gallery gallery-columns-2 gallery-columns-8-tablet js-image-gallery mt-1 mb-4"
+<div class="image-gallery is-align-full gallery gallery-columns-2 gallery-columns-4-tablet gallery-columns-8-desktop js-image-gallery mt-1 mb-4"
      data-next="{gallery_data.translations.next}"
      data-previous="{gallery_data.translations.previous}"
 >
