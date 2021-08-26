@@ -80,8 +80,8 @@ class ArtworkGroup {
                 'title'        => 'Kuvat',
                 'instructions' => '',
             ],
-            'year'                   => [
-                'title'        => 'Valmistumisvuosi',
+            'artists'                => [
+                'title'        => 'Taiteilijat',
                 'instructions' => '',
             ],
             'additional_information' => [
