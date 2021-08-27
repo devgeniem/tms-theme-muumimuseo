@@ -185,13 +185,16 @@ class AlterHeroLayout {
     }
 
     /**
-     * @param $key
-     * @param $strings
+     * Get hero group fields.
+     *
+     * @param string $key     Layout key.
+     * @param string $group   Group name.
+     * @param array  $strings Field strings.
      *
      * @return array
-     * @throws \Geniem\ACF\Exception
+     * @throws Exception In case of invalid ACF option.
      */
-    public function get_hero_group_fields( $key, $group, $strings ) {
+    public function get_hero_group_fields( string $key, string $group, array $strings ) : array {
         $title_field = ( new Field\Text( $strings['title']['label'] ) )
             ->set_key( "${key}_${group}_title" )
             ->set_name( "${group}_title" )
