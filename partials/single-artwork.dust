@@ -32,7 +32,9 @@
                                             {?artist_permalink}
                                                 <a href="{artist_permalink}"
                                                    class="button is-primary-invert is-outlined button--icon mt-4 mt-6-desktop">
-                                                    {Strings.s.artwork.artist_link|s}
+                                                    <span class="has-width-100">
+                                                        {Strings.s.artwork.artist_link|s}
+                                                    </span>
 
                                                     {>"ui/icon" icon="chevron-right" class="is-primary icon--large mr-1" /}
                                                 </a>
