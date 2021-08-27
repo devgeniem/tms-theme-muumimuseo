@@ -180,7 +180,6 @@ class AlterHeroLayout {
             ( new Logger() )->error( $e->getMessage(), $e->getTrace() );
         }
 
-
         return $fields;
     }
 
