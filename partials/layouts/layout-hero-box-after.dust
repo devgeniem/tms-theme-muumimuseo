@@ -16,7 +16,7 @@
 
                 {?link}
                     <div class="button-container mt-auto">
-                        {>"ui/button-link" link=link classes="mt-4 is-primary-invert" icon="chevron-right" icon_classes="icon--medium" /}
+                        {>"ui/button-link" link=link classes="mt-4 is-inverted" icon="chevron-right" icon_classes="icon--medium" /}
                     </div>
                 {/link}
             </div>
