@@ -55,7 +55,6 @@ class SingleArtwork extends SingleArtist {
             );
         }
 
-
         return $info_rows;
     }
 
