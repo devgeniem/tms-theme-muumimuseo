@@ -27,6 +27,7 @@ class ThemeController extends \TMS\Theme\Base\ThemeController {
             Localization::class,
             ThemeSupports::class,
             RolesController::class,
+            FormatterController::class,
         ];
 
         array_walk( $classes, function ( $class ) {

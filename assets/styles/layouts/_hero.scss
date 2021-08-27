@@ -1,0 +1,26 @@
+.muumimuseo-hero {
+    &__background-container {
+        @include until($tablet) {
+            padding-top: 75% !important; // sass-lint:disable-line no-important
+        }
+
+        @include until($desktop) {
+            padding-top: 50% !important; // sass-lint:disable-line no-important
+        }
+    }
+
+    &__inner {
+        @include from($desktop) {
+            margin-bottom: -4.75rem;
+            transform: translateY(-4.75rem);
+        }
+    }
+
+    h1 {
+        max-width: 20ch;
+
+        @include from($desktop) {
+            font-size: 3.38rem !important; // sass-lint:disable-line no-important
+        }
+    }
+}
