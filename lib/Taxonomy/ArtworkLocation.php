@@ -68,7 +68,7 @@ class ArtworkLocation implements Taxonomy {
             'show_in_nav_menus' => false,
             'show_tagcloud'     => false,
             'show_in_rest'      => true,
-            'capabilities'      =>   [
+            'capabilities'      => [
                 'manage_terms' => 'manage_artwork_locations',
                 'edit_terms'   => 'edit_artwork_locations',
                 'delete_terms' => 'delete_artwork_locations',
