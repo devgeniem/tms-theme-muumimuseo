@@ -158,7 +158,7 @@ class SingleArtwork extends SingleArtist {
     }
 
     /**
-     * Get featured media formatted for use in as a gallery item.
+     * Get featured media formatted for use as a gallery item.
      *
      * @return array|WP_Post|null
      */
