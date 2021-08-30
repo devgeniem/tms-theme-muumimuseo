@@ -65,18 +65,17 @@ class SingleArtwork extends SingleArtist {
      * @return array[]|null
      */
     protected function get_info_group_location() : ?array {
-        $row = null;
-
+        $group          = null;
         $location_terms = wp_get_post_terms( get_the_ID(), ArtworkLocation::SLUG, [ 'fields' => 'names' ] );
 
         if ( ! empty( $location_terms ) && ! is_wp_error( $location_terms ) ) {
-            $row = $this->format_info_group(
+            $group = $this->format_info_group(
                 _x( 'Location', 'theme-frontend', 'tms-theme-muumimuseo' ),
                 implode( ', ', $location_terms )
             );
         }
 
-        return $row;
+        return $group;
     }
 
     /**
@@ -85,7 +84,7 @@ class SingleArtwork extends SingleArtist {
      * @return array[]|null
      */
     protected function get_info_group_artist_name() : ?array {
-        $row        = null;
+        $group      = null;
         $artist_ids = array_keys( $this->get_artist_map() );
 
         if ( empty( $artist_ids ) ) {
@@ -102,14 +101,14 @@ class SingleArtwork extends SingleArtist {
         }
 
         if ( ! empty( $artist_names ) ) {
-            $row_title = count( $artist_names ) > 1
+            $group_title = count( $artist_names ) > 1
                 ? _x( 'Artists', 'theme-frontend', 'tms-theme-muumimuseo' )
                 : _x( 'Artist', 'theme-frontend', 'tms-theme-muumimuseo' );
 
-            $row = $this->format_info_group( $row_title, implode( ', ', $artist_names ) );
+            $group = $this->format_info_group( $group_title, implode( ', ', $artist_names ) );
         }
 
-        return $row;
+        return $group;
     }
 
     /**
