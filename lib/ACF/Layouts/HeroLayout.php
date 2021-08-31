@@ -183,7 +183,7 @@ class HeroLayout extends Layout {
         try {
             $this->add_fields(
                 apply_filters(
-                    'tms/acf/layout/' . $this->get_key() . '/fields',
+                    'tms/acf/layout/hero--muumimuseo/fields',
                     [
                         $image_field,
                         $title_field,
@@ -192,7 +192,8 @@ class HeroLayout extends Layout {
                         $opening_times_tab,
                         $ticket_tab,
                         $find_us_tab,
-                    ]
+                    ],
+                    $key
                 )
             );
         }
