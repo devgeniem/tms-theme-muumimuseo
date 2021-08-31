@@ -1,0 +1,7 @@
+<div class="layout-badge {align|s} has-text-centered">
+    <div class="layout-badge__inner is-flex is-justify-content-center is-align-items-center has-background-accent has-text-secondary-invert">
+        <p class="layout-badge__text is-family-tovescript hyphenate">
+            {text|s}
+        </p>
+    </div>
+</div>
