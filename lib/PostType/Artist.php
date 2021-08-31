@@ -280,6 +280,11 @@ class Artist implements PostType {
      * @return string
      */
     public function get_artist_name( $post_id ) {
-        return get_field( 'first_name', $post_id ) . ' ' . get_field( 'last_name', $post_id );
+        $fields = [
+            get_field( 'first_name', $post_id ),
+            get_field( 'last_name', $post_id ),
+        ];
+
+        return implode( ' ', array_filter( $fields, fn( $field ) => ! empty( $field ) ) );
     }
 }
