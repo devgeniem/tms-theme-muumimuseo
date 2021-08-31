@@ -181,7 +181,7 @@ class LayoutInfoBadge {
             ],
         ] );
 
-        $layout["${align}_main_content"] = $badge_html;
+        $layout[ "${align}_main_content" ] = $badge_html;
 
         return $layout;
     }
