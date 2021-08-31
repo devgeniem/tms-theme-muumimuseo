@@ -1,0 +1,36 @@
+<div class="columns is-multiline">
+    <div class="column">
+        <div class="has-border-bottom-1 has-border-gray--dark pb-4 mb-4">
+            <div class="columns">
+                <div class="column is-6-tablet is-flex is-align-items-center">
+                    <div class="filters mb-4">
+                        <span class="is-block h6 mb-3">
+                            {strings.filter|s}
+                        </span>
+
+                        <div class="filters__list">
+                            {#filters}
+                                <a href="{url}"
+                                   class="pill mr-2 mb-2 {?is_active}is-active{/is_active}">
+                                    {?is_active}
+                                        {>"ui/icon" icon="checkmark" class="icon--medium mr-2 is-primary-invert" /}
+                                    {/is_active}
+
+                                    {name|s}
+                                </a>
+                            {/filters}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-6-tablet is-offset-2-fullhd is-4-fullhd is-clipped">
+                    <form class="pt-2 is-pulled-right-desktop" action="{search.action|s}" method="get"
+                          role="search">
+                        {>"ui/input-text" label=strings.search.label name=search.input_search_name value=search.current_search placeholder=strings.search.input_placeholder /}
+                        {>"ui/button-search-submit" text=strings.search.submit_value /}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

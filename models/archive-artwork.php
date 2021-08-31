@@ -3,43 +3,26 @@
  *  Copyright (c) 2021. Geniem Oy
  */
 
-use TMS\Theme\Base\Traits\Pagination;
+use TMS\Theme\Base\Settings;
 use TMS\Theme\Muumimuseo\PostType\Artist;
-use TMS\Theme\Muumimuseo\Taxonomy\ArtistCategory;
+use TMS\Theme\Muumimuseo\PostType\Artwork;
+use TMS\Theme\Muumimuseo\Taxonomy\ArtworkLocation;
+use TMS\Theme\Muumimuseo\Taxonomy\ArtworkType;
 
 /**
- * Archive for Artist CPT
+ * Archive for Artwork CPT
  */
-class ArchiveArtist extends BaseModel {
-
-    use Pagination;
+class ArchiveArtwork extends ArchiveArtist {
 
     /**
      * Search input name.
      */
-    const SEARCH_QUERY_VAR = 'artist-search';
+    const SEARCH_QUERY_VAR = 'artwork-search';
 
     /**
      * Artist category filter name.
      */
-    const FILTER_QUERY_VAR = 'artist-filter';
-
-    /**
-     * Pagination data.
-     *
-     * @var object
-     */
-    protected object $pagination;
-
-    /**
-     * Hooks
-     */
-    public static function hooks() : void {
-        add_action(
-            'pre_get_posts',
-            [ __CLASS__, 'modify_query' ]
-        );
-    }
+    const FILTER_QUERY_VAR = 'artwork-filter';
 
     /**
      * Get search query var value
@@ -64,12 +47,13 @@ class ArchiveArtist extends BaseModel {
     }
 
     /**
-     * Page title
-     *
-     * @return string
+     * Hooks
      */
-    public function page_title() : string {
-        return post_type_archive_title( '', false );
+    public static function hooks() : void {
+        add_action(
+            'pre_get_posts',
+            [ __CLASS__, 'modify_query' ]
+        );
     }
 
     /**
@@ -79,18 +63,16 @@ class ArchiveArtist extends BaseModel {
      */
     public function strings() : array {
         return [
-            'search'         => [
-                'label'             => __( 'Search for artist', 'tms-theme-base' ),
+            'search'     => [
+                'label'             => __( 'Search for artwork', 'tms-theme-base' ),
                 'submit_value'      => __( 'Search', 'tms-theme-base' ),
                 'input_placeholder' => __( 'Search query', 'tms-theme-base' ),
             ],
-            'terms'          => [
+            'terms'      => [
                 'show_all' => __( 'Show All', 'tms-theme-base' ),
             ],
-            'no_results'     => __( 'No results', 'tms-theme-base' ),
-            'filter'         => __( 'Filter', 'tms-theme-base' ),
-            'art_categories' => __( 'Categories', 'tms-theme-base' ),
-
+            'no_results' => __( 'No results', 'tms-theme-base' ),
+            'filter'     => __( 'Filter', 'tms-theme-base' ),
         ];
     }
 
@@ -102,22 +84,21 @@ class ArchiveArtist extends BaseModel {
      * @return void
      */
     public static function modify_query( WP_Query $wp_query ) : void {
-        if ( is_admin() || ( ! $wp_query->is_main_query() || ! $wp_query->is_post_type_archive( Artist::SLUG ) ) ) {
+        if ( is_admin() || ( ! $wp_query->is_main_query() || ! $wp_query->is_post_type_archive( Artwork::SLUG ) ) ) {
             return;
         }
 
-        $wp_query->set( 'orderby', [ 'last_name' => 'ASC' ] );
-        $wp_query->set( 'meta_key', 'last_name' );
+        $wp_query->set( 'orderby', [ 'title' => 'ASC' ] );
 
-        $artist_category = self::get_filter_query_var();
+        $category = self::get_filter_query_var();
 
-        if ( ! empty( $artist_category ) ) {
+        if ( ! empty( $category ) ) {
             $wp_query->set(
                 'tax_query',
                 [
                     [
-                        'taxonomy' => ArtistCategory::SLUG,
-                        'terms'    => $artist_category,
+                        'taxonomy' => ArtworkType::SLUG,
+                        'terms'    => $category,
                     ],
                 ]
             );
@@ -142,7 +123,7 @@ class ArchiveArtist extends BaseModel {
         return [
             'input_search_name' => self::SEARCH_QUERY_VAR,
             'current_search'    => $this->search_data->query,
-            'action'            => get_post_type_archive_link( Artist::SLUG ),
+            'action'            => get_post_type_archive_link( Artwork::SLUG ),
         ];
     }
 
@@ -153,7 +134,7 @@ class ArchiveArtist extends BaseModel {
      */
     public function filters() {
         $categories = get_terms( [
-            'taxonomy'   => ArtistCategory::SLUG,
+            'taxonomy'   => ArtworkType::SLUG,
             'hide_empty' => true,
         ] );
 
@@ -161,7 +142,7 @@ class ArchiveArtist extends BaseModel {
             return [];
         }
 
-        $base_url   = get_post_type_archive_link( Artist::SLUG );
+        $base_url   = get_post_type_archive_link( Artwork::SLUG );
         $categories = array_map( function ( $item ) use ( $base_url ) {
             return [
                 'name'      => $item->name,
@@ -188,19 +169,6 @@ class ArchiveArtist extends BaseModel {
     }
 
     /**
-     * View results
-     *
-     * @return array
-     */
-    public function results() {
-        global $wp_query;
-
-        $this->set_pagination_data( $wp_query );
-
-        return $this->format_posts( $wp_query->posts );
-    }
-
-    /**
      * Format posts for view
      *
      * @param array $posts Array of WP_Post instances.
@@ -208,7 +176,11 @@ class ArchiveArtist extends BaseModel {
      * @return array
      */
     protected function format_posts( array $posts ) : array {
-        return array_map( function ( $item ) {
+        $display_location = Settings::get_setting( 'artwork_archive_display_location' );
+        $display_artist   = Settings::get_setting( 'artwork_archive_display_artist' );
+        $artist_map       = $display_artist ? $this->get_artist_map() : [];
+
+        return array_map( function ( $item ) use ( $artist_map, $display_artist, $display_location ) {
             if ( has_post_thumbnail( $item->ID ) ) {
                 $item->image = get_post_thumbnail_id( $item->ID );
             }
@@ -216,37 +188,57 @@ class ArchiveArtist extends BaseModel {
             $item->permalink = get_the_permalink( $item->ID );
             $item->fields    = get_fields( $item->ID );
 
-            $categories       = wp_get_post_terms( $item->ID, ArtistCategory::SLUG, [ 'fields' => 'names' ] );
-            $item->categories = ! empty( $categories ) && ! is_wp_error( $categories )
-                ? implode( ', ', $categories )
-                : false;
+            if ( $display_location ) {
+                $locations       = wp_get_post_terms( $item->ID, ArtworkLocation::SLUG, [ 'fields' => 'names' ] );
+                $item->locations = ! empty( $locations ) && ! is_wp_error( $locations )
+                    ? implode( ', ', $locations )
+                    : false;
+            }
 
-            $item->link = [
-                'url'          => $item->permalink,
-                'title'        => __( 'View artist', 'tms-theme-base' ),
-                'icon'         => 'chevron-right',
-                'icon_classes' => 'icon--medium',
-            ];
+            $item->types = wp_get_post_terms( $item->ID, ArtworkType::SLUG, [ 'fields' => 'names' ] );
+
+            if ( $display_artist && isset( $artist_map[ $item->ID ] ) ) {
+                $item->artist = implode( ', ', $artist_map[ $item->ID ] );
+            }
 
             return $item;
         }, $posts );
     }
 
     /**
-     * Set pagination data
+     * Get artworks artists map
      *
-     * @param WP_Query $wp_query Instance of WP_Query.
-     *
-     * @return void
+     * @return array
      */
-    protected function set_pagination_data( $wp_query ) : void {
-        $per_page = get_option( 'posts_per_page' );
-        $paged    = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+    protected function get_artist_map() : array {
+        $the_query = new WP_Query( [
+            'post_type'      => Artist::SLUG,
+            'posts_per_page' => 200, // phpcs:ignore
+            'no_found_rows'  => true,
+        ] );
 
-        $this->pagination           = new stdClass();
-        $this->pagination->page     = $paged;
-        $this->pagination->per_page = $per_page;
-        $this->pagination->items    = $wp_query->found_posts;
-        $this->pagination->max_page = (int) ceil( $wp_query->found_posts / $per_page );
+        if ( ! $the_query->have_posts() ) {
+            return [];
+        }
+
+        $map = [];
+
+        foreach ( $the_query->posts as $artist ) {
+            $artworks = get_field( 'artwork', $artist->ID );
+
+            if ( empty( $artworks ) ) {
+                continue;
+            }
+
+            foreach ( $artworks as $artwork ) {
+                if ( ! isset( $map[ $artwork->ID ] ) ) {
+                    $map[ $artwork->ID ] = [];
+                }
+
+                $map[ $artwork->ID ][] = $artist->post_title;
+            }
+        }
+
+        return $map;
     }
 }
