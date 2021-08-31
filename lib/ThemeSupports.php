@@ -35,6 +35,8 @@ class ThemeSupports implements \TMS\Theme\Base\Interfaces\Controller {
     protected function query_vars( $vars ) {
         $vars[] = \ArchiveArtist::SEARCH_QUERY_VAR;
         $vars[] = \ArchiveArtist::FILTER_QUERY_VAR;
+        $vars[] = \ArchiveArtwork::SEARCH_QUERY_VAR;
+        $vars[] = \ArchiveArtwork::FILTER_QUERY_VAR;
 
         return $vars;
     }
