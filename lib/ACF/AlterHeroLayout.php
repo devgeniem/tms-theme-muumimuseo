@@ -110,6 +110,7 @@ class AlterHeroLayout {
                 ->set_name( 'image' )
                 ->set_return_format( 'id' )
                 ->set_wrapper_width( 50 )
+                ->set_required()
                 ->set_instructions( $strings['image']['instructions'] );
 
             $title_field = ( new Field\Text( $strings['title']['label'] ) )
