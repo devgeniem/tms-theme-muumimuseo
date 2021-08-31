@@ -134,3 +134,35 @@
         }
     }
 }
+
+.muumimuseo-hero {
+    .layout-badge {
+        top: -3.25rem;
+
+        @include from(1600px) {
+            top: 5%;
+        }
+
+        &.align-before {
+            left: 1.25rem;
+
+            @include from($desktop) {
+                left: -1.75rem;
+            }
+
+            @include from(1600px) {
+                left: -6.67rem;
+            }
+        }
+
+        &.align-after {
+            @include from($desktop) {
+                right: -1.75rem;
+            }
+
+            @include from(1600px) {
+                right: -6.67rem;
+            }
+        }
+    }
+}

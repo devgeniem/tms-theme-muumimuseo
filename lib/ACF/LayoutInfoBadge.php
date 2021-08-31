@@ -84,6 +84,19 @@ class LayoutInfoBadge {
             [ $this, 'alter_format' ],
             10
         );
+
+        add_filter(
+            'tms/acf/layout/_hero/fields',
+            [ $this, 'alter_fields' ],
+            25,
+            2
+        );
+
+        add_filter(
+            'tms/acf/layout/hero/data',
+            [ $this, 'alter_format' ],
+            35
+        );
     }
 
     /**
