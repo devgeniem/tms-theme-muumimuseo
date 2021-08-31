@@ -5,6 +5,7 @@
 
 use Geniem\ACF\Field;
 use TMS\Theme\Base\Logger;
+use TMS\Theme\Muumimuseo\ACF\Field\AccentColorField;
 
 /**
  * Alter Call to Action Layout
@@ -59,6 +60,14 @@ class AlterCallToActionLayout {
             ( new Logger() )->error( $e->getMessage(), $e->getTrace() );
         }
 
+        try {
+            $accent_color_field = AccentColorField::field( $key );
+            array_unshift( $fields, $accent_color_field );
+        }
+        catch ( Exception $e ) {
+            ( new Logger() )->error( $e->getMessage(), $e->getTrace() );
+        }
+
         return $fields;
     }
 
@@ -70,6 +79,8 @@ class AlterCallToActionLayout {
      * @return array
      */
     public function alter_format( array $layout ) : array {
+        $layout['accent_color'] = $layout['accent_color'] ?? '';
+
         if ( empty( $layout['rows'] ) ) {
             return $layout;
         }
