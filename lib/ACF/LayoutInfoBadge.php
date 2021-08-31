@@ -86,7 +86,7 @@ class LayoutInfoBadge {
         );
 
         add_filter(
-            'tms/acf/layout/_hero/fields',
+            'tms/acf/layout/hero--muumimuseo/fields',
             [ $this, 'alter_fields' ],
             25,
             2
