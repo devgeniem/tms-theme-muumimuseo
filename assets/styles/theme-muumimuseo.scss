@@ -33,20 +33,29 @@ $accent-dark-invert: $color-white;
 $accent-secondary: $color-veden-vari;
 $accent-secondary-invert: $black;
 
+$accent-tertiary: $color-muumi-keltainen;
+$accent-tertiary-invert: $color-black;
+
 $text: $color-muumipeikon-valkoinen;
 $text-strong: $color-muumipeikon-valkoinen;
 $link: $primary;
 
 $colors-palette-primary: ($primary, $primary-invert, $primary-dark, $primary-light);
 $colors-palette-secondary: ($secondary, $secondary-invert, $secondary-dark, $secondary-light);
+$colors-palette-accent: ($accent, $accent-invert, $accent-dark, $accent-light);
+$colors-palette-accent-secondary: ($accent-secondary, $accent-secondary-invert);
+$colors-palette-accent-tertiary: ($accent-tertiary, $accent-tertiary-invert);
+$colors-palette-transparent: (transparent, $color-white);
 
 $colors: (
     "primary": $colors-palette-primary,
     "secondary": $colors-palette-secondary,
     "white": ($color-white, $color-black),
     "black": ($color-black, $color-white),
-    "accent": ($accent, $accent-invert, $accent-dark, $accent-light),
-    "accent-secondary": ($accent-secondary, $accent-secondary-invert),
+    "accent": $colors-palette-accent,
+    "accent-secondary": $colors-palette-accent-secondary,
+    "accent-tertiary": $colors-palette-accent-tertiary,
+    "transparent": $colors-palette-transparent,
     "light": ($color-muumipeikon-valkoinen, $color-black),
 );
 

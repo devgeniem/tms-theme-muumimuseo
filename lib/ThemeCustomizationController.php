@@ -180,11 +180,11 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
      */
     public function get_theme_accent_colors() : array {
         return [
-            'colors-default' => 'Ei taustaväriä (valkoinen teksti)',
-            'colors-1'       => 'Tumman vihreä (valkoinen teksti)',
-            'colors-2'       => 'Keltaoranssi (musta teksti)',
-            'colors-3'       => 'Turkoosi (musta teksti)',
-            'colors-4'       => 'Muumipeikon valkoinen (musta teksti)',
+            'has-colors-transparent'      => 'Ei taustaväriä (valkoinen teksti)',
+            'has-colors-primary'          => 'Tumman vihreä (valkoinen teksti)',
+            'has-colors-accent-tertiary'  => 'Keltaoranssi (musta teksti)',
+            'has-colors-accent-secondary' => 'Turkoosi (musta teksti)',
+            'has-colors-light'            => 'Muumipeikon valkoinen (musta teksti)',
         ];
     }
 

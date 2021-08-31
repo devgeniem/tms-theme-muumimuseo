@@ -3,28 +3,29 @@
  *  Copyright (c) 2021. Geniem Oy
  */
 
+namespace TMS\Theme\Muumimuseo\ACF;
+
 use TMS\Theme\Base\Logger;
 use TMS\Theme\Muumimuseo\ACF\Field\AccentColorField;
-use TMS\Theme\Muumimuseo\ThemeCustomizationController;
 
 /**
- * Alter Articles Layout
+ * Alter Image Carousel Layout
  */
-class AlterArticlesLayout {
+class AlterImageCarouselLayout {
 
     /**
      * Constructor
      */
     public function __construct() {
         add_filter(
-            'tms/acf/layout/_articles/fields',
+            'tms/acf/layout/_image_carousel/fields',
             [ $this, 'alter_fields' ],
             10,
             2
         );
 
         add_filter(
-            'tms/acf/layout/articles/data',
+            'tms/acf/layout/image_carousel/data',
             [ $this, 'alter_format' ]
         );
     }
@@ -38,13 +39,14 @@ class AlterArticlesLayout {
      * @return array
      */
     public function alter_fields( array $fields, string $key ) : array {
-
         try {
             $accent_color_field = AccentColorField::field( $key );
-
-            $fields[] = $accent_color_field;
+            if ( $accent_color_field !== null ) {
+                $accent_color_field->set_wrapper_width( 100 );
+                $fields[] = $accent_color_field;
+            }
         }
-        catch ( Exception $e ) {
+        catch ( \Exception $e ) {
             ( new Logger() )->error( $e->getMessage(), $e->getTrace() );
         }
 
@@ -65,4 +67,4 @@ class AlterArticlesLayout {
     }
 }
 
-( new AlterArticlesLayout() );
+( new AlterImageCarouselLayout() );

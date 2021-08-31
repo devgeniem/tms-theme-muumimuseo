@@ -71,7 +71,6 @@ class Artist implements PostType {
             10,
             3
         );
-
         add_action( 'acf/save_post', [ $this, 'update_related_artwork' ] );
         add_action( 'wp_trash_post', [ $this, 'delete_related_artwork' ] );
         add_action( 'before_delete_post', [ $this, 'delete_related_artwork' ] );
@@ -281,6 +280,11 @@ class Artist implements PostType {
      * @return string
      */
     public function get_artist_name( $post_id ) {
-        return get_field( 'first_name', $post_id ) . ' ' . get_field( 'last_name', $post_id );
+        $fields = [
+            get_field( 'first_name', $post_id ),
+            get_field( 'last_name', $post_id ),
+        ];
+
+        return implode( ' ', array_filter( $fields, fn( $field ) => ! empty( $field ) ) );
     }
 }
