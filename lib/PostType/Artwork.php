@@ -113,8 +113,8 @@ class Artwork implements PostType {
         $rewrite = [
             'slug'       => static::SLUG,
             'with_front' => false,
-            'pages'      => false,
-            'feeds'      => false,
+            'pages'      => true,
+            'feeds'      => true,
         ];
 
         $args = [
@@ -127,15 +127,15 @@ class Artwork implements PostType {
                 'excerpt',
             ],
             'hierarchical'    => false,
-            'public'          => false,
+            'public'          => true,
             'menu_position'   => $this->menu_order,
             'menu_icon'       => $this->icon,
             'show_in_menu'    => true,
             'show_ui'         => true,
-            'can_export'      => false,
-            'has_archive'     => false,
+            'can_export'      => true,
+            'has_archive'     => true,
             'rewrite'         => $rewrite,
-            'show_in_rest'    => false,
+            'show_in_rest'    => true,
             'capability_type' => 'artwork',
             'map_meta_cap'    => true,
         ];

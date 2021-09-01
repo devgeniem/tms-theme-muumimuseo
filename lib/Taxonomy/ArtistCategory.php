@@ -6,8 +6,8 @@
 namespace TMS\Theme\Muumimuseo\Taxonomy;
 
 use \TMS\Theme\Base\Interfaces\Taxonomy;
-use TMS\Theme\Base\PostType\Artist;
 use TMS\Theme\Base\Traits\Categories;
+use TMS\Theme\Muumimuseo\PostType\Artist;
 
 /**
  * This class defines the taxonomy.
@@ -68,6 +68,12 @@ class ArtistCategory implements Taxonomy {
             'show_in_nav_menus' => false,
             'show_tagcloud'     => false,
             'show_in_rest'      => true,
+            'capabilities'      => [
+                'manage_terms' => 'manage_artist_categories',
+                'edit_terms'   => 'edit_artist_categories',
+                'delete_terms' => 'delete_artist_categories',
+                'assign_terms' => 'assign_artist_categories',
+            ],
         ];
 
         register_taxonomy( self::SLUG, [ Artist::SLUG ], $args );

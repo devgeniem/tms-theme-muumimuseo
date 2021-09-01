@@ -68,6 +68,12 @@ class ArtworkType implements Taxonomy {
             'show_in_nav_menus' => false,
             'show_tagcloud'     => false,
             'show_in_rest'      => true,
+            'capabilities'      => [
+                'manage_terms' => 'manage_artwork_types',
+                'edit_terms'   => 'edit_artwork_types',
+                'delete_terms' => 'delete_artwork_types',
+                'assign_terms' => 'assign_artwork_types',
+            ],
         ];
 
         register_taxonomy( self::SLUG, [ Artwork::SLUG ], $args );

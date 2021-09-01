@@ -1,0 +1,53 @@
+{>"shared/base" /}
+
+{<content}
+    {#ArchiveArtist}
+        <main class="main-content section" id="main-content">
+            <div class="container">
+                {>"shared/archive-view-title" /}
+                {>"shared/archive-filters" /}
+
+                <div class="columns is-multiline is-variable is-6-desktop">
+                    {#results}
+                        <div class="column is-12 is-6-desktop">
+                            <div class="columns is-mobile is-variable is-4-desktop">
+                                {?image}
+                                    <div class="column is-4">
+                                        <div class="image is-3by4">
+                                            {@image id=image size="large" class="objectfit-image" /}
+                                        </div>
+                                    </div>
+                                {/image}
+
+                                <div class="column">
+                                    <h2 class="h3 mt-4 mb-4 has-line-height-tight">
+                                        {fields.first_name|s}
+                                        {fields.last_name|s}
+                                    </h2>
+
+                                    <div class="mt-4 mb-4 has-text-small">
+                                        {strings.art_categories|s}: {categories|s}
+                                    </div>
+
+                                    {?post_excerpt}
+                                        <div class="mt-4 mb-4 is-family-secondary">
+                                            {post_excerpt|s}
+                                        </div>
+                                    {/post_excerpt}
+
+                                    {>"ui/button-link" classes="is-primary-invert is-outlined mt-4" icon=link.icon icon_classes=link.icon_classes /}
+                                </div>
+                            </div>
+                        </div>
+                    {:else}
+                        <div class="column pt-8 pb-8 is-text-centered is-size-5">
+                            {Strings.s.home.no_results|s}
+                        </div>
+                    {/results}
+                </div>
+
+                {>"shared/archive-pagination" /}
+            </div>
+        </main>
+    {/ArchiveArtist}
+{/content}

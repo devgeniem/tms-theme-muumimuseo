@@ -6,6 +6,7 @@
 namespace TMS\Theme\Muumimuseo\PostType;
 
 use TMS\Theme\Base\Interfaces\PostType;
+use TMS\Theme\Muumimuseo\Taxonomy\ArtistCategory;
 
 /**
  * Artist CPT
@@ -63,6 +64,16 @@ class Artist implements PostType {
      */
     public function hooks() : void {
         add_action( 'init', \Closure::fromCallable( [ $this, 'register' ] ), 15 );
+        add_filter( 'tms/gutenberg/blocks', \Closure::fromCallable( [ $this, 'allowed_blocks' ] ), 10, 1 );
+        add_filter(
+            'tms/base/breadcrumbs/before_prepare',
+            \Closure::fromCallable( [ $this, 'format_single_breadcrumbs' ] ),
+            10,
+            3
+        );
+        add_action( 'acf/save_post', [ $this, 'update_related_artwork' ] );
+        add_action( 'wp_trash_post', [ $this, 'delete_related_artwork' ] );
+        add_action( 'before_delete_post', [ $this, 'delete_related_artwork' ] );
     }
 
     /**
@@ -81,10 +92,10 @@ class Artist implements PostType {
      */
     private function register() {
         $labels = [
-            'name'                  => 'Artistit',
-            'singular_name'         => 'Artisti',
-            'menu_name'             => 'Artistit',
-            'name_admin_bar'        => 'Artistit',
+            'name'                  => 'Taiteilijat',
+            'singular_name'         => 'Taiteilija',
+            'menu_name'             => 'Taiteilijat',
+            'name_admin_bar'        => 'Taiteilijat',
             'archives'              => 'Arkistot',
             'attributes'            => 'Ominaisuudet',
             'parent_item_colon'     => 'Vanhempi:',
@@ -113,8 +124,7 @@ class Artist implements PostType {
         $rewrite = [
             'slug'       => static::SLUG,
             'with_front' => false,
-            'pages'      => false,
-            'feeds'      => false,
+            'pages'      => true,
         ];
 
         $args = [
@@ -125,21 +135,156 @@ class Artist implements PostType {
                 'title',
                 'thumbnail',
                 'excerpt',
+                'editor',
             ],
             'hierarchical'    => false,
-            'public'          => false,
+            'public'          => true,
             'menu_position'   => $this->menu_order,
             'menu_icon'       => $this->icon,
             'show_in_menu'    => true,
             'show_ui'         => true,
-            'can_export'      => false,
-            'has_archive'     => false,
+            'can_export'      => true,
+            'has_archive'     => true,
             'rewrite'         => $rewrite,
-            'show_in_rest'    => false,
+            'show_in_rest'    => true,
             'capability_type' => 'artist',
             'map_meta_cap'    => true,
         ];
 
         register_post_type( static::SLUG, $args );
+    }
+
+    /**
+     * Set allowed blocks.
+     *
+     * @param array $blocks Block list.
+     */
+    public function allowed_blocks( $blocks ) {
+        $allowed_blocks = [
+            'acf/image',
+            'acf/video',
+            'acf/material',
+            'acf/quote',
+        ];
+
+        foreach ( $allowed_blocks as $block ) {
+            $blocks[ $block ]['post_types'][] = self::SLUG;
+        }
+
+        return $blocks;
+    }
+
+    /**
+     * Format single view breadcrumbs.
+     *
+     * @param array  $breadcrumbs  Default breadcrumbs.
+     * @param string $current_type Post type.
+     * @param string $current_id   Current post ID.
+     *
+     * @return array[]
+     */
+    public function format_single_breadcrumbs( $breadcrumbs, $current_type, $current_id ) {
+        if ( $current_type !== self::SLUG ) {
+            return $breadcrumbs;
+        }
+
+        return [
+            'home' => [
+                'title'     => _x( 'Home', 'Breadcrumbs', 'tms-theme-base' ),
+                'permalink' => trailingslashit( get_home_url() ),
+                'icon'      => '',
+            ],
+            [
+                'title'     => _x( 'Artists', 'Breadcrumb text', 'tms-theme-base' ),
+                'permalink' => get_post_type_archive_link( self::SLUG ),
+                'icon'      => false,
+            ],
+            [
+                'title'     => get_the_title( $current_id ),
+                'permalink' => false,
+                'icon'      => false,
+                'is_active' => true,
+            ],
+        ];
+    }
+
+    /**
+     * Update related artwork for search results
+     *
+     * @param int $post_id \WP_Post ID.
+     */
+    public function update_related_artwork( $post_id ) {
+        if ( self::get_post_type() !== \get_post_type( $post_id ) ) {
+            return;
+        }
+
+        $artworks = get_field( 'artwork', $post_id );
+
+        if ( empty( $artworks ) ) {
+            return;
+        }
+
+        $artist_name = $this->get_artist_name( $post_id );
+
+        foreach ( $artworks as $artwork ) {
+            $artist_field = get_the_content( null, false, $artwork->ID );
+
+            if ( false === strpos( $artist_field, $artist_name ) ) {
+                $artist_field = $artist_field . ' ' . $artist_name;
+
+                wp_update_post( [
+                    'ID'           => $artwork->ID,
+                    'post_content' => $artist_field,
+                ] );
+            }
+        }
+    }
+
+    /**
+     * Delete related artwork from search results
+     *
+     * @param int $post_id \WP_Post ID.
+     */
+    public function delete_related_artwork( $post_id ) {
+        if ( self::get_post_type() !== \get_post_type( $post_id ) ) {
+            return;
+        }
+
+        $artworks = get_field( 'artwork', $post_id );
+
+        if ( empty( $artworks ) ) {
+            return;
+        }
+
+        $artist_name = $this->get_artist_name( $post_id );
+
+        foreach ( $artworks as $artwork ) {
+            $artist_field = get_the_content( null, false, $artwork->ID );
+
+            if ( false !== strpos( $artist_field, $artist_name ) ) {
+                $artist_field = str_replace( $artist_name, ' ', $artist_field );
+
+                wp_update_post( [
+                    'ID'           => $artwork->ID,
+                    'post_content' => $artist_field,
+                ] );
+            }
+        }
+    }
+
+    /**
+     * Get artist name
+     *
+     * @param int $post_id \WP_Post ID.
+     *
+     * @return string
+     */
+    public function get_artist_name( $post_id ) {
+        $fields = [
+            get_field( 'first_name', $post_id ),
+            get_field( 'last_name', $post_id ),
+        ];
+
+        return implode( ' ', array_filter( $fields, fn( $field ) => ! empty( $field ) ) );
     }
 }
