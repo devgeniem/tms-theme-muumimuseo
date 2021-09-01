@@ -1,4 +1,10 @@
 .muumimuseo-hero {
+    &__background {
+        @include from($desktop) {
+            background-attachment: fixed;
+        }
+    }
+
     &__background-container {
         @include until($tablet) {
             padding-top: 75% !important; // sass-lint:disable-line no-important
