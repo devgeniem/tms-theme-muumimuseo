@@ -30,7 +30,7 @@
     &__text {
         font-size: 1.75rem;
         line-height: .75;
-        margin: 1.5ch;
+        margin: .5ch;
 
         @include from($desktop) {
             font-size: 2rem;
@@ -44,6 +44,8 @@
 
 .call-to-action {
     .layout-badge {
+        top: 0;
+
         @include from($desktop) {
             top: -2.5rem;
         }
@@ -107,8 +109,8 @@
 .video {
     .layout-badge {
         @include until($desktop) {
-            top: 50%;
-            transform: translateY(-50%);
+            top: unset;
+            bottom: .5rem;
         }
     }
 }
@@ -149,7 +151,11 @@
 
 .muumimuseo-hero {
     .layout-badge {
-        top: -3.25rem;
+        top: -4rem;
+
+        @include from($desktop) {
+            top: -3.25rem;
+        }
 
         @include from(1600px) {
             top: 5%;
