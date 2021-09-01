@@ -1,6 +1,6 @@
 .muumimuseo-hero {
     &__background {
-        @include from($widescreen) {
+        @include from(1440px) {
             background-attachment: fixed;
         }
     }
