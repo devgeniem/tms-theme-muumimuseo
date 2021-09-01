@@ -78,12 +78,12 @@
     .layout-badge {
         @include until($desktop) {
             top: .5rem;
+            right: .5rem;
         }
 
         &.align-before {
-            left: .5rem;
-
             @include from($desktop) {
+                right: unset;
                 left: -1.75rem;
             }
 
@@ -93,8 +93,6 @@
         }
 
         &.align-after {
-            right: .5rem;
-
             @include from($desktop) {
                 right: -1.75rem;
             }
