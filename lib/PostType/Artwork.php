@@ -52,8 +52,8 @@ class Artwork implements PostType {
      * Constructor
      */
     public function __construct() {
-        $this->url_slug    = _x( 'artist', 'theme CPT slugs', 'tms-theme-base' );
-        $this->description = _x( 'Artists', 'theme CPT', 'tms-theme-base' );
+        $this->url_slug    = _x( 'artist', 'theme CPT slugs', 'tms-theme-muumimuseo' );
+        $this->description = _x( 'Artists', 'theme CPT', 'tms-theme-muumimuseo' );
     }
 
     /**
@@ -189,12 +189,12 @@ class Artwork implements PostType {
 
         return [
             'home' => [
-                'title'     => _x( 'Home', 'Breadcrumbs', 'tms-theme-base' ),
+                'title'     => _x( 'Home', 'Breadcrumbs', 'tms-theme-muumimuseo' ),
                 'permalink' => trailingslashit( get_home_url() ),
                 'icon'      => '',
             ],
             [
-                'title'     => _x( 'Artwork', 'Breadcrumb text', 'tms-theme-base' ),
+                'title'     => _x( 'Artwork', 'Breadcrumb text', 'tms-theme-muumimuseo' ),
                 'permalink' => get_post_type_archive_link( self::SLUG ),
                 'icon'      => false,
             ],

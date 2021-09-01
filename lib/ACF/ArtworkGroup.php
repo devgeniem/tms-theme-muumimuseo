@@ -80,6 +80,10 @@ class ArtworkGroup {
                 'title'        => 'Kuvat',
                 'instructions' => '',
             ],
+            'year'                   => [
+                'title'        => 'Valmistumisvuosi',
+                'instructions' => '',
+            ],
             'additional_information' => [
                 'title'        => 'Lisätiedot',
                 'instructions' => '',
@@ -108,6 +112,11 @@ class ArtworkGroup {
             ->set_key( "${key}_images" )
             ->set_name( 'images' )
             ->set_instructions( $strings['images']['instructions'] );
+
+        $year_field = ( new Field\Text( $strings['year']['title'] ) )
+            ->set_key( "${key}_year" )
+            ->set_name( 'year' )
+            ->set_instructions( $strings['year']['instructions'] );
 
         $additional_info_repeater = ( new Field\Repeater( $strings['additional_information']['title'] ) )
             ->set_key( "${key}_additional_information" )
@@ -144,6 +153,7 @@ class ArtworkGroup {
         );
 
         $tab->add_fields( [
+            $year_field,
             $images_field,
             $additional_info_repeater,
         ] );
