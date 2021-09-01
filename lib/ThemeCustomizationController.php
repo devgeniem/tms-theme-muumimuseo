@@ -49,6 +49,11 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         );
 
         add_filter(
+            'tms/plugin-materials/block_materials/title_classes',
+            fn() => 'has-text-primary-invert'
+        );
+
+        add_filter(
             'tms/plugin-materials/page_materials/submit_button_classes',
             fn() => 'is-primary is-borderless'
         );
