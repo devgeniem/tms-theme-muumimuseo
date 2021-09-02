@@ -17,6 +17,21 @@ use TMS\Theme\Muumimuseo\Taxonomy\ArtworkType;
 class Localization extends \TMS\Theme\Base\Localization implements \TMS\Theme\Base\Interfaces\Controller {
 
     /**
+     * Load theme translations.
+     */
+    public function load_theme_textdomains() {
+        \load_theme_textdomain(
+            'tms-theme-base',
+            get_template_directory() . '/lang'
+        );
+
+        \load_child_theme_textdomain(
+            'tms-theme-muumimuseo',
+            get_stylesheet_directory() . '/lang'
+        );
+    }
+
+    /**
      * This adds the CPTs that are not public to Polylang translation.
      *
      * @param array   $post_types  The post type array.

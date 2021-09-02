@@ -211,19 +211,15 @@ class ArchiveArtwork extends ArchiveArtist {
      * @return array
      */
     protected function get_artist_map() : array {
-        $the_query = new WP_Query( [
-            'post_type'      => Artist::SLUG,
-            'posts_per_page' => 200, // phpcs:ignore
-            'no_found_rows'  => true,
-        ] );
+        $artists = Artist::get_all();
 
-        if ( ! $the_query->have_posts() ) {
+        if ( empty( $artists ) ) {
             return [];
         }
 
         $map = [];
 
-        foreach ( $the_query->posts as $artist ) {
+        foreach ( $artists as $artist ) {
             $artworks = get_field( 'artwork', $artist->ID );
 
             if ( empty( $artworks ) ) {
