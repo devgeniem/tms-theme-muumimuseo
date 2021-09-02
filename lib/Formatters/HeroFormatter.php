@@ -15,7 +15,7 @@ class HeroFormatter implements \TMS\Theme\Base\Interfaces\Formatter {
     /**
      * Define formatter name
      */
-    const NAME = 'MuumimuseoHero';
+    const NAME = 'Hero';
 
     /**
      * Hooks

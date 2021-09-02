@@ -5,10 +5,12 @@
 
 namespace TMS\Theme\Muumimuseo;
 
+use TMS\Theme\Base\Formatters\HeroFormatter;
+
 /**
  * Class FormatterController
  *
- * @package TMS\Theme\Base
+ * @package TMS\Theme\Muumimuseo
  */
 class FormatterController extends \TMS\Theme\Base\FormatterController implements \TMS\Theme\Base\Interfaces\Controller {
 
@@ -18,9 +20,12 @@ class FormatterController extends \TMS\Theme\Base\FormatterController implements
      * @return void
      */
     public function hooks() : void {
-        parent::hooks();
+        add_action(
+            'init',
+            \Closure::fromCallable( [ $this, 'register_formatters' ] )
+        );
 
-        add_filter( 'tms/acf/formatter/Hero/disable', '__return_true' );
+        add_filter( 'tms/theme/base/formatters', [ $this, 'remove_formatters' ] );
     }
 
     /**
@@ -39,5 +44,23 @@ class FormatterController extends \TMS\Theme\Base\FormatterController implements
      */
     protected function get_formatter_files() : array {
         return array_diff( scandir( __DIR__ . '/Formatters' ), [ '.', '..' ] );
+    }
+
+    /**
+     * Remove formatters.
+     *
+     * @param array $classes Formatter classes.
+     *
+     * @return array
+     */
+    public function remove_formatters( array $classes ) : array {
+        $formatters_to_remove = [
+            HeroFormatter::class,
+        ];
+
+        return array_filter(
+            $classes,
+            fn( $class ) => ! in_array( $class, $formatters_to_remove, true )
+        );
     }
 }
