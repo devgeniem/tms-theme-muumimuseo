@@ -6,6 +6,8 @@
 namespace TMS\Theme\Muumimuseo\ACF;
 
 use Geniem\ACF\Field;
+use TMS\Theme\Base\ACF\Layouts\HeroLayout as BaseThemeHeroLayout;
+use TMS\Theme\Muumimuseo\ACF\Layouts\HeroLayout;
 
 /**
  * Class AlterPageFrontPageGroup
@@ -34,10 +36,10 @@ class AlterPageFrontPageGroup {
      */
     public function replace_base_theme_hero( $layouts ) {
         $layouts = array_filter( $layouts, function ( $layout ) {
-            return $layout !== 'TMS\Theme\Base\ACF\Layouts\HeroLayout';
+            return $layout !== BaseThemeHeroLayout::class;
         } );
 
-        $layouts[] = 'TMS\Theme\Muumimuseo\ACF\Layouts\HeroLayout';
+        $layouts[] = HeroLayout::class;
 
         return $layouts;
     }
