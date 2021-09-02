@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
+- TMS-137: Color theme changes #16
 - TMS-142: Image Carousel Customization #15
 - TMS-135: Artist archive #10
 - TMS-205: Remove theme color settings #17
