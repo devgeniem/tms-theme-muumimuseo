@@ -68,6 +68,12 @@ class ArtworkLocation implements Taxonomy {
             'show_in_nav_menus' => false,
             'show_tagcloud'     => false,
             'show_in_rest'      => true,
+            'capabilities'      => [
+                'manage_terms' => 'manage_artwork_locations',
+                'edit_terms'   => 'edit_artwork_locations',
+                'delete_terms' => 'delete_artwork_locations',
+                'assign_terms' => 'assign_artwork_locations',
+            ],
         ];
 
         register_taxonomy( self::SLUG, [ Artwork::SLUG ], $args );

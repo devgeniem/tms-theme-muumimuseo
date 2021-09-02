@@ -1,0 +1,62 @@
+{>"shared/base" /}
+
+{<content}
+    {#ArchiveArtwork}
+        <main class="main-content section" id="main-content">
+            <div class="container">
+                {>"shared/archive-view-title" /}
+                {>"shared/archive-filters" /}
+
+                <div class="columns is-multiline is-variable is-6-desktop">
+                    {#results}
+                        <div class="column is-6 is-3-desktop">
+                            {?image}
+                                <div class="image is-4by3">
+                                    <a href="{permalink}" aria-hidden="true" tabindex="-1">
+                                        {@image id=image size="large" class="objectfit-image" /}
+                                    </a>
+                                </div>
+                            {/image}
+
+                            <h2 class="h4 mt-6 mb-4 has-line-height-tight">
+                                <a href="{permalink}" class="has-text-paragraph">
+                                    {post_title|s}
+                                </a>
+                            </h2>
+
+                            <div class="has-text-small">
+                                {fields.year|s}
+                            </div>
+
+                            {?artist}
+                                <div class="has-text-small">
+                                    {artist|s}
+                                </div>
+                            {/artist}
+
+                            {?locations}
+                                <div class="has-text-small">
+                                    {locations|s}
+                                </div>
+                            {/locations}
+
+                            {?types}
+                                {#types}
+                                    <span class="pill mt-4 mr-2">
+                                        {.|s}
+                                    </span>
+                                {/types}
+                            {/types}
+                        </div>
+                    {:else}
+                        <div class="column pt-8 pb-8 is-text-centered is-size-5">
+                            {Strings.s.home.no_results|s}
+                        </div>
+                    {/results}
+                </div>
+
+                {>"shared/archive-pagination" /}
+            </div>
+        </main>
+    {/ArchiveArtwork}
+{/content}

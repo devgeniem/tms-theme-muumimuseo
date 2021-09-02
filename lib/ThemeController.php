@@ -26,6 +26,7 @@ class ThemeController extends \TMS\Theme\Base\ThemeController {
             TaxonomyController::class,
             Localization::class,
             ThemeSupports::class,
+            RolesController::class,
         ];
 
         array_walk( $classes, function ( $class ) {
@@ -38,6 +39,7 @@ class ThemeController extends \TMS\Theme\Base\ThemeController {
 
         add_action( 'init', function () {
             \ArchiveArtist::hooks();
+            \ArchiveArtwork::hooks();
         } );
     }
 }
