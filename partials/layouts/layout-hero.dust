@@ -42,7 +42,7 @@
                                 {title|s}
                             </h3>
 
-                            <p class="mt-0 mb-0 is-family-sans-serif has-text-large has-text-weight-bold">{text|s}</p>
+                            <p class="mt-0 mb-0 is-family-secondary has-text-large has-text-weight-bold">{text|s}</p>
 
                             {?logo}
                                 <div class="image-container">
