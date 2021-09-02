@@ -26,6 +26,7 @@ class ThemeController extends \TMS\Theme\Base\ThemeController {
             TaxonomyController::class,
             Localization::class,
             ThemeSupports::class,
+            FormatterController::class,
             RolesController::class,
         ];
 
