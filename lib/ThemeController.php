@@ -27,6 +27,7 @@ class ThemeController extends \TMS\Theme\Base\ThemeController {
             Localization::class,
             ThemeSupports::class,
             FormatterController::class,
+            RolesController::class,
         ];
 
         array_walk( $classes, function ( $class ) {
@@ -39,6 +40,7 @@ class ThemeController extends \TMS\Theme\Base\ThemeController {
 
         add_action( 'init', function () {
             \ArchiveArtist::hooks();
+            \ArchiveArtwork::hooks();
         } );
     }
 }

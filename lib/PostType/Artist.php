@@ -71,6 +71,9 @@ class Artist implements PostType {
             10,
             3
         );
+        add_action( 'acf/save_post', [ $this, 'update_related_artwork' ] );
+        add_action( 'wp_trash_post', [ $this, 'delete_related_artwork' ] );
+        add_action( 'before_delete_post', [ $this, 'delete_related_artwork' ] );
     }
 
     /**
@@ -203,5 +206,85 @@ class Artist implements PostType {
                 'is_active' => true,
             ],
         ];
+    }
+
+    /**
+     * Update related artwork for search results
+     *
+     * @param int $post_id \WP_Post ID.
+     */
+    public function update_related_artwork( $post_id ) {
+        if ( self::get_post_type() !== \get_post_type( $post_id ) ) {
+            return;
+        }
+
+        $artworks = get_field( 'artwork', $post_id );
+
+        if ( empty( $artworks ) ) {
+            return;
+        }
+
+        $artist_name = $this->get_artist_name( $post_id );
+
+        foreach ( $artworks as $artwork ) {
+            $artist_field = get_the_content( null, false, $artwork->ID );
+
+            if ( false === strpos( $artist_field, $artist_name ) ) {
+                $artist_field = $artist_field . ' ' . $artist_name;
+
+                wp_update_post( [
+                    'ID'           => $artwork->ID,
+                    'post_content' => $artist_field,
+                ] );
+            }
+        }
+    }
+
+    /**
+     * Delete related artwork from search results
+     *
+     * @param int $post_id \WP_Post ID.
+     */
+    public function delete_related_artwork( $post_id ) {
+        if ( self::get_post_type() !== \get_post_type( $post_id ) ) {
+            return;
+        }
+
+        $artworks = get_field( 'artwork', $post_id );
+
+        if ( empty( $artworks ) ) {
+            return;
+        }
+
+        $artist_name = $this->get_artist_name( $post_id );
+
+        foreach ( $artworks as $artwork ) {
+            $artist_field = get_the_content( null, false, $artwork->ID );
+
+            if ( false !== strpos( $artist_field, $artist_name ) ) {
+                $artist_field = str_replace( $artist_name, ' ', $artist_field );
+
+                wp_update_post( [
+                    'ID'           => $artwork->ID,
+                    'post_content' => $artist_field,
+                ] );
+            }
+        }
+    }
+
+    /**
+     * Get artist name
+     *
+     * @param int $post_id \WP_Post ID.
+     *
+     * @return string
+     */
+    public function get_artist_name( $post_id ) {
+        $fields = [
+            get_field( 'first_name', $post_id ),
+            get_field( 'last_name', $post_id ),
+        ];
+
+        return implode( ' ', array_filter( $fields, fn( $field ) => ! empty( $field ) ) );
     }
 }
