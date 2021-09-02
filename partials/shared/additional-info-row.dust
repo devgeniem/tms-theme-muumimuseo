@@ -1,13 +1,13 @@
 <div class="has-border-bottom-1 has-border-gray--dark">
-    <div class="columns is-gapless mb-3">
-        <div class="column is-4">
-            <p class="m-0 is-uppercase has-text-weight-light">
+    <div class="columns is-multiline is-gapless mb-3">
+        <div class="column is-12 is-4-desktop">
+            <p class="m-0 is-uppercase has-text-weight-light has-text-small hyphenate">
                 {title|s}
             </p>
         </div>
 
         <div class="column">
-            <p class="m-0">
+            <p class="m-0 ml-3-desktop is-family-sans-serif">
                 {additional_information_group.additional_information_text|s}
             </p>
         </div>

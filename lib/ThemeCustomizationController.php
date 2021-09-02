@@ -102,6 +102,11 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
             'tms/theme/event/group_title',
             \Closure::fromCallable( [ $this, 'event_info_group_title_classes' ] )
         );
+
+        add_filter(
+            'tms/theme/accent_colors',
+            [ $this, 'get_theme_accent_colors' ]
+        );
     }
 
     /**
@@ -166,5 +171,33 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         $classes['icon']  = 'is-primary';
 
         return $classes;
+    }
+
+    /**
+     * Theme accent colors for layouts
+     *
+     * @return string[]
+     */
+    public function get_theme_accent_colors() : array {
+        return [
+            'has-colors-transparent'      => 'Ei taustaväriä (valkoinen teksti)',
+            'has-colors-primary'          => 'Tumman vihreä (valkoinen teksti)',
+            'has-colors-accent-tertiary'  => 'Keltaoranssi (musta teksti)',
+            'has-colors-accent-secondary' => 'Turkoosi (musta teksti)',
+            'has-colors-light'            => 'Muumipeikon valkoinen (musta teksti)',
+        ];
+    }
+
+    /**
+     * Get theme accent color by key
+     *
+     * @param string $key Accent color key.
+     *
+     * @return string|null
+     */
+    public function get_theme_accent_color_by_key( string $key ) : ?string {
+        $map = $this->get_theme_accent_colors();
+
+        return $map[ $key ] ?? null;
     }
 }
