@@ -3,7 +3,7 @@
  *  Copyright (c) 2021. Geniem Oy
  */
 
-namespace TMS\Theme\Base\Formatters;
+namespace TMS\Theme\Muumimuseo\Formatters;
 
 /**
  * Class HeroFormatter
