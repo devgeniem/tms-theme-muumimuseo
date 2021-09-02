@@ -1,0 +1,20 @@
+/*!*
+ * Copyright (c) 2021. Geniem Oy
+ */
+
+
+.image-carousel {
+    &__item {
+        .has-shape-round {
+            display: inline-block;
+            overflow: hidden;
+
+            img {
+                object-fit: contain;
+                height: 100%;
+                min-height: 100%;
+                clip-path: circle(closest-side);
+            }
+        }
+    }
+}
