@@ -51,7 +51,7 @@ class Assets extends \TMS\Theme\Base\Assets implements \TMS\Theme\Base\Interface
      * Get theme asset path.
      *
      * @param string $full_path Asset path.
-     * @param string $file File name.
+     * @param string $file      File name.
      *
      * @return string
      */
