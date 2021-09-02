@@ -7,6 +7,7 @@ namespace TMS\Theme\Muumimuseo\PostType;
 
 use TMS\Theme\Base\Interfaces\PostType;
 use TMS\Theme\Muumimuseo\Taxonomy\ArtistCategory;
+use WP_Query;
 
 /**
  * Artist CPT
@@ -286,5 +287,23 @@ class Artist implements PostType {
         ];
 
         return implode( ' ', array_filter( $fields, fn( $field ) => ! empty( $field ) ) );
+    }
+
+    /**
+     * Get all artists.
+     *
+     * @return \WP_Post[]
+     */
+    public static function get_all() : array {
+        $the_query = new WP_Query( [
+            'post_type'              => self::SLUG,
+            'posts_per_page'         => 200, // phpcs:ignore
+            'update_post_term_cache' => false,
+            'meta_key'               => 'last_name',
+            'orderby'                => [ 'last_name' => 'ASC' ],
+            'no_found_rows'          => true,
+        ] );
+
+        return $the_query->posts;
     }
 }
