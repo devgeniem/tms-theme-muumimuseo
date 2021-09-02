@@ -13,6 +13,17 @@ namespace TMS\Theme\Muumimuseo;
 class FormatterController extends \TMS\Theme\Base\FormatterController implements \TMS\Theme\Base\Interfaces\Controller {
 
     /**
+     * Add hooks and filters from this controller
+     *
+     * @return void
+     */
+    public function hooks() : void {
+        parent::hooks();
+
+        add_filter( 'tms/acf/formatter/Hero/disable', '__return_true' );
+    }
+
+    /**
      * Get namespace for formatter instances
      *
      * @return string
