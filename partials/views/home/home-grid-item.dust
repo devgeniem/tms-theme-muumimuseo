@@ -1,5 +1,5 @@
 <div class="column is-6 is-4-desktop is-3-widescreen">
-    <article class="entry mb-6">
+    <article class="entry mb-6 {entry_class|s}">
         {?featured_image}
             <div class="image is-5by3 mb-5">
                 <a href="{permalink}" aria-hidden="true" tabindex="-1">
@@ -9,7 +9,7 @@
         {/featured_image}
 
         <h2 class="entry__title h4 mt-0 mb-5">
-            <a href="{permalink}" class="has-text-white">
+            <a href="{permalink}">
                 {post_title|s}
             </a>
         </h2>

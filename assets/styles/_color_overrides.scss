@@ -5,7 +5,6 @@
 /*--------------------------------------------------------------
 Common
 --------------------------------------------------------------*/
-$link: $color-veden-vari;
 $link-hover: bulmaLighten($link, 15);
 $link-active: bulmaLighten($link, 15);
 
@@ -18,17 +17,9 @@ $secondary-navbar-item-navbar-link-color-hover: $color-muumipeikon-valkoinen;
 /*--------------------------------------------------------------
 assets/styles/ui-components/_breadcrumbs.scss
 --------------------------------------------------------------*/
-$tms-breadcrumb-item-color-link: $primary;
-$tms-breadcrumb-item-color-hover: $primary-dark;
-$tms-breadcrumb-item-color-active: $primary-light;
-$tms-breadcrumb-item-color-separator: $color-black;
-
-/*--------------------------------------------------------------
-assets/styles/ui-components/_breadcrumbs.scss
---------------------------------------------------------------*/
-$tms-breadcrumb-item-color-link: $link;
-$tms-breadcrumb-item-color-hover: $link-hover;
-$tms-breadcrumb-item-color-active: $link-active;
+$tms-breadcrumb-item-color-link: $color-veden-vari;
+$tms-breadcrumb-item-color-hover: bulmaDarken($color-veden-vari, 20);
+$tms-breadcrumb-item-color-active: bulmaLighten($color-veden-vari, 20);
 $tms-breadcrumb-item-color-separator: $color-muumipeikon-valkoinen;
 
 /*--------------------------------------------------------------
@@ -52,3 +43,8 @@ $pill-border-color-focus: $black !default;
 assets/styles/ui-components/_pagination.scss
 --------------------------------------------------------------*/
 $pagination-item-background-color: $color-muumipeikon-valkoinen !default;
+
+/*--------------------------------------------------------------
+assets/styles/helpers/_button.scss
+--------------------------------------------------------------*/
+$button-font-size-tablet: 1rem;
