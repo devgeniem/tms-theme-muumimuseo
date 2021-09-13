@@ -20,31 +20,7 @@ class AlterImageCarousel {
         add_filter( 'tms/block/image_carousel/fields', [ $this, 'alter_fields' ], 10, 1 );
         add_filter( 'tms/acf/block/image_carousel/data', [ $this, 'alter_data' ], 10, 1 );
 
-        add_filter(
-            'tms/acf/layout/fg_onepager_components_image_carousel/fields',
-            [ $this, 'alter_fields' ], 10, 1
-        );
-
-        add_filter(
-            'tms/acf/layout/fg_page_components_image_carousel/fields',
-            [ $this, 'alter_fields' ], 10, 1
-        );
-
-        add_filter(
-            'tms/acf/layout/fg_front_page_components_image_carousel/fields',
-            [ $this, 'alter_fields' ], 10, 1
-        );
-
-        add_filter(
-            'tms/acf/layout/fg_post_fields_components_image_carousel/fields',
-            [ $this, 'alter_fields' ], 10, 1
-        );
-
-        add_filter(
-            'tms/acf/layout/fg_dynamic_event_fields_components_image_carousel/fields',
-            [ $this, 'alter_fields' ], 10, 1
-        );
-
+        add_filter( 'tms/acf/layout/_image_carousel/fields', [ $this, 'alter_fields' ], 10, 1 );
         add_filter( 'tms/acf/layout/image_carousel/data', [ $this, 'alter_data' ], 10, 1 );
     }
 

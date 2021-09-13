@@ -1,4 +1,5 @@
 # Changelog
+
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
@@ -6,7 +7,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.0.0]
+
 ### Added
+
+- TMS-197: Add caps for Artist and Artwork #18
+- TMS-134: Single Artwork view #19
+- TMS-140: Hero layout #21
+- TMS-139: Info Badge #23
+- TMS-137: Color theme changes #16
+- TMS-142: Image Carousel Customization #15
 - TMS-135: Artist archive #10
 - TMS-205: Remove theme color settings #17
 - TMS-133: Single Artist #11

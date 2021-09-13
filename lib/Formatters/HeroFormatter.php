@@ -21,8 +21,6 @@ class HeroFormatter implements \TMS\Theme\Base\Interfaces\Formatter {
      * Hooks
      */
     public function hooks() : void {
-        add_filter( 'tms/acf/formatter/Hero/disable', '__return_true' );
-
         add_filter(
             'tms/acf/layout/hero/data',
             [ $this, 'format' ],
