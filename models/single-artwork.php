@@ -121,10 +121,8 @@ class SingleArtwork extends SingleArtist {
      */
     protected function format_info_group( string $row_title, string $row_text ) : array {
         return [
-            'additional_information_group' => [
-                'additional_information_title' => $row_title,
-                'additional_information_text'  => $row_text,
-            ],
+            'additional_information_title' => $row_title,
+            'additional_information_text'  => $row_text,
         ];
     }
 

@@ -7,6 +7,7 @@ namespace TMS\Theme\Base\Muumimuseo;
 
 use \Geniem\ACF\Exception;
 use TMS\Theme\Base\Logger;
+use TMS\Theme\Muumimuseo\ACF\Fields\Settings\ArtistSettingsTab;
 use TMS\Theme\Muumimuseo\ACF\Fields\Settings\ArtworkSettingsTab;
 
 /**
@@ -39,6 +40,7 @@ class SettingsGroup {
     protected function register_fields( array $fields, string $key ) : array {
         try {
             $fields[] = new ArtworkSettingsTab( '', $key );
+            $fields[] = new ArtistSettingsTab( '', $key );
         }
         catch ( Exception $e ) {
             ( new Logger() )->error( $e->getMessage(), $e->getTraceAsString() );

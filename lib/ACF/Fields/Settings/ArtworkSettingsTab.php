@@ -30,13 +30,21 @@ class ArtworkSettingsTab extends Tab {
      * @var array
      */
     protected $strings = [
-        'tab'                              => 'Teosarkisto',
+        'tab'                              => 'Teokset',
         'artwork_archive_display_location' => [
-            'title'        => 'Näytä sijainti',
+            'title'        => 'Näytä sijainti arkistossa',
             'instructions' => '',
         ],
         'artwork_archive_display_artist'   => [
-            'title'        => 'Näytä taiteilija',
+            'title'        => 'Näytä taiteilija arkistossa',
+            'instructions' => '',
+        ],
+        'artwork_additional_info'      => [
+            'title'        => 'Esitäytetyt lisätiedot',
+            'instructions' => '',
+        ],
+        'artwork_additional_info_text' => [
+            'title'        => 'Lisätiedon teksti',
             'instructions' => '',
         ],
     ];
@@ -81,9 +89,22 @@ class ArtworkSettingsTab extends Tab {
                 ->set_wrapper_width( 50 )
                 ->set_instructions( $strings['artwork_archive_display_artist']['instructions'] );
 
+            $info_repeater_field = ( new Field\Repeater( $strings['artwork_additional_info']['title'] ) )
+                ->set_key( "${key}_artwork_additional_info" )
+                ->set_name( 'artwork_additional_info' )
+                ->set_instructions( $strings['artwork_additional_info']['instructions'] );
+
+            $text_field = ( new Field\Text( $strings['artwork_additional_info_text']['title'] ) )
+                ->set_key( "${key}_artwork_additional_info_text" )
+                ->set_name( 'artwork_additional_info_text' )
+                ->set_instructions( $strings['artwork_additional_info_text']['instructions'] );
+
+            $info_repeater_field->add_field( $text_field );
+
             $this->add_fields( [
                 $display_location_field,
                 $display_artist_field,
+                $info_repeater_field,
             ] );
         }
         catch ( Exception $e ) {
