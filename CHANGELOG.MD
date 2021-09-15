@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
+- TMS-219: Artwork page template #25
 - TMS-209: Add translations #28
 
 ## [1.0.1]
