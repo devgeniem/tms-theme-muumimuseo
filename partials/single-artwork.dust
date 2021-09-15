@@ -29,16 +29,16 @@
                                                 {>"shared/additional-info-list" data=additional_info /}
                                             {/additional_info}
 
-                                            {?artist_permalink}
-                                                <a href="{artist_permalink}"
+                                            {?artist_link}
+                                                <a href="{artist_link.link}"
                                                    class="button is-primary-invert is-outlined button--icon mt-4 mt-6-desktop">
                                                     <span class="has-width-100">
-                                                        {Strings.s.artwork.artist_link|s}
+                                                        {artist_link.text|s}
                                                     </span>
 
                                                     {>"ui/icon" icon="chevron-right" class="is-primary icon--large mr-1" /}
                                                 </a>
-                                            {/artist_permalink}
+                                            {/artist_link}
                                         </div>
                                     </div>
 
