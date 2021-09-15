@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TMS Theme Muumimuseo\n"
-"POT-Creation-Date: 2021-09-02 07:39+0300\n"
+"POT-Creation-Date: 2021-09-15 09:36+0300\n"
 "PO-Revision-Date: 2021-09-02 07:39+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -16,77 +16,64 @@ msgstr ""
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
-"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: vendor\n"
 "X-Poedit-SearchPathExcluded-2: node_modules\n"
 
-#: assets/dist/vendor.js:4571
-msgctxt "text direction"
-msgid "ltr"
+#: assets/dist/vendor.js:1
+msgid "entries"
 msgstr ""
 
-#: lib/PostType/Artist.php:57 lib/PostType/Artwork.php:55
-msgctxt "theme CPT slugs"
-msgid "artist"
+#: assets/dist/vendor.js:1
+msgid "values"
 msgstr ""
 
-#: lib/PostType/Artist.php:58 lib/PostType/Artwork.php:56
+#: assets/dist/vendor.js:1
+msgid "keys"
+msgstr ""
+
+#: assets/dist/vendor.js:1
+msgid "Wrong index!"
+msgstr ""
+
+#: assets/dist/vendor.js:1
+msgid "Wrong offset!"
+msgstr ""
+
+#: assets/dist/vendor.js:1
+msgid "Wrong length!"
+msgstr ""
+
+#: assets/dist/vendor.js:1
+msgid "-"
+msgstr ""
+
+#: lib/PostType/Artist.php:59
 msgctxt "theme CPT"
 msgid "Artists"
 msgstr ""
 
-#: lib/PostType/Artist.php:194 lib/PostType/Artwork.php:192
+#: lib/PostType/Artist.php:193 lib/PostType/Artwork.php:192
 msgctxt "Breadcrumbs"
 msgid "Home"
 msgstr ""
 
-#: lib/PostType/Artist.php:199
+#: lib/PostType/Artist.php:198
 msgctxt "Breadcrumb text"
 msgid "Artists"
+msgstr ""
+
+#: lib/PostType/Artwork.php:57
+msgctxt "theme CPT"
+msgid "Artwork"
 msgstr ""
 
 #: lib/PostType/Artwork.php:197
 msgctxt "Breadcrumb text"
 msgid "Artwork"
-msgstr ""
-
-#: lib/Taxonomy/ArtistCategory.php:51
-msgid "Erottele kategoriat pilkulla"
-msgstr ""
-
-#: lib/Taxonomy/ArtistCategory.php:52
-msgid "Lisää tai poista kategoria"
-msgstr ""
-
-#: lib/Taxonomy/ArtistCategory.php:53 lib/Taxonomy/ArtistCategory.php:54
-msgid "Suositut kategoriat"
-msgstr ""
-
-#: lib/Taxonomy/ArtworkLocation.php:51
-msgid "Erottele sijainnit pilkulla"
-msgstr ""
-
-#: lib/Taxonomy/ArtworkLocation.php:52
-msgid "Lisää tai poista sijainti"
-msgstr ""
-
-#: lib/Taxonomy/ArtworkLocation.php:53 lib/Taxonomy/ArtworkLocation.php:54
-msgid "Suositut sijainnit"
-msgstr ""
-
-#: lib/Taxonomy/ArtworkType.php:51
-msgid "Erottele luokittelut pilkulla"
-msgstr ""
-
-#: lib/Taxonomy/ArtworkType.php:52
-msgid "Lisää tai poista luokittelu"
-msgstr ""
-
-#: lib/Taxonomy/ArtworkType.php:53 lib/Taxonomy/ArtworkType.php:54
-msgid "Suositut luokittelut"
 msgstr ""
 
 #: models/archive-artist.php:83
@@ -121,7 +108,7 @@ msgstr ""
 msgid "All"
 msgstr ""
 
-#: models/archive-artist.php:226
+#: models/archive-artist.php:226 models/single-artwork.php:190
 msgid "View artist"
 msgstr ""
 
