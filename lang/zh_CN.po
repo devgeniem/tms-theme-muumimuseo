@@ -1,0 +1,189 @@
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Project-Id-Version: TMS Theme Muumimuseo\n"
+"POT-Creation-Date: 2021-09-15 09:36+0300\n"
+"PO-Revision-Date: 2021-09-15 09:42+0300\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;"
+"esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;"
+"esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Last-Translator: \n"
+"Language: zh_CN\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+"X-Poedit-SearchPathExcluded-1: vendor\n"
+"X-Poedit-SearchPathExcluded-2: node_modules\n"
+
+#: assets/dist/vendor.js:1
+msgid "entries"
+msgstr ""
+
+#: assets/dist/vendor.js:1
+msgid "values"
+msgstr ""
+
+#: assets/dist/vendor.js:1
+msgid "keys"
+msgstr ""
+
+#: assets/dist/vendor.js:1
+msgid "Wrong index!"
+msgstr ""
+
+#: assets/dist/vendor.js:1
+msgid "Wrong offset!"
+msgstr ""
+
+#: assets/dist/vendor.js:1
+msgid "Wrong length!"
+msgstr ""
+
+#: assets/dist/vendor.js:1
+msgid "-"
+msgstr ""
+
+#: lib/PostType/Artist.php:59
+msgctxt "theme CPT"
+msgid "Artists"
+msgstr ""
+
+#: lib/PostType/Artist.php:193 lib/PostType/Artwork.php:192
+msgctxt "Breadcrumbs"
+msgid "Home"
+msgstr ""
+
+#: lib/PostType/Artist.php:198
+msgctxt "Breadcrumb text"
+msgid "Artists"
+msgstr ""
+
+#: lib/PostType/Artwork.php:57
+msgctxt "theme CPT"
+msgid "Artwork"
+msgstr ""
+
+#: lib/PostType/Artwork.php:197
+msgctxt "Breadcrumb text"
+msgid "Artwork"
+msgstr ""
+
+#: models/archive-artist.php:83
+msgid "Search for artist"
+msgstr ""
+
+#: models/archive-artist.php:84 models/archive-artwork.php:68
+msgid "Search"
+msgstr ""
+
+#: models/archive-artist.php:85 models/archive-artwork.php:69
+msgid "Search query"
+msgstr ""
+
+#: models/archive-artist.php:88 models/archive-artwork.php:72
+msgid "Show All"
+msgstr ""
+
+#: models/archive-artist.php:90 models/archive-artwork.php:74
+msgid "No results"
+msgstr ""
+
+#: models/archive-artist.php:91 models/archive-artwork.php:75
+msgid "Filter"
+msgstr ""
+
+#: models/archive-artist.php:92
+msgid "Categories"
+msgstr ""
+
+#: models/archive-artist.php:181 models/archive-artwork.php:162
+msgid "All"
+msgstr ""
+
+#: models/archive-artist.php:226 models/single-artwork.php:190
+msgid "View artist"
+msgstr ""
+
+#: models/archive-artwork.php:67
+msgid "Search for artwork"
+msgstr ""
+
+#: models/single-artwork.php:73
+msgctxt "theme-frontend"
+msgid "Location"
+msgstr ""
+
+#: models/single-artwork.php:105
+msgctxt "theme-frontend"
+msgid "Artists"
+msgstr ""
+
+#: models/single-artwork.php:106
+msgctxt "theme-frontend"
+msgid "Artist"
+msgstr ""
+
+#: wp-content/mu-plugins/acf-codifier/src/Field/FlexibleContent.php:67
+#: wp-content/mu-plugins/acf-codifier/src/Field/Repeater.php:60
+msgid "Add Row"
+msgstr ""
+
+#: wp-content/mu-plugins/acf-codifier/src/Fields/MultisitePostObject.php:24
+msgid "Multisite Post Object"
+msgstr ""
+
+#: wp-content/mu-plugins/acf-codifier/src/Fields/MultisiteRelationship.php:24
+msgid "Multisite Relationship"
+msgstr ""
+
+#: wp-content/mu-plugins/acf-codifier/src/Fields/MultisiteTaxonomy.php:23
+msgid "Multisite taxonomy"
+msgstr ""
+
+#: wp-content/mu-plugins/acf-codifier/src/Fields/Multitaxonomy.php:23
+msgid "Multitaxonomy"
+msgstr ""
+
+#: wp-content/mu-plugins/acf-codifier/src/Fields/Multitaxonomy.php:516
+#, php-format
+msgctxt "No terms"
+msgid "No %s"
+msgstr ""
+
+#: wp-content/mu-plugins/acf-codifier/src/Fields/PHP.php:18
+msgid "PHP"
+msgstr ""
+
+#: wp-content/mu-plugins/acf-codifier/src/Fields/PHP.php:48
+msgid "Instructions"
+msgstr ""
+
+#: wp-content/mu-plugins/acf-codifier/src/Fields/PHP.php:50
+msgid ""
+"This field can only be used with ACF Codifier. Doesn't do anything if "
+"defined in the admin side."
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "TMS Theme Muumimuseo"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Tampere Multisite Muumimuseo Theme"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Geniem"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://geniem.fi"
+msgstr ""
