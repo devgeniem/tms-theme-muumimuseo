@@ -62,14 +62,19 @@ class Artwork implements PostType {
      * @return void
      */
     public function hooks() : void {
-        add_action( 'init', \Closure::fromCallable( [ $this, 'register' ] ), 15 );
-        add_filter( 'tms/gutenberg/blocks', \Closure::fromCallable( [ $this, 'allowed_blocks' ] ), 10, 1 );
+        add_action( 'init', Closure::fromCallable( [ $this, 'register' ] ), 15 );
+        add_filter( 'tms/gutenberg/blocks', Closure::fromCallable( [ $this, 'allowed_blocks' ] ), 10, 1 );
 
         add_filter(
             'tms/base/breadcrumbs/before_prepare',
-            \Closure::fromCallable( [ $this, 'format_single_breadcrumbs' ] ),
+            Closure::fromCallable( [ $this, 'format_single_breadcrumbs' ] ),
             10,
             3
+        );
+
+        add_filter(
+            'tms/base/breadcrumbs/after_prepare',
+            Closure::fromCallable( [ $this, 'format_archive_breadcrumbs' ] ),
         );
     }
 
@@ -174,6 +179,29 @@ class Artwork implements PostType {
     }
 
     /**
+     * Get archive breadcrumbs base.
+     *
+     * @param false $is_cpt_archive Defines if cpt archive link is active.
+     *
+     * @return array[]
+     */
+    private function get_breadcrumbs_base( $is_cpt_archive = false ) : array {
+        return [
+            'home' => [
+                'title'     => _x( 'Home', 'Breadcrumbs', 'tms-theme-muumimuseo' ),
+                'permalink' => trailingslashit( get_home_url() ),
+                'icon'      => '',
+            ],
+            [
+                'title'     => _x( 'Artwork', 'Breadcrumb text', 'tms-theme-muumimuseo' ),
+                'permalink' => get_post_type_archive_link( self::SLUG ),
+                'icon'      => false,
+                'is_active' => $is_cpt_archive,
+            ],
+        ];
+    }
+
+    /**
      * Format single view breadcrumbs.
      *
      * @param array  $breadcrumbs  Default breadcrumbs.
@@ -187,23 +215,29 @@ class Artwork implements PostType {
             return $breadcrumbs;
         }
 
-        return [
-            'home' => [
-                'title'     => _x( 'Home', 'Breadcrumbs', 'tms-theme-muumimuseo' ),
-                'permalink' => trailingslashit( get_home_url() ),
-                'icon'      => '',
-            ],
-            [
-                'title'     => _x( 'Artwork', 'Breadcrumb text', 'tms-theme-muumimuseo' ),
-                'permalink' => get_post_type_archive_link( self::SLUG ),
-                'icon'      => false,
-            ],
-            [
-                'title'     => get_the_title( $current_id ),
-                'permalink' => false,
-                'icon'      => false,
-                'is_active' => true,
-            ],
+        $breadcrumbs   = $this->get_breadcrumbs_base();
+        $breadcrumbs[] = [
+            'title'     => get_the_title( $current_id ),
+            'permalink' => false,
+            'icon'      => false,
+            'is_active' => true,
         ];
+
+        return $breadcrumbs;
+    }
+
+    /**
+     * Format archive view breadcrumbs.
+     *
+     * @param array $breadcrumbs Default breadcrumbs.
+     *
+     * @return array[]
+     */
+    public function format_archive_breadcrumbs( $breadcrumbs ) {
+        if ( ! is_post_type_archive( self::SLUG ) ) {
+            return $breadcrumbs;
+        }
+
+        return $this->get_breadcrumbs_base( true );
     }
 }
