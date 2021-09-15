@@ -178,10 +178,17 @@ class SingleArtwork extends SingleArtist {
     /**
      * Returns artist link.
      */
-    public function artist_permalink() {
+    public function artist_link() {
         $artists = array_keys( $this->get_artist_map() );
 
-        return ! empty( $artists ) ? get_permalink( $artists[0] ) : false;
+        if ( empty( $artists ) ) {
+            return false;
+        }
+
+        return [
+            'link' => get_permalink( $artists[0] ),
+            'text' => __( 'View artist', 'tms-theme-muumimuseo' ),
+        ];
     }
 
     /**
