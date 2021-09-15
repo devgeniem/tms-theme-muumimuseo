@@ -5,10 +5,11 @@
 
 namespace TMS\Theme\Muumimuseo\PostType;
 
+use Closure;
 use TMS\Theme\Base\Interfaces\PostType;
 
 /**
- * Artist CPT
+ * Artwork CPT
  *
  * @package TMS\Theme\Base\PostType
  */
@@ -52,8 +53,8 @@ class Artwork implements PostType {
      * Constructor
      */
     public function __construct() {
-        $this->url_slug    = _x( 'artist', 'theme CPT slugs', 'tms-theme-muumimuseo' );
-        $this->description = _x( 'Artists', 'theme CPT', 'tms-theme-muumimuseo' );
+        $this->url_slug    = 'artwork';
+        $this->description = _x( 'Artwork', 'theme CPT', 'tms-theme-muumimuseo' );
     }
 
     /**
