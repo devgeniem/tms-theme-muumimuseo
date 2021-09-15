@@ -64,15 +64,15 @@ class ArchiveArtwork extends ArchiveArtist {
     public function strings() : array {
         return [
             'search'     => [
-                'label'             => __( 'Search for artwork', 'tms-theme-base' ),
-                'submit_value'      => __( 'Search', 'tms-theme-base' ),
-                'input_placeholder' => __( 'Search query', 'tms-theme-base' ),
+                'label'             => __( 'Search for artwork', 'tms-theme-muumimuseo' ),
+                'submit_value'      => __( 'Search', 'tms-theme-muumimuseo' ),
+                'input_placeholder' => __( 'Search query', 'tms-theme-muumimuseo' ),
             ],
             'terms'      => [
-                'show_all' => __( 'Show All', 'tms-theme-base' ),
+                'show_all' => __( 'Show All', 'tms-theme-muumimuseo' ),
             ],
-            'no_results' => __( 'No results', 'tms-theme-base' ),
-            'filter'     => __( 'Filter', 'tms-theme-base' ),
+            'no_results' => __( 'No results', 'tms-theme-muumimuseo' ),
+            'filter'     => __( 'Filter', 'tms-theme-muumimuseo' ),
         ];
     }
 
@@ -159,7 +159,7 @@ class ArchiveArtwork extends ArchiveArtist {
         array_unshift(
             $categories,
             [
-                'name'      => __( 'All', 'tms-theme-base' ),
+                'name'      => __( 'All', 'tms-theme-muumimuseo' ),
                 'url'       => $base_url,
                 'is_active' => null === self::get_filter_query_var(),
             ]

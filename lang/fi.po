@@ -1,15 +1,15 @@
-#, fuzzy
 msgid ""
 msgstr ""
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TMS Theme Muumimuseo\n"
 "POT-Creation-Date: 2021-09-15 09:36+0300\n"
-"PO-Revision-Date: 2021-09-02 07:39+0300\n"
+"PO-Revision-Date: 2021-09-15 09:36+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
@@ -54,51 +54,51 @@ msgstr ""
 #: lib/PostType/Artist.php:59
 msgctxt "theme CPT"
 msgid "Artists"
-msgstr ""
+msgstr "Taiteilijat"
 
 #: lib/PostType/Artist.php:193 lib/PostType/Artwork.php:192
 msgctxt "Breadcrumbs"
 msgid "Home"
-msgstr ""
+msgstr "Etusivu"
 
 #: lib/PostType/Artist.php:198
 msgctxt "Breadcrumb text"
 msgid "Artists"
-msgstr ""
+msgstr "Taiteilijat"
 
 #: lib/PostType/Artwork.php:57
 msgctxt "theme CPT"
 msgid "Artwork"
-msgstr ""
+msgstr "Teokset"
 
 #: lib/PostType/Artwork.php:197
 msgctxt "Breadcrumb text"
 msgid "Artwork"
-msgstr ""
+msgstr "Teokset"
 
 #: models/archive-artist.php:83
 msgid "Search for artist"
-msgstr ""
+msgstr "Hae taiteilijaa"
 
 #: models/archive-artist.php:84 models/archive-artwork.php:68
 msgid "Search"
-msgstr ""
+msgstr "Hae"
 
 #: models/archive-artist.php:85 models/archive-artwork.php:69
 msgid "Search query"
-msgstr ""
+msgstr "Kirjoita hakusanat"
 
 #: models/archive-artist.php:88 models/archive-artwork.php:72
 msgid "Show All"
-msgstr ""
+msgstr "Kaikki"
 
 #: models/archive-artist.php:90 models/archive-artwork.php:74
 msgid "No results"
-msgstr ""
+msgstr "Ei hakutuloksia"
 
 #: models/archive-artist.php:91 models/archive-artwork.php:75
 msgid "Filter"
-msgstr ""
+msgstr "Rajaa"
 
 #: models/archive-artist.php:92
 msgid "Categories"
@@ -106,30 +106,30 @@ msgstr ""
 
 #: models/archive-artist.php:181 models/archive-artwork.php:162
 msgid "All"
-msgstr ""
+msgstr "Kaikki"
 
 #: models/archive-artist.php:226 models/single-artwork.php:190
 msgid "View artist"
-msgstr ""
+msgstr "Tutustu taiteilijaan"
 
 #: models/archive-artwork.php:67
 msgid "Search for artwork"
-msgstr ""
+msgstr "Hae teosta"
 
 #: models/single-artwork.php:73
 msgctxt "theme-frontend"
 msgid "Location"
-msgstr ""
+msgstr "Sjiainti"
 
 #: models/single-artwork.php:105
 msgctxt "theme-frontend"
 msgid "Artists"
-msgstr ""
+msgstr "Taiteilijat"
 
 #: models/single-artwork.php:106
 msgctxt "theme-frontend"
 msgid "Artist"
-msgstr ""
+msgstr "Taiteililja"
 
 #: wp-content/mu-plugins/acf-codifier/src/Field/FlexibleContent.php:67
 #: wp-content/mu-plugins/acf-codifier/src/Field/Repeater.php:60

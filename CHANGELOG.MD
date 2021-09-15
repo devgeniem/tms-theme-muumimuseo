@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- TMS-209: Add translations #28
+
+## [1.0.1]
+
+### Fixed
+
+- TMS-199: Fix back-to-top button text wrapping in iOS #22
+
 ## [1.0.0]
 
 ### Added
