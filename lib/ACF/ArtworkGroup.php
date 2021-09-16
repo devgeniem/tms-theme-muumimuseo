@@ -10,6 +10,7 @@ use Geniem\ACF\Group;
 use Geniem\ACF\RuleGroup;
 use Geniem\ACF\Field;
 use TMS\Theme\Base\Logger;
+use TMS\Theme\Base\Settings;
 use TMS\Theme\Muumimuseo\PostType;
 
 /**
@@ -26,6 +27,13 @@ class ArtworkGroup {
         add_action(
             'init',
             \Closure::fromCallable( [ $this, 'register_fields' ] )
+        );
+
+        add_filter(
+            'acf/load_value/name=additional_information',
+            [ $this, 'prefill_additional_info' ],
+            10,
+            2
         );
     }
 
@@ -124,11 +132,6 @@ class ArtworkGroup {
             ->set_layout( 'block' )
             ->set_button_label( $strings['additional_information']['button'] );
 
-        $additional_info_group = ( new Field\Group( $strings['additional_information']['group']['title'] ) )
-            ->set_key( "${key}_additional_information_group" )
-            ->set_name( 'additional_information_group' )
-            ->set_instructions( $strings['additional_information']['group']['instructions'] );
-
         $additional_info_title = ( new Field\Text(
             $strings['additional_information']['item']['label']['title']
         ) )
@@ -143,14 +146,10 @@ class ArtworkGroup {
             ->set_wrapper_width( 50 )
             ->set_instructions( $strings['additional_information']['item']['value']['instructions'] );
 
-        $additional_info_group->add_fields( [
+        $additional_info_repeater->add_fields( [
             $additional_info_title,
             $additional_info_text,
         ] );
-
-        $additional_info_repeater->add_field(
-            $additional_info_group
-        );
 
         $tab->add_fields( [
             $year_field,
@@ -159,6 +158,37 @@ class ArtworkGroup {
         ] );
 
         return $tab;
+    }
+
+    /**
+     * Prefill additional information
+     *
+     * @param mixed $value   Field value.
+     * @param int   $post_id \WP_Post ID.
+     *
+     * @return array|array[]|mixed
+     */
+    public function prefill_additional_info( $value, $post_id ) {
+        if ( ! empty( $value ) || PostType\Artwork::SLUG !== get_post_type( $post_id ) ) {
+            return $value;
+        }
+
+        $titles = Settings::get_setting(
+            'artwork_additional_info',
+            DPT_PLL_ACTIVE
+                ? pll_get_post_language( $post_id )
+                : get_locale()
+        );
+
+        if ( empty( $titles ) ) {
+            return $value;
+        }
+
+        return array_map( function ( $item ) {
+            return [
+                'fg_artwork_fields_additional_information_title' => $item['artwork_additional_info_text'],
+            ];
+        }, $titles );
     }
 }
 

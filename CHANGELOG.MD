@@ -14,6 +14,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [1.0.1]
 
+## Added
+
+- TMS-216: Pre fill artist & artwork additional information from settings
+
 ### Fixed
 
 - TMS-199: Fix back-to-top button text wrapping in iOS #22
