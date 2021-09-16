@@ -3,5 +3,11 @@
         <h1 class="mt-0 mb-0">
             {page_title|s}
         </h1>
+
+        {?page_description}
+            <div class="mt-6 mb-0 keep-vertical-spacing">
+                {page_description|s}
+            </div>
+        {/page_description}
     </div>
 </div>
