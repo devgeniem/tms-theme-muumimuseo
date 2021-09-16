@@ -7,10 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.1.0]
+
 ### Added
 
 - TMS-219: Artwork page template #25
 - TMS-209: Add translations #28
+    - Adds Finnish translations
+    - Adds blank translations for de, ja, ru_RU, sv_SE, zh_CN
 
 ## [1.0.1]
 
