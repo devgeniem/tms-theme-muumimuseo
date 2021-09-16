@@ -86,7 +86,7 @@ class PageArtwork extends ArchiveArtwork {
      * @return string[]
      */
     public function search() : array {
-        $this->search_data        = new stdClass();
+        $this->search_data        = new \stdClass();
         $this->search_data->query = get_query_var( self::SEARCH_QUERY_VAR );
 
         return [
