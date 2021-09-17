@@ -31,18 +31,18 @@ $pill-color: $black;
 $pill-outlined-color: $color-muumi-haalea;
 $pill-outlined-color-hover: $color-muumi-haalea;
 
-$pill-background-active-focus: $primary-dark !default;
-$pill-background-color-hover: opacify($secondary-light, .75) !default;
-$pill-background-color-focus: $secondary-light !default;
-$pill-background-color-active: $dark !default;
-$pill-background-color-focus: $dark !default;
+$pill-background-active-focus: $primary-dark;
+$pill-background-color-hover: opacify($secondary-light, .75);
+$pill-background-color-focus: $secondary-light;
+$pill-background-color-active: $dark;
+$pill-background-color-focus: $dark;
 
-$pill-border-color-focus: $black !default;
+$pill-border-color-focus: $black;
 
 /*--------------------------------------------------------------
 assets/styles/ui-components/_pagination.scss
 --------------------------------------------------------------*/
-$pagination-item-background-color: $color-muumipeikon-valkoinen !default;
+$pagination-item-background-color: $color-muumipeikon-valkoinen;
 
 /*--------------------------------------------------------------
 assets/styles/helpers/_button.scss
