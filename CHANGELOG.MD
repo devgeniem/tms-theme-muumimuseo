@@ -7,7 +7,22 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-213: Setup search results theme colors #29
+
+## [1.1.0]
+
+### Added
+
+- TMS-219: Artwork page template #25
+- TMS-209: Add translations #28
+    - Adds Finnish translations
+    - Adds blank translations for de, ja, ru_RU, sv_SE, zh_CN
+
 ## [1.0.1]
+
+## Added
+
+- TMS-216: Pre fill artist & artwork additional information from settings
 
 ### Fixed
 

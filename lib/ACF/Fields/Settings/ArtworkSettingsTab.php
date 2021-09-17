@@ -39,11 +39,11 @@ class ArtworkSettingsTab extends Tab {
             'title'        => 'Näytä taiteilija arkistossa',
             'instructions' => '',
         ],
-        'artwork_additional_info'      => [
+        'artwork_additional_info'          => [
             'title'        => 'Esitäytetyt lisätiedot',
             'instructions' => '',
         ],
-        'artwork_additional_info_text' => [
+        'artwork_additional_info_text'     => [
             'title'        => 'Lisätiedon teksti',
             'instructions' => '',
         ],

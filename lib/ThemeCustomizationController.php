@@ -109,6 +109,11 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         );
 
         add_filter(
+            'tms/theme/search/search_item',
+            [ $this, 'search_classes' ]
+        );
+
+        add_filter(
             'tms/theme/accent_colors',
             [ $this, 'get_theme_accent_colors' ]
         );
@@ -138,6 +143,19 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         $link['classes'] = 'is-primary';
 
         return $link;
+    }
+
+    /**
+     * Search classes.
+     *
+     * @param array $classes Search view classes.
+     *
+     * @return array
+     */
+    public function search_classes( $classes ) : array {
+        $classes['search_item'] = 'has-background-primary';
+
+        return $classes;
     }
 
     /**

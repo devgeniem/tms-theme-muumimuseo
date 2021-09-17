@@ -101,10 +101,6 @@ class ArtistGroup {
                 'title'        => 'Lisätiedot',
                 'instructions' => '',
                 'button'       => 'Lisää rivi',
-                'group'        => [
-                    'title'        => 'Otsikko',
-                    'instructions' => '',
-                ],
                 'item'         => [
                     'label' => [
                         'title'        => 'Otsikko',
