@@ -7,9 +7,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.2.0] - 2021-09-23
+
 - TMS-213: Setup search results theme colors #29
 
-## [1.1.0]
+## [1.1.0] - 2021-09-16
 
 ### Added
 
@@ -18,7 +20,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
     - Adds Finnish translations
     - Adds blank translations for de, ja, ru_RU, sv_SE, zh_CN
 
-## [1.0.1]
+## [1.0.1] 2021-09-10
 
 ## Added
 
@@ -28,7 +30,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - TMS-199: Fix back-to-top button text wrapping in iOS #22
 
-## [1.0.0]
+## [1.0.0] - 2021-09-02
 
 ### Added
 
