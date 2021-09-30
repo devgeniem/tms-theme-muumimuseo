@@ -5,6 +5,8 @@
 
 namespace TMS\Theme\Muumimuseo;
 
+use WP_post;
+
 /**
  * Class ThemeCustomizationController
  *
@@ -233,6 +235,13 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         return $map[ $key ] ?? null;
     }
 
+    /**
+     * Alter search result item
+     *
+     * @param WP_Post $post_item Instance of \WP_Post.
+     *
+     * @return WP_post
+     */
     public function alter_search_result_item( $post_item ) {
         $post_item->content_type = false;
 
