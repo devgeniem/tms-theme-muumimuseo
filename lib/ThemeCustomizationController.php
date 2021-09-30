@@ -117,6 +117,11 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
             'tms/theme/accent_colors',
             [ $this, 'get_theme_accent_colors' ]
         );
+
+        add_filter(
+            'tms/theme/base/search_result_item',
+            [ $this, 'alter_search_result_item' ]
+        );
     }
 
     /**
@@ -153,7 +158,11 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
      * @return array
      */
     public function search_classes( $classes ) : array {
-        $classes['search_item'] = 'has-background-primary';
+        $classes['search_item']          = 'has-border-1 has-border-divider-invert';
+        $classes['search_item_excerpt']  = 'has-text-small';
+        $classes['search_form']          = 'has-colors-accent-secondary';
+        $classes['search_filter_button'] = 'has-background-primary-invert has-text-accent-secondary-invert';
+        $classes['event_search_section'] = 'has-border-bottom-1 has-border-divider-invert';
 
         return $classes;
     }
@@ -222,5 +231,11 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         $map = $this->get_theme_accent_colors();
 
         return $map[ $key ] ?? null;
+    }
+
+    public function alter_search_result_item( $post_item ) {
+        $post_item->content_type = false;
+
+        return $post_item;
     }
 }
