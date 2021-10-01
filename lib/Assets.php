@@ -23,7 +23,7 @@ class Assets extends \TMS\Theme\Base\Assets implements \TMS\Theme\Base\Interface
 
         add_filter( 'tms/theme/theme_css_path', [ $this, 'theme_asset_path' ], 10, 2 );
         add_filter( 'tms/theme/theme_js_path', [ $this, 'theme_asset_path' ], 10, 2 );
-        add_filter( 'tms/theme/admin_js_path', [ $this, 'theme_asset_path' ], 10, 2 );
+        add_filter( 'tms/theme/admin_js_path', [ $this, 'base_theme_asset_path' ], 10, 2 );
 
         add_filter( 'tms/theme/asset_mod_time', function ( $mod_time, $filename ) {
             if ( false !== strpos( $filename, 'muumimuseo' ) ) {
@@ -58,5 +58,17 @@ class Assets extends \TMS\Theme\Base\Assets implements \TMS\Theme\Base\Interface
      */
     public function theme_asset_path( $full_path, $file ) : string { // // phpcs:ignore
         return get_stylesheet_directory_uri() . '/assets/dist/' . $file;
+    }
+
+    /**
+     * Get base theme asset path.
+     *
+     * @param string $full_path Asset path.
+     * @param string $file      File name.
+     *
+     * @return string
+     */
+    public function base_theme_asset_path( $full_path, $file ) : string { // // phpcs:ignore
+        return get_template_directory_uri() . '/assets/dist/' . $file;
     }
 }
