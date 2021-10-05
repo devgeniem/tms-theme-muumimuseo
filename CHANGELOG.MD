@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- TMS-214: Installed Duet Date Picker JS library
+- TMS-263: `tms/theme/admin_js_path` filter #22
+
 ## [1.2.0] - 2021-09-23
 
 - TMS-213: Setup search results theme colors #29
