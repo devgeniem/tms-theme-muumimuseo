@@ -112,6 +112,11 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
             'tms/theme/accent_colors',
             [ $this, 'get_theme_accent_colors' ]
         );
+
+        add_filter(
+            'tms/acf/block/quote/data',
+            [ $this, 'alter_block_quote_data' ]
+        );
     }
 
     /**
@@ -217,5 +222,21 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         $map = $this->get_theme_accent_colors();
 
         return $map[ $key ] ?? null;
+    }
+
+    public function alter_block_quote_data( $data ) {
+        $data['classes']['container'] = [];
+        $data['classes']['quote']     = [
+            'has-text-primary',
+            'is-size-1',
+            'has-line-height-tight',
+            'is-family-tovescript',
+        ];
+
+        if ( ! empty( $data['is_wide'] ) ) {
+            $data['classes']['container'][] = 'is-align-wide';
+        }
+
+        return $data;
     }
 }
