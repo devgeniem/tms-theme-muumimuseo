@@ -252,7 +252,14 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
 
         return $post_item;
     }
-   
+
+    /**
+     * Alter Quote block data.
+     *
+     * @param array $data Block data.
+     *
+     * @return array
+     */
     public function alter_block_quote_data( $data ) {
         $data['classes']['container'] = [];
         $data['classes']['quote']     = [
