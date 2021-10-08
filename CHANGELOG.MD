@@ -11,6 +11,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - TMS-285: Override focus styles for Image gallery block and Image carousel layout
 
+### Added
+
+- TMS-299: Display artworks year of manufacture
+- TMS-296: Override Quote block styles #37
+
 ## [1.3.0] - 2021-10-06
 
 ### Added
