@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- TMS-296: Override Quote block styles #37
+
 ## [1.3.0] - 2021-10-06
 
 ### Added
