@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+- TMS-285: Override focus styles for Image gallery block and Image carousel layout
+
+## [1.3.0] - 2021-10-06
+
 ### Added
 
 - TMS-214: Installed Duet Date Picker JS library
