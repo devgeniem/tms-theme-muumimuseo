@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
-- TMS-285: Override focus styles for Image gallery block and Image carousel layout
+- TMS-285: Override focus styles for Image gallery block and Image carousel layout #36
 
 ## [1.3.0] - 2021-10-06
 
