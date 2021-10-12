@@ -1,0 +1,13 @@
+/*!*
+ * Copyright (c) 2021. Geniem Oy
+ */
+
+.slick {
+    &-track {
+        .modal-trigger {
+            &:focus {
+                outline: .125rem solid $color-white;
+            }
+        }
+    }
+}
