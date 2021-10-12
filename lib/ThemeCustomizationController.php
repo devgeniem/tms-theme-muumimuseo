@@ -116,13 +116,13 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         );
 
         add_filter(
-            'tms/acf/block/quote/data',
-            [ $this, 'alter_block_quote_data' ]
+            'tms/theme/base/search_result_item',
+            [ $this, 'alter_search_result_item' ]
         );
 
         add_filter(
-            'tms/theme/base/search_result_item',
-            [ $this, 'alter_search_result_item' ]
+            'tms/acf/block/quote/data',
+            [ $this, 'alter_block_quote_data' ]
         );
     }
 
@@ -236,6 +236,19 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
     }
 
     /**
+     * Alter search result item
+     *
+     * @param WP_Post $post_item Instance of \WP_Post.
+     *
+     * @return WP_post
+     */
+    public function alter_search_result_item( $post_item ) {
+        $post_item->content_type = false;
+
+        return $post_item;
+    }
+
+    /**
      * Alter Quote block data.
      *
      * @param array $data Block data.
@@ -256,18 +269,5 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         }
 
         return $data;
-    }
-
-    /**
-     * Alter search result item
-     *
-     * @param WP_Post $post_item Instance of \WP_Post.
-     *
-     * @return WP_post
-     */
-    public function alter_search_result_item( $post_item ) {
-        $post_item->content_type = false;
-
-        return $post_item;
     }
 }
