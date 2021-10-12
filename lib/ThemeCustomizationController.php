@@ -115,7 +115,6 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
             [ $this, 'get_theme_accent_colors' ]
         );
 
-
         add_filter(
             'tms/theme/header/colors',
             [ $this, 'header_colors' ]
