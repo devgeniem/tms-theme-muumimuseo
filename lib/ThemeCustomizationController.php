@@ -5,6 +5,8 @@
 
 namespace TMS\Theme\Muumimuseo;
 
+use WP_post;
+
 /**
  * Class ThemeCustomizationController
  *
@@ -114,6 +116,11 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         );
 
         add_filter(
+            'tms/theme/base/search_result_item',
+            [ $this, 'alter_search_result_item' ]
+        );
+      
+        add_filter(
             'tms/acf/block/quote/data',
             [ $this, 'alter_block_quote_data' ]
         );
@@ -153,7 +160,11 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
      * @return array
      */
     public function search_classes( $classes ) : array {
-        $classes['search_item'] = 'has-background-primary';
+        $classes['search_item']          = 'has-border-1 has-border-divider-invert';
+        $classes['search_item_excerpt']  = 'has-text-small';
+        $classes['search_form']          = 'has-colors-accent-secondary';
+        $classes['search_filter_button'] = 'has-background-primary-invert has-text-accent-secondary-invert';
+        $classes['event_search_section'] = 'has-border-bottom-1 has-border-divider-invert';
 
         return $classes;
     }
@@ -224,6 +235,19 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         return $map[ $key ] ?? null;
     }
 
+    /**
+     * Alter search result item
+     *
+     * @param WP_Post $post_item Instance of \WP_Post.
+     *
+     * @return WP_post
+     */
+    public function alter_search_result_item( $post_item ) {
+        $post_item->content_type = false;
+
+        return $post_item;
+    }
+  
     /**
      * Alter Quote block data.
      *
