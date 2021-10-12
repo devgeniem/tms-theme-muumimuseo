@@ -121,6 +121,11 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         );
 
         add_filter(
+            'tms/theme/header/colors',
+            [ $this, 'header_colors' ]
+        );
+
+        add_filter(
             'tms/theme/base/search_result_item',
             [ $this, 'alter_search_result_item' ]
         );
@@ -238,6 +243,19 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         $map = $this->get_theme_accent_colors();
 
         return $map[ $key ] ?? null;
+    }
+
+    /**
+     * Header colors
+     *
+     * @param array $colors Header colors config.
+     *
+     * @return array
+     */
+    public function header_colors( $colors ) {
+        $colors['nav']['container'] = 'is-family-primary';
+
+        return $colors;
     }
 
     /**
