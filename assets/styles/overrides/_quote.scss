@@ -1,0 +1,17 @@
+/*!
+ *  Copyright (c) 2021. Geniem Oy
+ */
+
+.quote {
+    .single & {
+        padding-right: 0 !important; // sass-lint:disable-line no-important
+        padding-left: 0 !important; // sass-lint:disable-line no-important
+        text-align: center !important; // sass-lint:disable-line no-important
+
+        .quote__content {
+            @include from($desktop) {
+                font-size: 3.7rem !important; // sass-lint:disable-line no-important
+            }
+        }
+    }
+}

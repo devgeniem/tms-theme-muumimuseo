@@ -119,6 +119,11 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
             'tms/theme/base/search_result_item',
             [ $this, 'alter_search_result_item' ]
         );
+      
+        add_filter(
+            'tms/acf/block/quote/data',
+            [ $this, 'alter_block_quote_data' ]
+        );
     }
 
     /**
@@ -241,5 +246,28 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         $post_item->content_type = false;
 
         return $post_item;
+    }
+  
+    /**
+     * Alter Quote block data.
+     *
+     * @param array $data Block data.
+     *
+     * @return array
+     */
+    public function alter_block_quote_data( $data ) {
+        $data['classes']['container'] = [];
+        $data['classes']['quote']     = [
+            'has-text-primary',
+            'is-size-1',
+            'has-line-height-tight',
+            'is-family-tovescript',
+        ];
+
+        if ( ! empty( $data['is_wide'] ) ) {
+            $data['classes']['container'][] = 'is-align-wide';
+        }
+
+        return $data;
     }
 }
