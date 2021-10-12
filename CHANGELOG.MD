@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
+- TMS-312: Subpages block styles
 - TMS-212: Search view #32
 - TMS-299: Display artworks year of manufacture #37
 - TMS-296: Override Quote block styles #37

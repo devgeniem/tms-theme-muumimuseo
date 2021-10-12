@@ -132,7 +132,14 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
 
         add_filter(
             'tms/acf/block/quote/data',
-            [ $this, 'alter_block_quote_data' ]
+            [ $this, 'alter_block_quote_data' ],
+            30
+        );
+
+        add_filter(
+            'tms/acf/block/subpages/data',
+            [ $this, 'alter_block_subpages_data' ],
+            30
         );
     }
 
@@ -290,6 +297,27 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         if ( ! empty( $data['is_wide'] ) ) {
             $data['classes']['container'][] = 'is-align-wide';
         }
+
+        return $data;
+    }
+
+    /**
+     * Alter Subpages block data.
+     *
+     * @param array $data Block data.
+     *
+     * @return array
+     */
+    public function alter_block_subpages_data( $data ) {
+        if ( empty( $data['subpages'] ) ) {
+            return $data;
+        }
+
+        foreach ( $data['subpages'] as $key => $item ) {
+            $data['subpages'][ $key ]['classes'] .= ' has-border-1 has-border-divider-invert';
+        }
+
+        $data['icon_classes'] = 'is-accent-tertiary';
 
         return $data;
     }
