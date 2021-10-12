@@ -1,0 +1,11 @@
+/*!*
+ * Copyright (c) 2021. Geniem Oy
+ */
+
+ .image-gallery {
+    &__image {
+        &:focus {
+            outline: .125rem solid $color-white;
+        }
+    }
+}

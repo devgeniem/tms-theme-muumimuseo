@@ -7,10 +7,22 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+
+### Added
+
+- TMS-212: Search view #32
+- TMS-299: Display artworks year of manufacture #37
+- TMS-296: Override Quote block styles #37
+
+### Changed
+
+- TMS-285: Override focus styles for Image gallery block and Image carousel layout #36
+
 ## [1.3.0] - 2021-10-06
 
 ### Added
 
+- TMS-214: Installed Duet Date Picker JS library
 - TMS-263: `tms/theme/admin_js_path` filter #22
 
 ## [1.2.0] - 2021-09-23

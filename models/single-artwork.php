@@ -55,6 +55,15 @@ class SingleArtwork extends SingleArtist {
             );
         }
 
+        $artwork_year_group = $this->get_info_group_artwork_year();
+
+        if ( ! empty( $artwork_year_group ) ) {
+            array_unshift(
+                $info_rows,
+                $artwork_year_group
+            );
+        }
+
         return $info_rows;
     }
 
@@ -109,6 +118,24 @@ class SingleArtwork extends SingleArtist {
         }
 
         return $group;
+    }
+
+    /**
+     * Get info group artwork year
+     *
+     * @return array[]|string[]|null
+     */
+    public function get_info_group_artwork_year() {
+        $year = get_field( 'year' );
+
+        if ( ! empty( $year ) ) {
+            return $this->format_info_group(
+                __( 'Year of manufacture', 'tms-theme-muumimuseo' ),
+                $year
+            );
+        }
+
+        return null;
     }
 
     /**
