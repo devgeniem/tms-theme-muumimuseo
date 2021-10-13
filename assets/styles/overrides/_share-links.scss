@@ -1,0 +1,20 @@
+/*!
+ *  Copyright (c) 2021. Geniem Oy
+ */
+
+.share-links {
+    a {
+        width: 2.6rem;
+        height: 2.6rem;
+
+        &:hover,
+        &:focus {
+            background-color: darken($accent, 8%) !important; // sass-lint:disable-line no-important
+        }
+
+        .icon {
+            width: 1.1rem;
+            height: 1.1rem;
+        }
+    }
+}
