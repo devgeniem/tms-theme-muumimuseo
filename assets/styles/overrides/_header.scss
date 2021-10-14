@@ -9,6 +9,12 @@
         border-top: 1px solid $color-tumma-harmaa;
         box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
     }
+
+    &__logo-image {
+        @include from($tablet) {
+            max-width: 14rem;
+        }
+    }
 }
 
 .primary-nav {
