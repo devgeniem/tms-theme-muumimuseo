@@ -1,0 +1,17 @@
+/*!
+ *  Copyright (c) 2021. Geniem Oy
+ */
+
+// sass-lint:disable no-important
+
+.link-list {
+    font-family: $family-secondary;
+    color: $color-muumipeikon-valkoinen-invert !important;
+    background-color: $color-muumipeikon-valkoinen !important;
+
+    &__links {
+        a {
+            color: $primary;
+        }
+    }
+}
