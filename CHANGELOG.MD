@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
+- TMS-303: Adjust hero height #43
 - TMS-302: Make the logo bigger #42
 - fix/link-list-block: Fix link list block styles #41
 - TMS-298: Alter header colors #40
