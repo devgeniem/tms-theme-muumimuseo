@@ -16,6 +16,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
+- TMS-302: Make the logo bigger
+- fix/link-list-block: Fix link list block styles #41
 - TMS-298: Alter header colors #40
 - TMS-306: Share links styles #39
 - TMS-285: Override focus styles for Image gallery block and Image carousel layout #36
