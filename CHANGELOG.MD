@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+- TMS-336: Override pill color scheme
+
 ## [1.4.0] - 2021-10-14
 
 ### Added
