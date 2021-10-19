@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+- TMS-335: Image banner block button colour change
+
+## [1.4.0] - 2021-10-14
+
 ### Added
 
 - TMS-312: Subpages block styles #38
