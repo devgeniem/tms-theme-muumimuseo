@@ -9,7 +9,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
-- TMS-335: Image banner block button colour change
+- TMS-336: Override pill color scheme #45
+- TMS-335: Image banner block button colour change #44
 
 ## [1.4.0] - 2021-10-14
 
