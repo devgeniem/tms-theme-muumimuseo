@@ -1,3 +1,4 @@
+// Latin font families
 @font-face {
     font-family: "Bodoni Egyptian Pro";
     font-weight: 700;
@@ -44,4 +45,33 @@
     font-weight: 400;
     font-display: swap;
     src: url("./../fonts/tovescript-regular.otf");
+}
+
+// Japanese font families
+@font-face {
+    font-family: "Source Han Sans";
+    font-weight: 700;
+    font-display: swap;
+    src: url("./../fonts/SourceHanSans-Bold.otf");
+}
+
+@font-face {
+    font-family: "Source Han Sans";
+    font-weight: 500;
+    font-display: swap;
+    src: url("./../fonts/SourceHanSans-Medium.otf");
+}
+
+@font-face {
+    font-family: "Source Han Sans";
+    font-weight: 400;
+    font-display: swap;
+    src: url("./../fonts/SourceHanSans-Regular.otf");
+}
+
+@font-face {
+    font-family: "Source Han Sans";
+    font-weight: 300;
+    font-display: swap;
+    src: url("./../fonts/SourceHanSans-Light.otf");
 }
