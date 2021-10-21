@@ -6,4 +6,3 @@
 import '../../../tms-theme-base/assets/scripts/main.js';
 import '../fonts';
 import '../styles/theme-muumimuseo.scss';
-import './fonts';
