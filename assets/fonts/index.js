@@ -7,11 +7,5 @@ import './gotham-pro-regular.otf';
 import './gotham-pro-medium.otf';
 import './tovescript-regular.otf';
 
-// Japanese font families
-import './SourceHanSans-Bold.otf';
-import './SourceHanSans-Light.otf';
-import './SourceHanSans-Medium.otf';
-import './SourceHanSans-Regular.otf';
-
 // Russian font families
 import './TeslaSlabCy-RegularItalic.otf';
