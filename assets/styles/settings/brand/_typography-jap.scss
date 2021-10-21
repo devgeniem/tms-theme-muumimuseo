@@ -4,7 +4,8 @@ $font-family-japanese: 'Source Han Sans';
 html[lang="ja"] {
     // Basic elements and utility classes
     .is-family-primary,
-    .is-family-secondary {
+    .is-family-secondary,
+    .is-family-tovescript {
         font-family: $font-family-japanese !important; // sass-lint:disable-line no-important
     }
 

@@ -1,0 +1,44 @@
+// Russian typography
+$font-family-russian: 'Tesla Slab Cy';
+
+html[lang="ru-RU"] {
+    .is-family-secondary,
+    .is-family-tovescript {
+        font-family: $font-family-russian !important; // sass-lint:disable-line no-important
+    }
+
+    // Headings
+    h1,
+    .h1,
+    h2,
+    .h2,
+    h3,
+    .h3,
+    h4,
+    .h4,
+    h5,
+    .h5,
+    h6,
+    .h6 {
+        font-family: $font-family-russian;
+        font-weight: 400;
+    }
+
+    // Misc selectors for elements that can't easily use 'is-family-{name}' utility classes
+    // because of exceptions to the tms-theme-base or other reasons
+    .fly-out-nav {
+        &__primary {
+            .navbar-dropdown {
+                > .navbar-item {
+                    font-family: $font-family-russian;
+                }
+            }
+        }
+    }
+
+    .link-list,
+    .gform_wrapper button,
+    .button {
+        font-family: $font-family-russian;
+    }
+}

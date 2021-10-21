@@ -75,3 +75,11 @@
     font-display: swap;
     src: url("./../fonts/SourceHanSans-Light.otf");
 }
+
+// Cyrillic font families
+@font-face {
+    font-family: "Tesla Slab Cy";
+    font-weight: 400;
+    font-display: swap;
+    src: url("./../fonts/TeslaSlabCy-RegularItalic.otf");
+}
