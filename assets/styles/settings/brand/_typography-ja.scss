@@ -1,0 +1,104 @@
+// Japanese typography
+$font-family-japanese: "source-han-sans-cjk-ja", sans-serif;
+
+html[lang="ja"] {
+    // Basic elements and utility classes
+    .is-family-primary,
+    .is-family-secondary,
+    .is-family-tovescript {
+        font-family: $font-family-japanese !important; // sass-lint:disable-line no-important
+    }
+
+    .has-text-weight-light {
+        font-family: $font-family-japanese;
+        font-weight: 300;
+    }
+
+    body,
+    button,
+    input,
+    optgroup,
+    select,
+    textarea,
+    .has-text-weight-normal {
+        font-family: $font-family-japanese;
+        font-weight: 400;
+    }
+
+    .has-text-lead,
+    .has-text-weight-medium {
+        font-family: $font-family-japanese;
+        font-weight: 500;
+    }
+
+    b,
+    strong,
+    .has-text-weight-bold {
+        font-family: $font-family-japanese;
+        font-weight: 700;
+    }
+
+    // Headings
+    h1,
+    .h1,
+    h2,
+    .h2,
+    h3,
+    .h3,
+    h4,
+    .h4 {
+        font-family: $font-family-japanese;
+        font-weight: 700;
+    }
+
+    h5,
+    .h5,
+    h6,
+    .h6 {
+        font-family: $font-family-japanese;
+        font-weight: 500;
+    }
+
+    // Misc selectors for elements that can't easily use 'is-family-{name}' utility classes
+    // because of exceptions to the tms-theme-base or other reason
+    .primary-nav {
+        font-family: $font-family-japanese !important; // sass-lint:disable-line no-important
+
+        > li {
+            > div > a,
+            > a {
+                font-family: $font-family-japanese;
+            }
+        }
+    }
+
+    .fly-out-nav {
+        &__primary {
+            > li {
+                > a,
+                > div > a {
+                    font-family: $font-family-japanese;
+                }
+            }
+
+            .navbar-dropdown {
+                > .navbar-item {
+                    font-family: $font-family-japanese;
+                }
+            }
+        }
+
+        .secondary-menu {
+            .menu-item-secondary__link {
+                font-family: $font-family-japanese !important; // sass-lint:disable-line no-important
+            }
+        }
+    }
+
+    .gform_wrapper button,
+    .button,
+    .link-list,
+    .pill {
+        font-family: $font-family-japanese;
+    }
+}

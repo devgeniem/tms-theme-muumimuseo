@@ -1,16 +1,16 @@
-// Japanese typography
-$font-family-japanese: "source-han-sans-cjk-ja", serif;
+// Korean typography
+$font-family-korean: "source-han-sans-korean", sans-serif;
 
-html[lang="ja"] {
+html[lang="ko-KR"] {
     // Basic elements and utility classes
     .is-family-primary,
     .is-family-secondary,
     .is-family-tovescript {
-        font-family: $font-family-japanese !important; // sass-lint:disable-line no-important
+        font-family: $font-family-korean !important; // sass-lint:disable-line no-important
     }
 
     .has-text-weight-light {
-        font-family: $font-family-japanese;
+        font-family: $font-family-korean;
         font-weight: 300;
     }
 
@@ -21,20 +21,20 @@ html[lang="ja"] {
     select,
     textarea,
     .has-text-weight-normal {
-        font-family: $font-family-japanese;
+        font-family: $font-family-korean;
         font-weight: 400;
     }
 
     .has-text-lead,
     .has-text-weight-medium {
-        font-family: $font-family-japanese;
+        font-family: $font-family-korean;
         font-weight: 500;
     }
 
     b,
     strong,
     .has-text-weight-bold {
-        font-family: $font-family-japanese;
+        font-family: $font-family-korean;
         font-weight: 700;
     }
 
@@ -47,7 +47,7 @@ html[lang="ja"] {
     .h3,
     h4,
     .h4 {
-        font-family: $font-family-japanese;
+        font-family: $font-family-korean;
         font-weight: 700;
     }
 
@@ -55,19 +55,19 @@ html[lang="ja"] {
     .h5,
     h6,
     .h6 {
-        font-family: $font-family-japanese;
+        font-family: $font-family-korean;
         font-weight: 500;
     }
 
     // Misc selectors for elements that can't easily use 'is-family-{name}' utility classes
     // because of exceptions to the tms-theme-base or other reason
     .primary-nav {
-        font-family: $font-family-japanese !important; // sass-lint:disable-line no-important
+        font-family: $font-family-korean !important; // sass-lint:disable-line no-important
 
         > li {
             > div > a,
             > a {
-                font-family: $font-family-japanese;
+                font-family: $font-family-korean;
             }
         }
     }
@@ -77,20 +77,20 @@ html[lang="ja"] {
             > li {
                 > a,
                 > div > a {
-                    font-family: $font-family-japanese;
+                    font-family: $font-family-korean;
                 }
             }
 
             .navbar-dropdown {
                 > .navbar-item {
-                    font-family: $font-family-japanese;
+                    font-family: $font-family-korean;
                 }
             }
         }
 
         .secondary-menu {
             .menu-item-secondary__link {
-                font-family: $font-family-japanese !important; // sass-lint:disable-line no-important
+                font-family: $font-family-korean !important; // sass-lint:disable-line no-important
             }
         }
     }
@@ -99,6 +99,6 @@ html[lang="ja"] {
     .button,
     .link-list,
     .pill {
-        font-family: $font-family-japanese;
+        font-family: $font-family-korean;
     }
 }
