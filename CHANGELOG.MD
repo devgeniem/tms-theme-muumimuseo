@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.6.0] - 2021-10-25
+
 ### Changed
 
 - TMS-348: Make post type url slugs translatable with Polylang #46
