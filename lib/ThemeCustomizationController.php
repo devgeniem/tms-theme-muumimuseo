@@ -106,6 +106,11 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         );
 
         add_filter(
+            'tms/theme/page_events_search/item_classes',
+            \Closure::fromCallable( [ $this, 'event_item_classes' ] )
+        );
+
+        add_filter(
             'tms/theme/event/group_title',
             \Closure::fromCallable( [ $this, 'event_info_group_title_classes' ] )
         );

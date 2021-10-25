@@ -7,11 +7,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.6.0] - 2021-10-25
+
 ### Changed
 
 - TMS-336: Override pill color scheme
 - TMS-335: Image banner block button colour change
-- TMS-348: Make post type url slugs translatable with Polylang
+- TMS-348: Make post type url slugs translatable with Polylang #46
 
 ## [1.5.0] - 2021-10-20
 
