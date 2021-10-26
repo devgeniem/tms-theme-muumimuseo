@@ -1,18 +1,16 @@
 .layout-badge {
     position: absolute;
+    top: 0;
     z-index: 1;
     overflow: hidden;
     width: 100px;
     border-radius: 50%;
+    transform: translateY(-40%);
 
     @include from($desktop) {
-        top: 15%;
+        top: 64px;
         width: 125px;
-    }
-
-    @include from(1600px) {
-        top: 15%;
-        width: 225px;
+        transform: translateY(0);
     }
 
     &::after {
@@ -35,151 +33,48 @@
         @include from($desktop) {
             font-size: 2rem;
         }
-
-        @include from(1600px) {
-            font-size: 3.671rem;
-        }
     }
-}
 
-.call-to-action {
-    .layout-badge {
-        top: 0;
+    &.align-before {
+        left: 0;
 
         @include from($desktop) {
-            top: -2.5rem;
-        }
-
-        &.align-before {
-            @include from($desktop) {
-                left: -2.75rem;
-            }
-
-            @include from(1600px) {
-                left: -7.5rem;
-            }
-        }
-
-        &.align-after {
-            @include from($desktop) {
-                right: -2.75rem;
-            }
-
-            @include from(1600px) {
-                right: -7.5rem;
-            }
+            left: -85px;
         }
     }
-}
 
-.image,
-.image-block,
-.video {
-    .layout-badge {
-        @include until($desktop) {
-            top: .5rem;
-            right: .5rem;
-        }
-
-        &.align-before {
-            @include from($desktop) {
-                right: unset;
-                left: -1.75rem;
-            }
-
-            @include from(1600px) {
-                left: -6.67rem;
-            }
-        }
-
-        &.align-after {
-            @include from($desktop) {
-                right: -1.75rem;
-            }
-
-            @include from(1600px) {
-                right: -6.67rem;
-            }
-        }
-    }
-}
-
-.video {
-    .layout-badge {
-        @include until($desktop) {
-            top: unset;
-            bottom: .5rem;
-        }
-    }
-}
-
-.link-list {
-    .layout-badge {
-        top: -3rem;
+    &.align-after {
+        right: 0;
 
         @include from($desktop) {
-            top: -3.5rem;
-        }
-
-        &.align-before {
-            left: -1.35rem;
-
-            @include from($desktop) {
-                left: -4.5rem;
-            }
-
-            @include from(1600px) {
-                left: -11rem;
-            }
-        }
-
-        &.align-after {
-            right: -1.35rem;
-
-            @include from($desktop) {
-                right: -4.5rem;
-            }
-
-            @include from(1600px) {
-                right: -11rem;
-            }
+            right: -85px;
         }
     }
 }
 
 .muumimuseo-hero {
     .layout-badge {
-        top: -4rem;
-
-        @include from($desktop) {
-            top: -3.25rem;
-        }
-
-        @include from(1600px) {
-            top: 5%;
-        }
-
         &.align-before {
-            left: 1.25rem;
-
             @include from($desktop) {
-                left: -1.75rem;
+                left: 0;
+                transform: translateX(-35%);
             }
 
-            @include from(1600px) {
-                left: -6.67rem;
+            @include from(1550px) {
+                left: -85px;
+                transform: translateX(0);
             }
         }
 
         &.align-after {
-            right: 1.25rem;
-
             @include from($desktop) {
-                right: -1.75rem;
+                right: 0;
+                transform: translateX(35%);
             }
 
-            @include from(1600px) {
-                right: -6.67rem;
+            @include from(1550px) {
+                right: -85px;
+                transform: translateX(0);
             }
         }
     }
@@ -187,33 +82,17 @@
 
 .image-banner {
     .layout-badge {
-        top: -3.25rem;
-
-        @include from(1600px) {
-            top: 5%;
-        }
-
         &.align-before {
-            left: 0;
-
             @include from($desktop) {
-                left: -1.75rem;
-            }
-
-            @include from(1600px) {
-                left: -6.67rem;
+                left: 0;
+                transform: translateX(-35%);
             }
         }
 
         &.align-after {
-            right: 0;
-
             @include from($desktop) {
-                right: -1.75rem;
-            }
-
-            @include from(1600px) {
-                right: -6.67rem;
+                right: 0;
+                transform: translateX(35%);
             }
         }
     }
