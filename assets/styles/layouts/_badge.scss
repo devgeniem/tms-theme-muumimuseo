@@ -57,7 +57,12 @@
         &.align-before {
             @include from($desktop) {
                 left: 0;
-                transform: translateX(-35%);
+                transform: translateX(-55%);
+            }
+
+            @include from($widescreen) {
+                left: -$gap;
+                transform: translateX(-45%);
             }
 
             @include from(1550px) {
@@ -69,7 +74,12 @@
         &.align-after {
             @include from($desktop) {
                 right: 0;
-                transform: translateX(35%);
+                transform: translateX(55%);
+            }
+
+            @include from($widescreen) {
+                right: -$gap;
+                transform: translateX(45%);
             }
 
             @include from(1550px) {
