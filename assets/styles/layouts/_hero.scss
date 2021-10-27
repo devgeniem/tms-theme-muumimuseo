@@ -5,8 +5,13 @@
 
     &__inner {
         @include from($desktop) {
-            margin-bottom: -4.75rem;
+            max-width: 85%;
+            margin: 0 auto -4.75rem;
             transform: translateY(-4.75rem);
+        }
+
+        @include from(1550px) {
+            max-width: 100%;
         }
     }
 

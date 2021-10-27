@@ -9,7 +9,7 @@
         <div class="container">
             <div class="columns has-background-primary-invert">
                 <div class="column">
-                    <div class="muumimuseo-hero__box is-center p-6 has-text-centered">
+                    <div class="muumimuseo-hero__box is-center p-6 pr-8-desktop pl-8-desktop has-text-centered">
                         {?title}
                             <h1 class="h1 mt-0 mr-auto mb-5 ml-auto no-hyphens has-text-secondary-invert">
                                 {title|s}
