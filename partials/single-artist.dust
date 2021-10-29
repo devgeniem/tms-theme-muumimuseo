@@ -44,8 +44,7 @@
                                     {/share_links}
                                 </div>
 
-                                
-                                 <div class="column is-12-desktop entry__content keep-vertical-spacing is-family-sans-serif">
+                                 <div class="column is-10-desktop entry__content keep-vertical-spacing is-family-sans-serif">
                                         {?content.post_excerpt}
                                             <p>
                                                 {content.post_excerpt|s}
