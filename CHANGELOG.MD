@@ -7,8 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-### Changed
+### Added
+- TMS-357 Single Artist: New ACF field fort short desc.
 
+### Changed
+- TMS-357 Single Artist: Layout changes.
+- TMS-305: Badge positioning #48
 - fix/events-calendar-default-image: Fix events calendar styles
 
 ## [1.6.0] - 2021-10-25
