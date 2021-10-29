@@ -171,6 +171,7 @@ class ArtistGroup {
             $additional_info_repeater,
         ] );
 
+        
         return $tab;
     }
 
