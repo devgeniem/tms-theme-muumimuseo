@@ -13,27 +13,18 @@
                                 </h1>
                             </header>
 
-                            <article class="entry columns is-desktop">
-                                <div class="column is-6-desktop">
-                                    <div class="entry__content keep-vertical-spacing is-family-sans-serif">
-                                        {?content.post_excerpt}
-                                            <p>
-                                                {content.post_excerpt|s}
-                                            </p>
-                                        {/content.post_excerpt}
-
-                                        {@content /}
-                                    </div>
-
-                                    {?content.fields.additional_information}
-                                        {>"shared/additional-info-list" list_class="mt-6" data=content.fields.additional_information /}
-                                    {/content.fields.additional_information}
+                            <article class="entry columns is-desktop is-flex-wrap-wrap">
+                                
+                                 <div class="column is-6-desktop entry__content keep-vertical-spacing is-family-sans-serif">
                                     {?content.fields.short_description}
                                         <p>
                                             {content.fields.short_description|s}
                                         </p>
                                      {/content.fields.short_description}
-                                </div>
+                                    {?content.fields.additional_information}
+                                        {>"shared/additional-info-list" list_class="mt-6" data=content.fields.additional_information /}
+                                    {/content.fields.additional_information}
+                                 </div>
 
                                 <div class="column is-4-desktop is-offset-2-desktop">
                                     {?content.image}
@@ -52,6 +43,17 @@
                                         </div>
                                     {/share_links}
                                 </div>
+
+                                
+                                 <div class="column is-12-desktop entry__content keep-vertical-spacing is-family-sans-serif">
+                                        {?content.post_excerpt}
+                                            <p>
+                                                {content.post_excerpt|s}
+                                            </p>
+                                        {/content.post_excerpt}
+
+                                        {@content /}
+                                    </div>
 
                             </article>
                         </div>
