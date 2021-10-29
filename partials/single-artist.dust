@@ -28,6 +28,11 @@
                                     {?content.fields.additional_information}
                                         {>"shared/additional-info-list" list_class="mt-6" data=content.fields.additional_information /}
                                     {/content.fields.additional_information}
+                                    {?content.fields.short_description}
+                                        <p>
+                                            {content.fields.short_description|s}
+                                        </p>
+                                     {/content.fields.short_description}
                                 </div>
 
                                 <div class="column is-4-desktop is-offset-2-desktop">
@@ -47,6 +52,7 @@
                                         </div>
                                     {/share_links}
                                 </div>
+
                             </article>
                         </div>
                     </div>

@@ -93,7 +93,7 @@ class ArtistGroup {
                 'title'        => 'Sukunimi',
                 'instructions' => '',
             ],
-            'short_description' => [
+            'short_description'      => [
                 'title'        => 'Lyhyt kuvaus',
                 'instructions' => '',
             ],
@@ -135,7 +135,7 @@ class ArtistGroup {
             ->set_wrapper_width( 50 )
             ->set_instructions( $strings['last_name']['instructions'] );
 
-        $short_description_field = ( new Field\Text( $strings['short_description']['title'] ) )
+        $short_description_field = ( new Field\Textarea( $strings['short_description']['title'] ) )
             ->set_key( "${key}_short_description" )
             ->set_name( 'short_description' )
             ->redipress_include_search()
