@@ -15,9 +15,9 @@
 
                             <article class="entry columns is-desktop is-flex-wrap-wrap">
                                 
-                                 <div class="column is-6-desktop entry__content keep-vertical-spacing is-family-sans-serif">
+                                 <div class="column is-6-desktop entry__content keep-vertical-spacing ">
                                     {?content.fields.short_description}
-                                        <p>
+                                        <p class="is-family-sans-serif">
                                             {content.fields.short_description|s}
                                         </p>
                                      {/content.fields.short_description}
