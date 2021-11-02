@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.7.1] – 0201-11-01
+
+### Changed 
+- TMS-358 Single Artist: Table's fonts fixed.
+
+## [1.7.0] - 2021-10-25
+
 ### Added
 - TMS-357 Single Artist: New ACF field fort short desc.
 
