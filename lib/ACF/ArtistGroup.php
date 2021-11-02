@@ -93,6 +93,10 @@ class ArtistGroup {
                 'title'        => 'Sukunimi',
                 'instructions' => '',
             ],
+            'short_description'      => [
+                'title'        => 'Lyhyt kuvaus',
+                'instructions' => '',
+            ],
             'artwork'                => [
                 'title'        => 'Teokset',
                 'instructions' => '',
@@ -131,6 +135,13 @@ class ArtistGroup {
             ->set_wrapper_width( 50 )
             ->set_instructions( $strings['last_name']['instructions'] );
 
+        $short_description_field = ( new Field\Textarea( $strings['short_description']['title'] ) )
+            ->set_key( "${key}_short_description" )
+            ->set_name( 'short_description' )
+            ->redipress_include_search()
+            ->set_wrapper_width( 50 )
+            ->set_instructions( $strings['short_description']['instructions'] );
+
         $additional_info_repeater = ( new Field\Repeater(
             $strings['additional_information']['title']
         ) )
@@ -156,6 +167,7 @@ class ArtistGroup {
         $tab->add_fields( [
             $first_name_field,
             $last_name_field,
+            $short_description_field,
             $additional_info_repeater,
         ] );
 
