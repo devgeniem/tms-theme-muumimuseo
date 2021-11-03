@@ -4,6 +4,15 @@
 
 .grid {
     &__item {
+
+        @include from($tablet) {
+            &__details p { 
+                // Addition lines for 2 line or multiline ellipsis
+                // https://caniuse.com/css-line-clamp
+                // Other related properties found in base theme
+                -webkit-line-clamp: 8;
+            }
+        }
         &.has-colors-secondary {
             color: $color-black !important;
             background-color: $color-muumi-haalea !important;
