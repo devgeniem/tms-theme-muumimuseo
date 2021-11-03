@@ -1,14 +1,15 @@
-/*!
+/**
  *  Copyright (c) 2021. Geniem Oy
  */
+/* stylelint-disable declaration-no-important */
 
 .events {
     &__item-inner {
-        a.button.is-primary { // sass-lint:disable-line no-qualifying-elements force-element-nesting
+        a.button.is-primary {
             &:hover,
             &:focus {
-                color: darken($primary, 5%) !important; // sass-lint:disable-line no-important
-                border-color: darken($primary, 5%) !important; // sass-lint:disable-line no-important
+                border-color: darken($primary, 5%) !important;
+                color: darken($primary, 5%) !important;
             }
         }
     }

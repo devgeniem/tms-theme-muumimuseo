@@ -1,6 +1,7 @@
-/*!*
+/**
  * Copyright (c) 2021. Geniem Oy
  */
+/* stylelint-disable declaration-no-important */
 
 .sibling-navigation {
     &__item {
@@ -8,14 +9,15 @@
         background: $color-white !important;
         color: $color-black !important;
 
-        &:hover {
+        &:hover,
+        &:focus {
             background: $color-muumi-haalea !important;
             text-decoration: none;
         }
 
         &.is-current {
-            background: $color-white !important;
             border-color: $primary-light !important;
+            background: $color-white !important;
             color: $primary-light !important;
         }
     }

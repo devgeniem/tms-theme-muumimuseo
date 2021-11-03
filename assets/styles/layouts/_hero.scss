@@ -1,3 +1,4 @@
+/* stylelint-disable declaration-no-important */
 .muumimuseo-hero {
     &__background-container {
         @include hero-height;
@@ -19,7 +20,7 @@
         max-width: 20ch;
 
         @include from($desktop) {
-            font-size: 3.38rem !important; // sass-lint:disable-line no-important
+            font-size: 3.38rem !important;
         }
     }
 }

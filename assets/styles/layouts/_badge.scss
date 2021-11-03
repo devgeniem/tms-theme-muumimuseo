@@ -1,11 +1,11 @@
 .layout-badge {
     position: absolute;
-    top: 0;
     z-index: 1;
-    overflow: hidden;
+    top: 0;
     width: 100px;
-    border-radius: 50%;
+    overflow: hidden;
     transform: translateY(-40%);
+    border-radius: 50%;
 
     @include from($desktop) {
         top: 64px;
@@ -26,9 +26,9 @@
     }
 
     &__text {
+        margin: .5ch;
         font-size: 1.75rem;
         line-height: .75;
-        margin: .5ch;
 
         @include from($desktop) {
             font-size: 2rem;
