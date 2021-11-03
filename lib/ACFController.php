@@ -24,14 +24,14 @@ class ACFController extends Base\ACFController implements Base\Interfaces\Contro
         return __DIR__ . '/ACF';
     }
 
-    // filter for overwriting grid field's properties
     public function hooks() : void{
-        add_filter('tms/acf/grid_fields',Closure::fromCallable( [ $this, 'modify_acf'] ));
+        // filter for overwriting grid field's properties
+        add_filter( 'tms/acf/grid_fields', Closure::fromCallable( [ $this, 'modify_acf'] ) );
     }
 
     private function modify_acf($fields){
         $description = $fields->sub_fields['description'];
-        if(empty($description) || !$description instanceof Textarea){
+        if( empty($description) || !$description instanceof Textarea ){
             return $fields;
         }
         $description->set_maxlength( 300 );
