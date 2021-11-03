@@ -1,7 +1,7 @@
-/*!*
+/**
  * Copyright (c) 2021. Geniem Oy
  */
-
+/* stylelint-disable declaration-no-important */
 
 .icon-links {
     &.section {
@@ -18,15 +18,15 @@
 
     .button {
         &.is-primary {
-            background: $primary !important;
             border-color: $primary !important;
+            background: $primary !important;
             color: $primary-invert !important;
 
             &:hover,
             &:active,
             &:focus {
-                background: $primary-invert !important;
                 border-color: $primary !important;
+                background: $primary-invert !important;
                 color: $primary !important;
             }
         }

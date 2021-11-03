@@ -1,8 +1,7 @@
-/*!
+/**
  *  Copyright (c) 2021. Geniem Oy
  */
-
-// sass-lint:disable no-important no-color-literals
+/* stylelint-disable declaration-no-important */
 
 .site-header {
     &__nav {
@@ -27,7 +26,6 @@
 
     .navbar-dropdown {
         background-color: $black !important;
-
     }
 
     .navbar-link,

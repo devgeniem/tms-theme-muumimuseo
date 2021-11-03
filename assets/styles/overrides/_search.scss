@@ -1,7 +1,8 @@
 .search-item {
     &__title {
         a {
-            &:not(:hover) {
+            &:not(:hover),
+            &:not(:focus) {
                 text-decoration: none;
             }
         }
@@ -9,7 +10,8 @@
 
     .breadcrumbs__nav {
         a {
-            &:hover {
+            &:hover,
+            &:focus {
                 color: $search-item-hover;
             }
         }

@@ -1,6 +1,7 @@
-/*!
+/**
  *  Copyright (c) 2021. Geniem Oy
  */
+/* stylelint-disable declaration-no-important */
 
 .share-links {
     a {
@@ -9,7 +10,7 @@
 
         &:hover,
         &:focus {
-            background-color: darken($accent, 8%) !important; // sass-lint:disable-line no-important
+            background-color: darken($accent, 8%) !important;
         }
 
         .icon {

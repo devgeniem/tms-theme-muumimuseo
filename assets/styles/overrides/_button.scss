@@ -1,18 +1,19 @@
-/*!*
+/**
  * Copyright (c) 2021. Geniem Oy
  */
+/* stylelint-disable declaration-no-important */
 
 .button {
     &.is-primary,
     &.is-secondary {
-        background: $primary !important;
         border-color: $primary !important;
+        background: $primary !important;
         color: $color-white !important;
 
         &.is-hovered,
         &:hover {
-            background: $color-white !important;
             border-color: $color-white !important;
+            background: $color-white !important;
             color: $primary !important;
         }
 
@@ -20,8 +21,8 @@
         &:active,
         &.is-focused,
         &:focus {
-            background: $color-white !important;
             border-color: $color-white !important;
+            background: $color-white !important;
             color: $color-black !important;
 
             .icon {
@@ -31,7 +32,7 @@
 
         &.is-focused,
         &:focus {
-            outline: 0.125rem dashed $primary;
+            outline: .125rem dashed $primary;
         }
 
         &.is-borderless {
@@ -43,8 +44,8 @@
             &:focus,
             &.is-active,
             &:active {
-                background: $color-black !important;
                 border-color: transparent !important;
+                background: $color-black !important;
                 color: $color-white !important;
 
                 .icon {
@@ -70,8 +71,8 @@
             &:focus,
             &.is-hovered,
             &:hover {
-                background: transparent !important;
                 border-color: $color-white !important;
+                background: transparent !important;
                 color: $color-white !important;
 
                 .icon {
@@ -81,7 +82,7 @@
 
             &.is-focused,
             &:focus {
-                outline: 0.125rem dashed $primary;
+                outline: .125rem dashed $primary;
             }
         }
 
@@ -90,8 +91,8 @@
          */
         &-invert,
         &.is-inverted {
-            background: $color-black !important;
             border-color: $color-white !important;
+            background: $color-black !important;
             color: $color-white !important;
 
             .icon {
@@ -100,8 +101,8 @@
 
             &.is-hovered,
             &:hover {
-                background: $color-black !important;
                 border-color: $primary-light !important;
+                background: $color-black !important;
                 color: $primary-light !important;
 
                 .icon {
@@ -113,8 +114,8 @@
             &:active,
             &.is-focused,
             &:focus {
-                background: $color-black !important;
                 border-color: $primary-light !important;
+                background: $color-black !important;
                 color: $color-white !important;
 
                 .icon {
@@ -124,7 +125,7 @@
 
             &.is-focused,
             &:focus {
-                outline: 0.125rem dashed $primary-light;
+                outline: .125rem dashed $primary-light;
 
                 .icon {
                     fill: $color-white !important;
@@ -132,8 +133,8 @@
             }
 
             &.is-borderless {
-                color: $color-white !important;
                 background: $color-black !important;
+                color: $color-white !important;
 
                 .icon {
                     fill: $color-white !important;
@@ -145,8 +146,8 @@
                 &:focus,
                 &.is-active,
                 &:active {
-                    background: $color-black !important;
                     border-color: transparent !important;
+                    background: $color-black !important;
                     color: $color-white !important;
 
                     .icon {
@@ -165,9 +166,9 @@
             }
 
             &.is-outlined {
+                border-color: $color-white !important;
                 background: transparent !important;
                 color: $color-white !important;
-                border-color: $color-white !important;
 
                 .icon {
                     fill: $color-white !important;
@@ -179,8 +180,8 @@
                 &:focus,
                 &.is-hovered,
                 &:hover {
-                    background: transparent !important;
                     border-color: $primary-light !important;
+                    background: transparent !important;
                     color: $primary-light !important;
 
                     .icon {
@@ -190,7 +191,7 @@
 
                 &.is-focused,
                 &:focus {
-                    outline: 0.125rem dashed $primary-light;
+                    outline: .125rem dashed $primary-light;
 
                     .icon {
                         fill: $primary-light !important;
