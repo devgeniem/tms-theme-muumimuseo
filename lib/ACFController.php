@@ -40,11 +40,20 @@ class ACFController extends Base\ACFController implements Base\Interfaces\Contro
      */
     private function modify_acf( $fields ){
         $description = $fields->sub_fields['description'];
-        if( empty($description) || !$description instanceof Textarea ){
-            return $fields;
+        if( ! empty($description) && is_object($description) ){
+            
+            if( method_exists( $description, 'set_maxlength' )){
+                $description->set_maxlength( 300 );
+            }
+
+            if(method_exists( $description, 'set_new_lines' )){
+                $description->set_new_lines('br');
+            }
+
+            $fields->sub_fields['description'] = $description;
+
         }
-        $description->set_maxlength( 300 );
-        $fields->sub_fields['description'] = $description;
+        
         return $fields;
     }
 }
