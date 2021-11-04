@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+- TMS-360: More characters are shown in grid field's content. 
+
 ## [1.7.1] – 0201-11-01
 
 ### Changed 
