@@ -322,7 +322,7 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
             $data['subpages'][ $key ]['classes'] .= ' has-border-1 has-border-divider-invert';
         }
 
-        $data['icon_classes'] = 'is-accent-tertiary';
+        $data['icon_classes'] = 'is-primary';
 
         return $data;
     }
