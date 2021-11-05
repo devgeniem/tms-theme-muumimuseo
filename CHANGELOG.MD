@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.8.1] – 2021-11-05
+
 ### Changed
 
 - TMS-372: Fix secondary accent color #60
