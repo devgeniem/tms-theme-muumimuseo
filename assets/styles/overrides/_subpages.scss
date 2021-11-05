@@ -1,0 +1,17 @@
+/*!
+ *  Copyright (c) 2021. Geniem Oy
+ */
+
+.subpages {
+    .post-link {
+        border-color: $white !important; // sass-lint:disable-line no-important
+
+        &.has-background-image {
+            border: 0;
+
+            .overlay--dark-gradient {
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .9) 100%);
+            }
+        }
+    }
+}
