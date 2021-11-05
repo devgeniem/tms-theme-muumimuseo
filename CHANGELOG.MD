@@ -9,7 +9,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
-- TMS-372: Fix secondary accent color
+- TMS-372: Fix secondary accent color #60
+- TMS-318-1: Avoid heading level increase #61
 
 ## [1.8.0] – 2021-11-05
 
