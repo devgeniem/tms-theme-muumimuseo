@@ -49,7 +49,6 @@ class SingleArtist extends BaseModel {
         }
 
         return array_map( function ( $item ) {
-            $item = Query::get_acf_post( $item );
             $types = wp_get_post_terms( $item->ID, ArtworkType::SLUG );
 
             if ( ! empty( $types ) ) {
