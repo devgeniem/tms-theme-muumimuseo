@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+- TMS-373: Fix subpages styles
+
 ## [1.8.0] – 2021-11-05
 
 ### Changed
