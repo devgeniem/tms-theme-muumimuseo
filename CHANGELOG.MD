@@ -7,13 +7,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-## [1.8.0] – 20201-11-05
+## [1.8.0] – 2021-11-05
 
 ### Changed
 
 - TMS-371: Remove search filters #57
 
-## [1.7.0] – 20201-11-04
+## [1.7.0] – 2021-11-04
 
 ### Added
 
