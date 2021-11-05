@@ -27,9 +27,9 @@ class ACFController extends Base\ACFController implements Base\Interfaces\Contro
     /**
      * Filters for overwriting grid field's properties
      *
-     * @return void
+     * @return mixed
      */
-    public function hooks() : void {
+    public function mm_hooks() : void {
         add_filter( 'tms/acf/grid_fields', Closure::fromCallable( [ $this, 'modify_acf' ] ) );
     }
 
