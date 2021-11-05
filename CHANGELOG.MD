@@ -8,18 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 ### Added
+
 - TMS-360: More characters are shown in grid field's content. 
-
-### Changed
-
-## [1.7.1] – 0201-11-01
-
-### Changed 
-- TMS-358 Single Artist: Table's fonts fixed.
-
-## [1.7.0] – 20201-11-04
-
-- TMS-375: Fix language navigation styles
 
 ## [1.8.1] – 2021-11-05
 
@@ -35,12 +25,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - TMS-371: Remove search filters #57
 
+## [1.7.1] – 0201-11-01
+
+### Changed
+
+- TMS-358 Single Artist: Table's fonts fixed.
+
 ## [1.7.0] – 2021-11-04
->>>>>>> TMS-375
+
+- TMS-375: Fix language navigation styles
 
 ### Added
 
-- TMS-357 Single Artist: New ACF field fort short desc.
+- TMS-357 Single Artist: New ACF field font short desc.
 
 ### Changed
 
