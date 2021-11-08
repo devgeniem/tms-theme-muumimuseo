@@ -3,6 +3,7 @@
  */
 
 .notice-banner {
+    &__text,
     &__link {
         font-family: $family-secondary;
     }
