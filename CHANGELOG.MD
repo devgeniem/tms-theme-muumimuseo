@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - TMS-360: More characters are shown in grid field's content. 
 
+### Changed
+
+- TMS-376: Fix layout fonts
+
 ## [1.8.1] – 2021-11-05
 
 ### Changed

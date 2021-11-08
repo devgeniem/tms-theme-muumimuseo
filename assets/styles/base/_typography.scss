@@ -1,0 +1,9 @@
+// The sites typography styles
+
+.entry {
+    &__content {
+        > p {
+            font-family: $family-secondary;
+        }
+    }
+}
