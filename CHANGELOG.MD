@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
-- TMS-374: Fix event list styles
+- TMS-374: Fix event list styles #65
 
 ## [1.8.1] – 2021-11-05
 
