@@ -36,9 +36,6 @@ class ThemeController extends \TMS\Theme\Base\ThemeController {
 
             if ( $instance instanceof Interfaces\Controller ) {
                 $instance->hooks();
-                if ( method_exists( $instance, 'mm_hooks' ) ) {
-                    $instance->mm_hooks();
-                }
             }
         } );
 
