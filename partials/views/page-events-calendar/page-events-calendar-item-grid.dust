@@ -1,0 +1,57 @@
+<div class="events__item has-height-100 {item_classes.grid.item|s}">
+    {?image}
+        <div class="image is-relative is-4by3" aria-hidden="true">
+            <a href="{url}" aria-hidden="true" tabindex="-1" class="is-absolute has-top-0 has-right-0 has-bottom-0 has-left-0">
+                <img src="{image}" alt="" class="objectfit-image">
+            </a>
+
+            {?primary_keyword}
+                <span class="pill is-absolute has-bottom-2 has-left-2 is-bordered is-secondary">
+                    {primary_keyword|s}
+                </span>
+            {/primary_keyword}
+
+        </div>
+    {/image}
+
+    <div class="events__item-inner pt-5 pr-6 pb-6 pl-6 {item_classes.grid.item_inner|s}">
+        <h3 class="h5 mt-0 mb-5">
+            <a href="{url}" class="has-text-black">
+                {name|s}
+            </a>
+        </h3>
+
+        <p class="has-text-small">
+            {short_description|s}
+        </p>
+
+        <div class="is-flex is-align-items-center mt-2 mb-2">
+            <span class="is-sr-only"> {Strings.s.event.date|s} </span>
+            <span class="is-flex">
+                {>"ui/icon" icon="date" class="icon--large is-primary mr-2 {item_classes.grid.icon|s}" /}
+            </span>
+
+            {date|s}
+        </div>
+
+        <div class="is-flex is-align-items-center mt-2 mb-2">
+            <span class="is-sr-only">{Strings.s.event.time|s}</span>
+            <span class="is-flex">
+                {>"ui/icon" icon="time" class="icon--large is-primary mr-2 {item_classes.grid.icon|s}" /}
+            </span>
+
+            {time|s}
+        </div>
+
+        {?location.name}
+            <div class="is-flex is-align-items-center mt-2 mb-2">
+                <span class="is-sr-only">"{Strings.s.event.location|s}</span>
+                <span class="is-flex">
+                    {>"ui/icon" icon=location_icon class="icon--large is-primary mr-2 {item_classes.grid.icon|s}" /}
+                </span>
+
+                {location.name|s}
+            </div>
+        {/location.name}
+    </div>
+</div>
