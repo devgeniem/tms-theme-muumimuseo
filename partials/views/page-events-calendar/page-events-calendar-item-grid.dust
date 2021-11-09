@@ -1,7 +1,7 @@
 <div class="events__item has-height-100 {item_classes.grid.item|s}">
     {?image}
         <div class="image is-relative is-4by3" aria-hidden="true">
-            <a href="{url}" aria-hidden="true" tabindex="-1">
+            <a href="{url}" aria-hidden="true" tabindex="-1" class="is-absolute has-top-0 has-right-0 has-bottom-0 has-left-0">
                 <img src="{image}" alt="" class="objectfit-image">
             </a>
 
