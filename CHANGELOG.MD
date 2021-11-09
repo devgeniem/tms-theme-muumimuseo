@@ -8,19 +8,40 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 ### Added
+
 - TMS-360: More characters are shown in grid field's content. 
 
-## [1.7.1] – 0201-11-01
+## [1.8.2] – 2021-11-09
 
-### Changed 
-- TMS-358 Single Artist: Table's fonts fixed.
+### Changed
 
-## [1.7.0] - 2021-10-25
+- TMS-374: Fix event list styles #65
+- TMS-376: Fix layout fonts #64
+- TMS-375: Fix language navigation styles #62
+
+## [1.8.1] – 2021-11-05
+
+### Changed
+
+- TMS-372: Fix secondary accent color #60
+- TMS-318-1: Avoid heading level increase #61
+- TMS-373: Fix subpages styles #59
+
+## [1.8.0] – 2021-11-05
+
+### Changed
+
+- TMS-371: Remove search filters #57
+
+## [1.7.0] – 2021-11-04
 
 ### Added
+
 - TMS-357 Single Artist: New ACF field fort short desc.
 
 ### Changed
+
+- TMS-358 Single Artist: Table's fonts fixed.
 - TMS-357 Single Artist: Layout changes.
 - TMS-305: Badge positioning #48
 - fix/events-calendar-default-image: Fix events calendar styles
