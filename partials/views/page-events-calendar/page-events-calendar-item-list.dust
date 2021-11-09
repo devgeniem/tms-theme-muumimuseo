@@ -11,8 +11,7 @@
             </div>
 
             {?primary_keyword}
-                <span
-                    class="is-absolute has-top-1 has-left-1 pill is-bordered has-background-primary-invert has-text-primary">
+                <span class="is-absolute has-top-1 has-left-1 pill">
                     {primary_keyword|s}
                 </span>
             {/primary_keyword}
