@@ -24,38 +24,4 @@ class ACFController extends Base\ACFController implements Base\Interfaces\Contro
         return __DIR__ . '/ACF';
     }
 
-    /**
-     * Filters for overwriting grid field's properties
-     *
-     * @return mixed
-     */
-    public function mm_hooks() : void {
-        add_filter( 'tms/acf/grid_fields', Closure::fromCallable( [ $this, 'modify_acf' ] ) );
-    }
-
-    /**
-     * Functionality for modifying ACF fields for this theme
-     *
-     * @param mixed $fields Fields.
-     * @return mixed
-     */
-    private function modify_acf( $fields ) {
-        $description = $fields->sub_fields['description'];
-
-        if ( ! empty( $description ) && is_object( $description ) ) {
-
-            if ( method_exists( $description, 'set_maxlength' ) ) {
-                $description->set_maxlength( 300 );
-            }
-
-            if ( method_exists( $description, 'set_new_lines' ) ) {
-                $description->set_new_lines( 'br' );
-            }
-
-            $fields->sub_fields['description'] = $description;
-
-        }
-
-        return $fields;
-    }
 }
