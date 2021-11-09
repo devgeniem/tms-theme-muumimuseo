@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 
 - TMS-374: Fix event list styles #65
+- TMS-376: Fix layout fonts #64
+- TMS-375: Fix language navigation styles #62
 
 ## [1.8.1] – 2021-11-05
 

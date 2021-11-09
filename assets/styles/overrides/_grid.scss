@@ -2,6 +2,8 @@
  * Copyright (c) 2021. Geniem Oy
  */
 
+// sass-lint:disable no-important
+
 .grid {
     &__item {
         &.has-colors-secondary {
@@ -14,16 +16,16 @@
             background-color: $primary !important;
 
             a {
+                color: $primary !important;
                 background: $primary-invert !important;
                 border-color: $primary-invert !important;
-                color: $primary !important;
 
                 &:hover,
                 &:focus,
                 &:active {
+                    color: $primary-invert !important;
                     background: $primary !important;
                     border-color: $primary-invert !important;
-                    color: $primary-invert !important;
                 }
             }
         }
@@ -31,18 +33,22 @@
         &--featured {
             &.has-colors-accent {
                 a {
+                    color: $primary-invert !important;
                     background: $primary !important;
                     border-color: $primary !important;
-                    color: $primary-invert !important;
 
                     &:hover,
                     &:focus,
                     &:active {
+                        color: $primary !important;
                         background: $primary-invert !important;
                         border-color: $primary-invert !important;
-                        color: $primary !important;
                     }
                 }
+            }
+
+            .button {
+                border: 0 !important;
             }
         }
     }

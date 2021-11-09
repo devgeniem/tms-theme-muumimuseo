@@ -1,0 +1,10 @@
+/*!
+ *  Copyright (c) 2021. Geniem Oy
+ */
+
+.notice-banner {
+    &__text,
+    &__link {
+        font-family: $family-secondary;
+    }
+}
