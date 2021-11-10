@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+- TMS-361: Fix image carousel's highlighting
+
 ## [1.8.2] – 2021-11-09
 
 ### Changed
