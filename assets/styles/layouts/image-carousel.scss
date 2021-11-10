@@ -18,3 +18,18 @@
         }
     }
 }
+
+.slick-track .modal-trigger{
+    img{
+        filter:brightness(100%);
+        transition: $speed filter linear, $speed -webkit-filter linear;
+    }
+    &:disabled{
+        opacity:1;
+        img{
+            filter:brightness(80%);
+        }
+        
+    }
+  
+}
