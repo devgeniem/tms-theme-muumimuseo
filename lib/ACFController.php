@@ -5,9 +5,7 @@
 
 namespace TMS\Theme\Muumimuseo;
 
-use Closure;
 use \TMS\Theme\Base;
-use Geniem\ACF\Field\Textarea;
 /**
  * Class ACFController
  *
