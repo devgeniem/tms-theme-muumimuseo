@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+- TMS-361: Fix image carousel's highlighting
+
 ### Added
 
 - TMS-360: More characters are shown in grid field's content. 
