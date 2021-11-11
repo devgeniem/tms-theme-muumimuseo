@@ -20,6 +20,12 @@ class AlterGridFields {
             10,
             2
         );
+        add_filter(
+            'tms/layout/grid/fields',
+            [ $this, 'alter_fields' ],
+            10,
+            2
+        );
     }
 
     /**
@@ -30,7 +36,6 @@ class AlterGridFields {
      * @return array
      */
     public function alter_fields( array $fields ) : array {
-
         try {
             $fields['repeater']->sub_fields['grid_item_custom']->sub_fields['description']->set_maxlength( 300 );
             $fields['repeater']->sub_fields['grid_item_custom']->sub_fields['description']->set_new_lines( 'br' );
@@ -39,7 +44,6 @@ class AlterGridFields {
         catch ( Exception $e ) {
             ( new Logger() )->error( $e->getMessage(), $e->getTrace() );
         }
-
         return $fields;
     }
 }
