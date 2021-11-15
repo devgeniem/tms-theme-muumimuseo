@@ -1,19 +1,15 @@
-{?title}
-    {?text}
-    <div class="has-border-bottom-1 has-border-gray--dark">
-        <div class="columns is-multiline is-gapless mb-3">
-            <div class="column is-12 is-4-desktop">
-                <p class="m-0 is-uppercase hyphenate">
-                    {title|s}
-                </p>
-            </div>
+<div class="has-border-bottom-1 has-border-gray--dark">
+    <div class="columns is-multiline is-gapless mb-3">
+        <div class="column is-12 is-4-desktop">
+            <p class="m-0 is-uppercase hyphenate">
+                {title|s}
+            </p>
+        </div>
 
-            <div class="column">
-                <p class="m-0 ml-3-desktop is-family-sans-serif">
-                    {text|s}
-                </p>
-            </div>
+        <div class="column">
+            <p class="m-0 ml-3-desktop is-family-sans-serif">
+                {text|s}
+            </p>
         </div>
     </div>
-    {/text}
-{/title}
+</div>
