@@ -292,7 +292,6 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
             'has-line-height-tight',
             'is-family-tovescript',
         ];
-        $data['classes']['author'] = ['mt-4'];
 
         if ( ! empty( $data['is_wide'] ) ) {
             $data['classes']['container'][] = 'is-align-wide';
