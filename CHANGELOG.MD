@@ -7,10 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-### Changed
+### Added
 
+- TMS-370: Check that single artist's additional info has title and text.
+
+### Changed 
+
+- TMS-296: fixed style of a quote.
 - TMS-360: Fixed filter for layout. More characters are shown in grid field's content.
-- TMS-296: fixed stylea of a quote.
 
 ## [1.9.0] – 2021-11-11
 
