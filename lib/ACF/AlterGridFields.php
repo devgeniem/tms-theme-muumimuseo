@@ -21,7 +21,7 @@ class AlterGridFields {
             2
         );
         add_filter(
-            'tms/layout/grid/fields',
+            'tms/acf/layout/_grid/fields',
             [ $this, 'alter_fields' ],
             10,
             2
