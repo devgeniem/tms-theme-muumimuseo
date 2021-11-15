@@ -5,7 +5,7 @@
 .single-artwork {
     .quote {
         margin: 0 !important; // sass-lint:disable-line no-import
-        padding: 2rem 0 !important; // sass-lint:disable-line no-import
+        padding: 3rem 0 !important; // sass-lint:disable-line no-import
 
         &__content {
             @include keep-vertical-spacing;

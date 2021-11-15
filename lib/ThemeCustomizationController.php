@@ -293,7 +293,6 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
     public function alter_block_quote_data( $data ) {
         $data['classes']['container'] = [];
         $data['classes']['quote']     = [
-            'has-text-primary',
             'is-size-1',
             'has-line-height-tight',
             'is-family-tovescript',
