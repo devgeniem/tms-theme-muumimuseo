@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
-- TMS-302-1: Make the logo bigger
+- TMS-302-1: Make the logo bigger #71
 - TMS-296: fixed style of a quote.
 - TMS-360: Fixed filter for layout. More characters are shown in grid field's content.
 
