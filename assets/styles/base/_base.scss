@@ -1,3 +1,18 @@
 html {
     background-color: $black;
 }
+main {
+    background-image: url('../../assets/img/eyes_transparent_bg.gif'),
+    url('../../assets/img/eyes_transparent_bg.gif'),
+    url('../../assets/img/eyes_transparent_bg.gif'),
+    url('../../assets/img/eyes_transparent_bg.gif'),
+    url('../../assets/img/eyes_transparent_bg.gif');
+    background-attachment: fixed;
+    background-size: 100px auto;
+    background-repeat: no-repeat;
+    background-position: calc(5vw - 50px) 50vh,
+    5vw calc(50vh - 30px),
+    5vw calc(50vh + 30px),
+    calc(95vw - 100px) 50vh,
+    calc(95vw - 50px)calc(50vh + 30px);
+}
