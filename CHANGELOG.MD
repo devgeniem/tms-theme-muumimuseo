@@ -12,8 +12,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TMS-370: Check that single artist's additional info has title and text.
 - TMS-379: Blinking eyes as background
  
-### Changed 
+### Changed
 
+- TMS-393: Language dropdown styles.
 - TMS-296: fixed style of a quote.
 - TMS-360: Fixed filter for layout. More characters are shown in grid field's content.
 
