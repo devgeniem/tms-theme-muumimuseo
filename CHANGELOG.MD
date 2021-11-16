@@ -10,7 +10,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 
 - TMS-370: Check that single artist's additional info has title and text.
-
+- TMS-379: Blinking eyes as background
+ 
 ### Changed 
 
 - TMS-296: fixed style of a quote.
