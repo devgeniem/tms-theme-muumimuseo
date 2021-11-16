@@ -11,8 +11,17 @@
     }
 
     &__logo-image {
+        min-width: 12rem;
+        max-width: 12rem;
+
         @include from($tablet) {
+            min-width: 12rem;
             max-width: 14rem;
+        }
+
+        @include from($desktop) {
+            min-width: 12rem;
+            max-width: 20rem;
         }
     }
 }
