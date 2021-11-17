@@ -44,17 +44,36 @@
         }
     }
 
-    .dropdown-content {
-        border-radius: 0;
+    .dropdown-menu{
+        min-width: auto;
+        width:100%;
+        border: 0.15rem solid $white;
+        border-radius: 0.125rem!important;
+        border-top: 0;
+        padding-top:0;
+    }
 
+    .dropdown-content {
+        padding-top:0;
+        padding-bottom:0;
+        background-color: $black;
         .dropdown-item {
             font-size: 1rem;
-            color: $black;
+            color: $white;
+            padding-right: 1rem;
 
             &:hover,
             &:focus {
-                color: $primary;
+                color: $black;
+                text-decoration: none;
+                background-color: $dropdown-item-hover-background-color;
             }
+            &:focus {
+                outline: 0.125rem dashed $primary;
+                outline-offset: 0.25rem;
+                border-radius: 0.125rem!important;
+            }
+            
         }
     }
 }
