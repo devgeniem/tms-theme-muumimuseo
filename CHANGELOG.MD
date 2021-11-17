@@ -7,10 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- TMS-370: Check that single artist's additional info has title and text.
 
 ### Changed
 
 - TMS-393: Language dropdown styles.
+- TMS-302-1: Make the logo bigger #71
 - TMS-296: fixed style of a quote.
 - TMS-360: Fixed filter for layout. More characters are shown in grid field's content.
 
@@ -22,7 +26,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
-- TMS-360: More characters are shown in grid field's content. 
+- TMS-360: More characters are shown in grid field's content.
 
 ## [1.8.2] – 2021-11-09
 
