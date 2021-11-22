@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- TMS-379: Blinking eyes as background
+ 
 ### Changed
 
 - TMS-398: Fix form styles
