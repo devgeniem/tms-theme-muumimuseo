@@ -2,17 +2,17 @@ html {
     background-color: $black;
 }
 main {
-    background-image: url('../../assets/img/eyes_transparent_bg.gif'),
-    url('../../assets/img/eyes_transparent_bg.gif'),
-    url('../../assets/img/eyes_transparent_bg.gif'),
-    url('../../assets/img/eyes_transparent_bg.gif'),
-    url('../../assets/img/eyes_transparent_bg.gif');
+    background-image: url('../../assets/img/silmat-01.gif'),
+    url('../../assets/img/silmat-02.gif'),
+    url('../../assets/img/silmat-03.gif'),
+    url('../../assets/img/silmat-05.gif'),
+    url('../../assets/img/silmat-06.gif');
     background-attachment: fixed;
     background-size: 100px auto;
     background-repeat: no-repeat;
     background-position: calc(5vw - 50px) 50vh,
-    5vw calc(50vh - 30px),
-    5vw calc(50vh + 30px),
-    calc(95vw - 100px) 50vh,
-    calc(95vw - 50px)calc(50vh + 30px);
+    calc(5vw + 70px) calc(50vh - 40px),
+    calc(5vw + 70px)calc(50vh + 40px),
+    calc(90vw - 100px) 50vh,
+    calc(90vw + 10px) calc(50vh + 70px);
 }
