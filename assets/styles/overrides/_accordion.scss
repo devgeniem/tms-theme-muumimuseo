@@ -1,0 +1,8 @@
+.accordion{
+    &__row{
+        &, &:hover {border-color: $white};
+    }
+    .icon.is-accent{
+        fill: $white !important;
+    }
+}
