@@ -42,6 +42,11 @@
     .navbar-link,
     .navbar-item {
         color: $white !important;
+        &.current-menu-item,
+        &.current-menu-parent {
+            border-bottom-color: $navbar-item-navbar-link-color;
+            background: $navbar-item-navbar-active-bg-color !important;
+        }
     }
 
     &--dropdown {
