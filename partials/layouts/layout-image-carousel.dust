@@ -4,37 +4,49 @@
         <div class="columns is-multiline">
 
             {?title}
-                <h3 id="{carousel_id}-title" class="image-carousel__title column is-block is-half is-offset-one-quarter has-text-centered mt-0 mb-3">
+                <h3 id="{carousel_id}-title"
+                    class="image-carousel__title column is-block is-half is-offset-one-quarter has-text-centered mt-0 mb-3">
                     {title|s}
                 </h3>
             {/title}
 
             {?description}
-                <div class="image-carousel__description column is-half is-offset-one-quarter has-text-lead has-text-centered mt-0 mb-6">
+                <div
+                    class="image-carousel__description column is-half is-offset-one-quarter has-text-lead has-text-centered mt-0 mb-6">
                     {description|s}
                 </div>
             {/description}
 
-            <div class="image-carousel__items column is-full image-carousel__items--primary"
-                id="{carousel_id}" data-slider-for="{carousel_id}-modal-carousel">
-                {#rows}
-                    <div class="image-carousel__item" id="{id}">
-                        {! Modal trigger !}
-                        <button
-                            class="image modal-trigger {shape}"
-                            data-modal-button
-                            data-target="{carousel_id}-modal"
-                            aria-controls="{carousel_id}-modal"
-                            aria-expanded="false"
-                            aria-haspopup="true"
-                            aria-label="{translations.open}"
-                        >
-                            {@image id=image.id alt=image.alt title=image.description size="medium_vertical" class="objectfit-image" width="{image.sizes.medium_vertical-width}" loading="" /}
-                        </button>
-                    </div>
-                {/rows}
-            </div>
+            <div class="image-carousel__inner column is-full ">
+                <button class="button button--icon is-primary slick-prev slick-arrow" type="button">
+                    {>"ui/icon" icon="chevron-left" /}
+                    <span class="is-sr-only">{strings.s.gallery.previous|s}</span>
+                </button>
 
+                <div class="image-carousel__items image-carousel__items--primary"
+                     id="{carousel_id}" data-slider-for="{carousel_id}-modal-carousel">
+                    {#rows}
+                        <div class="image-carousel__item" id="{id}">
+                            {! modal trigger !}
+                            <button
+                                class="image modal-trigger {shape}"
+                                data-modal-button
+                                data-target="{carousel_id}-modal"
+                                aria-controls="{carousel_id}-modal"
+                                aria-expanded="false"
+                                aria-haspopup="true"
+                                aria-label="{translations.open}"
+                            >
+                                {@image id=image.id alt=image.alt title=image.description size="medium_vertical" class="objectfit-image" width="{image.sizes.medium_vertical-width}" loading="" /}
+                            </button>
+                        </div>
+                    {/rows}
+                </div>
+                <button class="button button--icon is-primary slick-next slick-arrow" type="button">
+                    {>"ui/icon" icon="chevron-right" /}
+                    <span class="is-sr-only">{strings.s.gallery.next|s}</span>
+                </button>
+            </div>
         </div>
     </div>
 
