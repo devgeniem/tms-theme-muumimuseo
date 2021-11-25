@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
  
 ### Changed
 
+- TMS-414: Image carousel tab index
 - TMS-403: Sibling navigation styles #78
 - TMS-401: Fix nav underlining for currrent menu parent
 - TMS-404: Fix accordion styles
