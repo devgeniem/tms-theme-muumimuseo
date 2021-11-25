@@ -1,16 +1,15 @@
-#, fuzzy
 msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: TMS Theme Muumimuseo\n"
 "POT-Creation-Date: 2021-10-22 08:13+0300\n"
-"PO-Revision-Date: 2021-11-05 17:15+0200\n"
+"PO-Revision-Date: 2021-11-25 16:15+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 3.0\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -18,6 +17,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
 "_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Language: ko_KR\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: vendor\n"
@@ -27,95 +27,95 @@ msgstr ""
 #: lib/PostType/Artist.php:59
 msgctxt "theme CPT"
 msgid "Artists"
-msgstr "Художники"
+msgstr "작가"
 
 #: lib/PostType/Artist.php:193 lib/PostType/Artwork.php:192
 msgctxt "Breadcrumbs"
 msgid "Home"
-msgstr "Главная"
+msgstr "홈"
 
 #: lib/PostType/Artist.php:198
 msgctxt "Breadcrumb text"
 msgid "Artists"
-msgstr "Художники"
+msgstr "작가"
 
 #: lib/PostType/Artwork.php:57
 msgctxt "theme CPT"
 msgid "Artwork"
-msgstr "Изображение"
+msgstr "작품"
 
 #: lib/PostType/Artwork.php:197
 msgctxt "Breadcrumb text"
 msgid "Artwork"
-msgstr "Изображение"
+msgstr "작품"
 
 #: models/archive-artist.php:83
 msgid "Search for artist"
-msgstr "Поиск художника"
+msgstr "작가 검색"
 
 #: models/archive-artist.php:84 models/archive-artwork.php:68
 msgid "Search"
-msgstr "Поиск"
+msgstr "검색"
 
 #: models/archive-artist.php:85 models/archive-artwork.php:69
 msgid "Search query"
-msgstr "Поисковый запрос"
+msgstr "쿼리 검색"
 
 #: models/archive-artist.php:88 models/archive-artwork.php:72
 msgid "Show All"
-msgstr "Показать все"
+msgstr "전체 보기"
 
 #: models/archive-artist.php:90 models/archive-artwork.php:74
 msgid "No results"
-msgstr "Нет результатов"
+msgstr "결과 없음"
 
 #: models/archive-artist.php:91 models/archive-artwork.php:75
 msgid "Filter"
-msgstr "Фильтр"
+msgstr "필터"
 
 #: models/archive-artist.php:92
 msgid "Categories"
-msgstr "Категории"
+msgstr "카테고리"
 
 #: models/archive-artist.php:181 models/archive-artwork.php:162
 #: models/page-artwork.php:128
 msgid "All"
-msgstr "Все"
+msgstr "전체"
 
 #: models/archive-artist.php:226 models/single-artwork.php:215
 msgid "View artist"
-msgstr "Просмотреть художника"
+msgstr "작가 보기"
 
 #: models/archive-artwork.php:67
 msgid "Search for artwork"
-msgstr "Поиск изображения"
+msgstr "작품 검색"
 
 #: models/single-artwork.php:82
 msgctxt "theme-frontend"
 msgid "Location"
-msgstr "Место"
+msgstr "위치"
 
 #: models/single-artwork.php:114
 msgctxt "theme-frontend"
 msgid "Artists"
-msgstr "Художники"
+msgstr "작가"
 
 #: models/single-artwork.php:115
 msgctxt "theme-frontend"
 msgid "Artist"
-msgstr "Художник"
+msgstr "작가"
 
 #: models/single-artwork.php:133
 msgid "Year of manufacture"
-msgstr "Год изготовления"
+msgstr "제조연도"
 
 #. Theme Name of the plugin/theme
 msgid "TMS Theme Muumimuseo"
-msgstr "Тема TMS Muumimuseo"
+msgstr "TMS Theme Muumimuseo"
 
 #. Description of the plugin/theme
 msgid "Tampere Multisite Muumimuseo Theme"
-msgstr "Тема Tampere Multisite Muumimuseo"
+msgstr "Tampere Multisite Muumimuseo Theme"
 
 #. Author of the plugin/theme
 msgid "Geniem"
