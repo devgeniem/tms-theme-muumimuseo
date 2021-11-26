@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+- TMS-416: Fix post highlights' title link text color
+
+## [1.11.0] – 2021-11-26
+
 ### Added
 
 - TMS-379: Blinking eyes as background
