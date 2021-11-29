@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 
 - TMS-416: Fix post highlights' title link text color
+- TMS-477: Fix active pill hover colors`
 
 ## [1.11.0] – 2021-11-26
 
