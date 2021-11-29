@@ -16,7 +16,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 
 - TMS-379: Blinking eyes as background
- 
+- TMS-333: Add translations
+
 ### Changed
 
 - TMS-414: Image carousel tab index
