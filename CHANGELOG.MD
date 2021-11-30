@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
-- TMS-487: Improve back to top link hover & focus state visibility
+- TMS-487: Improve back to top link hover & focus state visibility #85
 
 ## [1.12.0] – 2021-11-30
 
