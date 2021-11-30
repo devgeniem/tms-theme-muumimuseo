@@ -297,6 +297,7 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
             'has-line-height-tight',
             'is-family-tovescript',
         ];
+        $data['classes']['author']    = '';
 
         if ( ! empty( $data['is_wide'] ) ) {
             $data['classes']['container'][] = 'is-align-wide';
@@ -321,7 +322,16 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
             $data['subpages'][ $key ]['classes'] .= ' has-border-1 has-border-divider-invert';
         }
 
-        $data['icon_classes'] = 'is-primary';
+        $icon_colors_map = [
+            'black'     => 'is-accent-tertiary',
+            'white'     => 'is-primary',
+            'primary'   => 'is-primary-invert',
+            'secondary' => 'is-secondary-invert',
+        ];
+
+        $icon_color_key = $data['background_color'] ?? 'black';
+
+        $data['icon_classes'] = $icon_colors_map[ $icon_color_key ];
 
         return $data;
     }
