@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
-- TMS-486: Improve content link discernibility by adding an underline
+- TMS-486: Improve content link discernibility by adding an underline #86
 
 ## [1.12.0] – 2021-11-30
 
