@@ -151,6 +151,11 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
             'tms/theme/layout_events/event_icon',
             fn() => '',
         );
+
+        add_filter(
+            'tms/single/related_display_categories',
+            '__return_false',
+        );
     }
 
     /**
