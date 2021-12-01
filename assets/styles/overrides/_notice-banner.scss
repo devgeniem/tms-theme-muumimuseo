@@ -7,4 +7,12 @@
     &__link {
         font-family: $family-secondary;
     }
+
+    &.has-background-secondary {
+        background-color: $primary-invert !important; // sass-lint:disable-line no-important
+
+        .icon {
+            fill: $primary !important; // sass-lint:disable-line no-important
+        }
+    }
 }
