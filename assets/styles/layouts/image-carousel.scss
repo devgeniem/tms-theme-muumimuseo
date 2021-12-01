@@ -17,6 +17,25 @@
             }
         }
     }
+
+    &.has-colors-light,
+    &.has-colors-accent-tertiary,
+    &.has-colors-accent-secondary {
+        .image {
+            &:focus {
+                outline-color: $primary;
+            }
+        }
+    }
+
+    &.has-colors-transparent,
+    &.has-colors-primary {
+        .slick-arrow {
+            &:focus {
+                outline-color: $primary-invert;
+            }
+        }
+    }
 }
 
 .slick-track .modal-trigger {
@@ -24,12 +43,12 @@
         filter: brightness(100%);
         transition: $speed filter linear, $speed -webkit-filter linear;
     }
-    &:disabled{
+
+    &:disabled {
         opacity: 1;
-        img{
+
+        img {
             filter: brightness(80%);
         }
-        
     }
-  
 }
