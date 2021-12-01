@@ -18,3 +18,12 @@ main {
         calc(95vw - 20px) calc(50vh + 30px);
     }
 }
+
+.page,
+.single {
+    .entry__content {
+        > p > a {
+            text-decoration: underline;
+        }
+    }
+}
