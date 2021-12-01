@@ -21,7 +21,8 @@ main {
 
 .page,
 .single {
-    .entry__content {
+    .entry__content,
+    .textblock__inner {
         > p > a {
             text-decoration: underline;
         }
