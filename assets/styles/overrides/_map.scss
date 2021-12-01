@@ -6,4 +6,12 @@
     &__description {
         font-family: $family-secondary;
     }
+
+    &__placeholder-wrapper {
+        .button {
+            &:focus {
+                outline: 2px dashed $primary-invert;
+            }
+        }
+    }
 }

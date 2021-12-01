@@ -11,5 +11,9 @@
                 fill: currentColor !important;
             }
         }
+
+        &:focus {
+            outline: 2px dashed $primary-invert;
+        }
     }
 }
