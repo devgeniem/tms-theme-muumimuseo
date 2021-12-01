@@ -1,0 +1,13 @@
+.related-posts {
+    color: $black;
+    background-color: $accent-secondary !important; // sass-lint:disable-line no-important
+
+    a {
+        font-family: $family-secondary;
+        color: inherit !important; // sass-lint:disable-line no-important
+
+        .icon {
+            fill: currentColor !important; // sass-lint:disable-line no-important
+        }
+    }
+}
