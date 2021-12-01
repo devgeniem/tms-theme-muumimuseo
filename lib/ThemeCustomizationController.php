@@ -91,11 +91,6 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         );
 
         add_filter(
-            'tms/theme/layout_events/item_icon_class',
-            fn() => 'is-black'
-        );
-
-        add_filter(
             'tms/theme/page_events_calendar/item_classes',
             \Closure::fromCallable( [ $this, 'event_item_classes' ] )
         );
@@ -140,6 +135,21 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
             'tms/acf/block/subpages/data',
             [ $this, 'alter_block_subpages_data' ],
             30
+        );
+
+        add_filter(
+            'tms/theme/layout_events/all_events_link',
+            fn() => 'is-size-6 has-text-primary-invert is-family-secondary',
+        );
+
+        add_filter(
+            'tms/theme/layout_events/event_item',
+            fn() => '',
+        );
+
+        add_filter(
+            'tms/theme/layout_events/event_icon',
+            fn() => '',
         );
     }
 
