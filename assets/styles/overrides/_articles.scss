@@ -1,0 +1,7 @@
+.layout-articles {
+    .entry {
+        &__title > a {
+            color: inherit !important; // sass-lint:disable-line no-important
+        }
+    }
+}
