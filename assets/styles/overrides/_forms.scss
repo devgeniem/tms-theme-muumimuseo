@@ -6,5 +6,20 @@
     // GForms inside a wrapper need a different layout
     .gform_wrapper {
         background: transparent;
+
+        button {
+            border: 0;
+        }
+
+        select,
+        input,
+        textarea {
+            border-color: transparent;
+
+            &:focus {
+                outline-offset: 0;
+                outline: 3px solid $primary-light;
+            }
+        }
     }
 }
