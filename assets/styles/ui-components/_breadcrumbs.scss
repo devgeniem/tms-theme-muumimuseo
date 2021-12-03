@@ -1,0 +1,18 @@
+/*!*
+ * Copyright (c) 2021. Geniem Oy
+ */
+
+.breadcrumb {
+    .breadcrumbs {
+        &__nav {
+            font-size: 1rem;
+
+            span,
+            a {
+                margin: 0 !important; // sass-lint:disable-line no-important
+                padding-right: .33rem !important; // sass-lint:disable-line no-important
+                padding-left: .33rem !important; // sass-lint:disable-line no-important
+            }
+        }
+    }
+}
