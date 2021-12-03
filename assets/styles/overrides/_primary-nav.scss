@@ -1,5 +1,8 @@
 .primary-nav {
     &--dropdown .navbar-dropdown {
         padding-top: 1.5rem;
+        &__parent-link {
+            display:none !important;
+        }
     }
 }
