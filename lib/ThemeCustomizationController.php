@@ -91,6 +91,11 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         );
 
         add_filter(
+            'tms/theme/single_blog/classes',
+            \Closure::fromCallable( [ $this, 'single_blog_classes' ] )
+        );
+
+        add_filter(
             'tms/theme/blogs/info_section_classes',
             fn() => 'has-colors-accent-secondary'
         );
@@ -236,6 +241,21 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
             'item_inner' => 'has-text-black',
             'icon'       => 'is-primary',
         ];
+
+        return $classes;
+    }
+
+    /**
+     * Override single blog view classes.
+     *
+     * @param array $classes Classes.
+     *
+     * @return array
+     */
+    public function single_blog_classes( $classes ) : array {
+        $classes['info_section']         = 'has-colors-accent-secondary';
+        $classes['info_section_button']  = 'is-primary';
+        $classes['info_section_authors'] = 'has-border has-border-top-1 has-border-primary';
 
         return $classes;
     }
