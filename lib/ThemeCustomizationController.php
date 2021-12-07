@@ -91,6 +91,21 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         );
 
         add_filter(
+            'tms/theme/blogs/info_section_classes',
+            fn() => 'has-colors-accent-secondary'
+        );
+
+        add_filter(
+            'tms/theme/blogs/info_section_button_classes',
+            fn() => 'is-primary'
+        );
+
+        add_filter(
+            'tms/theme/blogs/info_section_authors',
+            fn() => 'has-border has-border-top-1 has-border-primary'
+        );
+
+        add_filter(
             'tms/theme/page_events_calendar/item_classes',
             \Closure::fromCallable( [ $this, 'event_item_classes' ] )
         );
