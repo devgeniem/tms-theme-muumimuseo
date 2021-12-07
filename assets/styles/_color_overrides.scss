@@ -78,3 +78,11 @@ $duet-color-button: $primary;
 $duet-color-surface: $white;
 $duet-color-overlay: rgba(0, 0, 0, .8);
 $duet-color-border: $primary-light;
+
+/*--------------------------------------------------------------
+assets/styles/ui-components/_table.scss
+--------------------------------------------------------------*/
+$table-row-background-color-even: $black;
+$table-row-background-color-odd: rgba(78, 80, 86, .5);
+$table-row-background-color-even-hover: $primary-dark;
+$table-row-background-color-odd-hover: $primary-dark;
