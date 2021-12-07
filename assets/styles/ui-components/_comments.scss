@@ -1,0 +1,14 @@
+.comment {
+    &__heading {
+        color: $primary-invert !important; // sass-lint:disable-line no-important
+    }
+
+    .button {
+        border-color: $primary !important; // sass-lint:disable-line no-important
+
+        &:hover,
+        &:focus {
+            border-color: $primary-invert !important; // sass-lint:disable-line no-important
+        }
+    }
+}

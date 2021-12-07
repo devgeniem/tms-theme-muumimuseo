@@ -1,0 +1,9 @@
+.post-type-archive-blog-article {
+    button[aria-controls="js-archive-description-toggle-target"] {
+        color: $primary-invert;
+
+        .icon {
+            fill: $primary !important; // sass-lint:disable-line no-important
+        }
+    }
+}

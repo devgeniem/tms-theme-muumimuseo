@@ -24,6 +24,11 @@
             max-width: 20rem;
         }
     }
+
+    .menu-item-secondary__link {
+        font-family: $family-primary !important;
+        font-weight: 400;
+    }
 }
 
 .primary-nav {

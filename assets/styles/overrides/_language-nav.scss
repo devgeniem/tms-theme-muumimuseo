@@ -17,10 +17,21 @@
 }
 
 .language-nav {
+    .dropdown-menu {
+        z-index: 25;
+    }
+
     .dropdown {
         &.is-active {
             .icon {
                 transform: rotate(180deg);
+            }
+
+            .dropdown-trigger {
+                .button {
+                    border-bottom-left-radius: 0 !important;
+                    border-bottom-right-radius: 0 !important;
+                }
             }
         }
 
@@ -31,7 +42,7 @@
                 padding-left: 1rem;
                 color: $white !important;
                 border-color: $white !important;
-                border-radius: .125rem !important;
+                border-radius: .25rem !important;
 
                 @include from($desktop) {
                     font-size: .88rem;
@@ -44,19 +55,22 @@
         }
     }
 
-    .dropdown-menu{
+    .dropdown-menu {
         min-width: auto;
-        width:100%;
+        width: 100%;
         border: 0.15rem solid $white;
-        border-radius: 0.125rem!important;
         border-top: 0;
-        padding-top:0;
+        padding-top: 0;
+        border-bottom-right-radius: .25rem;
+        border-bottom-left-radius: .25rem;
     }
 
     .dropdown-content {
-        padding-top:0;
-        padding-bottom:0;
+        padding-top: 0;
+        padding-bottom: 0;
         background-color: $black;
+        border-radius: 0;
+
         .dropdown-item {
             font-size: 1rem;
             color: $white;
@@ -68,12 +82,13 @@
                 text-decoration: none;
                 background-color: $dropdown-item-hover-background-color;
             }
+
             &:focus {
                 outline: 0.125rem dashed $primary;
                 outline-offset: 0.25rem;
-                border-radius: 0.125rem!important;
+                border-radius: 0.125rem !important;
             }
-            
+
         }
     }
 }
