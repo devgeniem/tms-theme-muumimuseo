@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
+- TMS-386: Remove navbar dropdown parent link from primary menu dropdown
 - TMS-487: Improve back to top link hover & focus state visibility #85
 - TMS-486: Improve content link discernibility by adding an underline #84
 
