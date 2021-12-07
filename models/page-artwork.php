@@ -151,7 +151,7 @@ class PageArtwork extends ArchiveArtwork {
 
         if ( empty( $categories ) ) {
             $categories = get_field( 'artwork_types' );
-            $categories = array_map( fn( $c ) => $c->term_id, $categories );
+            $categories = ! empty( $categories ) ?? array_map( fn( $c ) => $c->term_id, $categories );
         }
 
         $args['tax_query'] = [
