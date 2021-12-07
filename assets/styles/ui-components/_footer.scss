@@ -14,8 +14,8 @@
 
     &__link {
         font-family: $family-secondary !important; // sass-lint:disable-line no-important
+        font-size: 1rem !important; // sass-lint:disable-line no-important
         margin-bottom: $theme-spacing;
-        text-decoration: underline;
     }
 
     &__copy-links {

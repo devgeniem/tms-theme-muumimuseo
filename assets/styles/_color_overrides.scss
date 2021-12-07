@@ -66,3 +66,15 @@ $button-font-size-tablet: 1rem;
 assets/styles/views/_search.scss
 --------------------------------------------------------------*/
 $search-item-hover: $color-muumipeikon-valkoinen;
+
+/*--------------------------------------------------------------
+assets/styles/ui-components/_duetdatepicker.scss
+--------------------------------------------------------------*/
+$duet-color-primary: $primary;
+$duet-color-text: $black;
+$duet-color-text-active: $primary;
+$duet-color-text-placeholder: $grey;
+$duet-color-button: $primary;
+$duet-color-surface: $white;
+$duet-color-overlay: rgba(0, 0, 0, .8);
+$duet-color-border: $primary-light;
