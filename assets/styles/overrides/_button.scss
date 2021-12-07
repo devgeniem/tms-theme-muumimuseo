@@ -199,4 +199,10 @@
             }
         }
     }
+
+    .has-colors-primary & {
+        &:focus {
+            outline-color: $primary-invert;
+        }
+    }
 }

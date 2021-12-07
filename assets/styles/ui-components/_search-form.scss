@@ -1,0 +1,10 @@
+.search-input-container {
+    .button[type="submit"] {
+        border-color: $primary;
+
+        &:focus,
+        &:hover {
+            border-color: $primary-invert;
+        }
+    }
+}
