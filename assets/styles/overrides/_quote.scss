@@ -14,4 +14,9 @@
             }
         }
     }
+
+    &__author {
+        font-size: .9rem !important; // sass-lint:disable-line no-important
+        letter-spacing: .025rem;
+    }
 }

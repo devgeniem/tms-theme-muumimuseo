@@ -91,11 +91,6 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         );
 
         add_filter(
-            'tms/theme/layout_events/item_icon_class',
-            fn() => 'is-black'
-        );
-
-        add_filter(
             'tms/theme/page_events_calendar/item_classes',
             \Closure::fromCallable( [ $this, 'event_item_classes' ] )
         );
@@ -140,6 +135,26 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
             'tms/acf/block/subpages/data',
             [ $this, 'alter_block_subpages_data' ],
             30
+        );
+
+        add_filter(
+            'tms/theme/layout_events/all_events_link',
+            fn() => 'is-size-6 has-text-primary-invert is-family-secondary',
+        );
+
+        add_filter(
+            'tms/theme/layout_events/event_item',
+            fn() => '',
+        );
+
+        add_filter(
+            'tms/theme/layout_events/event_icon',
+            fn() => '',
+        );
+
+        add_filter(
+            'tms/single/related_display_categories',
+            '__return_false',
         );
     }
 
@@ -292,6 +307,7 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
             'has-line-height-tight',
             'is-family-tovescript',
         ];
+        $data['classes']['author']    = '';
 
         if ( ! empty( $data['is_wide'] ) ) {
             $data['classes']['container'][] = 'is-align-wide';
@@ -316,7 +332,16 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
             $data['subpages'][ $key ]['classes'] .= ' has-border-1 has-border-divider-invert';
         }
 
-        $data['icon_classes'] = 'is-primary';
+        $icon_colors_map = [
+            'black'     => 'is-accent-tertiary',
+            'white'     => 'is-primary',
+            'primary'   => 'is-primary-invert',
+            'secondary' => 'is-secondary-invert',
+        ];
+
+        $icon_color_key = $data['background_color'] ?? 'black';
+
+        $data['icon_classes'] = $icon_colors_map[ $icon_color_key ];
 
         return $data;
     }

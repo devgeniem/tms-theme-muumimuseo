@@ -1,0 +1,19 @@
+.image-banner {
+    .button {
+        &:hover,
+        &:focus,
+        &:active {
+            color: $primary-invert !important;
+            background: $primary !important;
+            border-color: $primary-invert !important;
+
+            .icon {
+                fill: currentColor !important;
+            }
+        }
+
+        &:focus {
+            outline: 2px dashed $primary-invert;
+        }
+    }
+}

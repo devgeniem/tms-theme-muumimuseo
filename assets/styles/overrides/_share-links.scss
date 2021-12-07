@@ -12,6 +12,11 @@
             background-color: darken($accent, 8%) !important; // sass-lint:disable-line no-important
         }
 
+        &:focus {
+            outline: 2px dashed $primary-invert;
+            outline-offset: 2px;
+        }
+
         .icon {
             width: 1.1rem;
             height: 1.1rem;
