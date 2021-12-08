@@ -1,3 +1,30 @@
 html {
     background-color: $black;
 }
+main {
+    @media screen and (min-width: $desktop) {
+        background-image: url('../../assets/img/silmat-01.gif'),
+        url('../../assets/img/silmat-02.gif'),
+        url('../../assets/img/silmat-03.gif'),
+        url('../../assets/img/silmat-05.gif'),
+        url('../../assets/img/silmat-06.gif');
+        background-attachment: fixed;
+        background-size: 70px auto;
+        background-repeat: no-repeat;
+        background-position: calc(5vw - 50px) 50vh,
+        calc(5vw + 40px) calc(50vh - 30px),
+        calc(5vw + 40px) calc(50vh + 30px),
+        calc(95vw - 100px) 50vh,
+        calc(95vw - 20px) calc(50vh + 30px);
+    }
+}
+
+.page,
+.single {
+    .entry__content,
+    .textblock__inner {
+        > p > a {
+            text-decoration: underline;
+        }
+    }
+}

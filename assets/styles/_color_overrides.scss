@@ -10,6 +10,8 @@ $link-active: bulmaLighten($link, 15);
 
 
 $navbar-item-navbar-active-bg-color: transparent;
+$lang-nav-link-border: $white;
+$navbar-item-navbar-link-color: $white;
 
 
 /*--------------------------------------------------------------
@@ -17,6 +19,12 @@ $navbar-item-navbar-active-bg-color: transparent;
 --------------------------------------------------------------*/
 $secondary-navbar-item-navbar-link-color: $color-muumipeikon-valkoinen;
 $secondary-navbar-item-navbar-link-color-hover: $color-muumipeikon-valkoinen;
+
+/*--------------------------------------------------------------
+# ui-components/header/_fly-out-nav.scss
+--------------------------------------------------------------*/
+$fly-out-nav-trigger-icon: $color-muumipeikon-valkoinen;
+$fly-out-nav-trigger-icon-hover: $fly-out-nav-trigger-icon;
 
 /*--------------------------------------------------------------
 assets/styles/ui-components/_breadcrumbs.scss
@@ -40,6 +48,7 @@ $pill-background-color-hover: opacify($secondary-light, .75);
 $pill-background-color-focus: $secondary-light;
 $pill-background-color-active: $dark;
 $pill-background-color-focus: $dark;
+$pill-color-active-hover: $primary-invert;
 
 $pill-border-color-focus: $black;
 
@@ -57,3 +66,23 @@ $button-font-size-tablet: 1rem;
 assets/styles/views/_search.scss
 --------------------------------------------------------------*/
 $search-item-hover: $color-muumipeikon-valkoinen;
+
+/*--------------------------------------------------------------
+assets/styles/ui-components/_duetdatepicker.scss
+--------------------------------------------------------------*/
+$duet-color-primary: $primary;
+$duet-color-text: $black;
+$duet-color-text-active: $primary;
+$duet-color-text-placeholder: $grey;
+$duet-color-button: $primary;
+$duet-color-surface: $white;
+$duet-color-overlay: rgba(0, 0, 0, .8);
+$duet-color-border: $primary-light;
+
+/*--------------------------------------------------------------
+assets/styles/ui-components/_table.scss
+--------------------------------------------------------------*/
+$table-row-background-color-even: $black;
+$table-row-background-color-odd: rgba(78, 80, 86, .5);
+$table-row-background-color-even-hover: $primary-dark;
+$table-row-background-color-odd-hover: $primary-dark;

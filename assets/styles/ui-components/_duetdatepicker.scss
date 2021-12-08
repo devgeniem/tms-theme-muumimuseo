@@ -1,0 +1,10 @@
+.duet-date {
+    &__toggle-icon {
+        color: $primary-invert !important; // sass-lint:disable-line no-important
+    }
+
+    &__prev,
+    &__next {
+        color: $primary-invert !important; // sass-lint:disable-line no-important
+    }
+}

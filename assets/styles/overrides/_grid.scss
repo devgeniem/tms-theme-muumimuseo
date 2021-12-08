@@ -2,8 +2,19 @@
  * Copyright (c) 2021. Geniem Oy
  */
 
+// sass-lint:disable no-important
+
 .grid {
     &__item {
+
+        @include from($tablet) {
+            &__details p { 
+                // Addition lines for 2 line or multiline ellipsis
+                // https://caniuse.com/css-line-clamp
+                // Other related properties found in base theme
+                -webkit-line-clamp: 8;
+            }
+        }
         &.has-colors-secondary {
             color: $color-black !important;
             background-color: $color-muumi-haalea !important;
@@ -14,33 +25,53 @@
             background-color: $primary !important;
 
             a {
+                color: $primary !important;
                 background: $primary-invert !important;
                 border-color: $primary-invert !important;
-                color: $primary !important;
 
                 &:hover,
                 &:focus,
                 &:active {
+                    color: $primary-invert !important;
                     background: $primary !important;
                     border-color: $primary-invert !important;
-                    color: $primary-invert !important;
                 }
             }
         }
 
         &--featured {
             &.has-colors-accent {
-                a {
-                    background: $primary !important;
-                    border-color: $primary !important;
-                    color: $primary-invert !important;
+                a.button {
+                    color: $primary !important;
+                    background: $primary-invert !important;
+                    border-color: $primary-invert !important;
 
                     &:hover,
                     &:focus,
                     &:active {
-                        background: $primary-invert !important;
+                        color: $primary-invert !important;
+                        background: $primary !important;
                         border-color: $primary-invert !important;
-                        color: $primary !important;
+                    }
+                }
+
+                &.has-image {
+                    a.button {
+                        color: $primary-invert !important;
+                        background: $primary !important;
+                        border-color: $primary !important;
+
+                        &:hover,
+                        &:focus,
+                        &:active {
+                            color: $primary !important;
+                            background: $primary-invert !important;
+                            border-color: $primary-invert !important;
+                        }
+                    }
+
+                    .button {
+                        border: 0 !important;
                     }
                 }
             }

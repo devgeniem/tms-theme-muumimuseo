@@ -1,0 +1,17 @@
+/*!
+ *  Copyright (c) 2021. Geniem Oy
+ */
+
+.map {
+    &__description {
+        font-family: $family-secondary;
+    }
+
+    &__placeholder-wrapper {
+        .button {
+            &:focus {
+                outline: 2px dashed $primary-invert;
+            }
+        }
+    }
+}

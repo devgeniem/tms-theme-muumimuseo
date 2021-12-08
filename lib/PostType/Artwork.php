@@ -26,7 +26,7 @@ class Artwork implements PostType {
      *
      * @var string
      */
-    private $url_slug = '';
+    private $url_slug = 'artwork';
 
     /**
      * Define the CPT description
@@ -53,7 +53,6 @@ class Artwork implements PostType {
      * Constructor
      */
     public function __construct() {
-        $this->url_slug    = 'artwork';
         $this->description = _x( 'Artwork', 'theme CPT', 'tms-theme-muumimuseo' );
     }
 
@@ -125,7 +124,7 @@ class Artwork implements PostType {
         ];
 
         $rewrite = [
-            'slug'       => static::SLUG,
+            'slug'       => $this->url_slug,
             'with_front' => false,
             'pages'      => true,
             'feeds'      => true,

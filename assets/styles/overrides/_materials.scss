@@ -1,0 +1,53 @@
+.materials{
+
+    .has-border-secondary {
+        border-color:$color-vaalean-harmaa;
+        border-radius: 0 !important;
+    }
+
+    .button.is-primary.is-outlined {
+        color: $color-white !important;
+        background-color: $primary !important;
+
+        &:hover {
+            background-color: $color-white !important;
+            color: $primary !important;
+        }
+
+    }
+
+    .has-width-100 {
+
+        .is-flex {
+           width:100%;
+        }
+        
+        .button.is-align-self-flex-start{
+            align-self: center !important;
+        }
+
+    }
+
+    .icon--chevron-right {
+        fill: $primary;
+    }
+
+    .image.is-64x64 {
+        height:49px;
+    }
+
+    .icon--file {
+        fill: $color-white;
+    }
+
+    p,
+    span {
+        font-family:  $body-family;
+        font-weight: 400;
+    }
+
+    span {
+        text-transform: uppercase;
+    }
+
+}

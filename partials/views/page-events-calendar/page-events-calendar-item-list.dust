@@ -1,0 +1,66 @@
+<div class="events__item columns is-gapless mt-4 mb-4 {item_classes.list.item|s}">
+    {?image}
+        <div class="column is-4 is-relative">
+            <a href="{url}" class="is-hidden-mobile is-overlay has-background-cover" aria-hidden="true"
+               tabindex="-1" {@inlinebg url=image /}></a>
+
+            <div class="image is-16by9 is-hidden-tablet" aria-hidden="true">
+                <a href="{url}" aria-hidden="true" tabindex="-1">
+                    <img src="{image}" alt="" class="objectfit-image">
+                </a>
+            </div>
+
+            {?primary_keyword}
+                <span class="is-absolute has-top-1 has-left-1 pill">
+                    {primary_keyword|s}
+                </span>
+            {/primary_keyword}
+        </div>
+    {/image}
+
+    <div class="column">
+        <div class="events__item-inner pt-5 pr-6 pb-6 pl-6">
+            <h3 class="h5 mt-0 mb-5">
+                <a href="{url}" class="has-text-black">
+                    {name|s}
+                </a>
+            </h3>
+
+            <div class="is-flex is-flex-wrap-wrap">
+                <div class="is-flex is-align-items-center mt-2 mb-2 mr-4 {item_classes.list.meta_label|s}">
+                    <span class="is-sr-only">{Strings.s.event.date|s}</span>
+                    <span class="is-flex">
+                        {>"ui/icon" icon="date" class="icon--large is-primary mr-2 {item_classes.list.icon|s}" /}
+                    </span>
+
+                    {date|s}
+                </div>
+
+                <div class="is-flex is-align-items-center mt-2 mb-2 mr-4 {item_classes.list.meta_label|s}">
+                    <span class="is-sr-only">{Strings.s.event.time|s}</span>
+                    <span class="is-flex">
+                        {>"ui/icon" icon="time" class="icon--large is-primary mr-2 {item_classes.list.icon|s}" /}
+                    </span>
+
+                    {time|s}
+                </div>
+
+                {?location.name}
+                    <div class="is-flex is-align-items-center mt-2 mb-2 {item_classes.list.meta_label|s}">
+                        <span class="is-sr-only"> {Strings.s.event.location|s} </span>
+                        <span class="is-flex">
+                            {>"ui/icon" icon=location_icon class="icon--large is-primary mr-2 {item_classes.list.icon|s}" /}
+                        </span>
+
+                        {location.name|s}
+                    </div>
+                {/location.name}
+            </div>
+
+            <p class="has-text-small {item_classes.list.description|s}">
+                {short_description|s}
+            </p>
+
+        </div>
+    </div>
+</div>

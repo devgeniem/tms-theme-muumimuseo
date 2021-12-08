@@ -1,0 +1,24 @@
+.site-footer {
+    #js-back-to-top { // sass-lint:disable-line no-ids
+        &:hover,
+        &:focus {
+            color: $primary !important; // sass-lint:disable-line no-important
+            background-color: $primary-invert !important; // sass-lint:disable-line no-important
+            border-color: $primary-invert !important; // sass-lint:disable-line no-important
+        }
+
+        &:focus {
+            outline-color: $primary-invert;
+        }
+    }
+
+    &__link {
+        font-family: $family-secondary !important; // sass-lint:disable-line no-important
+        font-size: 1rem !important; // sass-lint:disable-line no-important
+        margin-bottom: $theme-spacing;
+    }
+
+    &__copy-links {
+        font-size: 85% !important; // sass-lint:disable-line no-important
+    }
+}

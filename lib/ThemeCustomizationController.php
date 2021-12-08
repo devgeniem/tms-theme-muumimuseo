@@ -52,7 +52,7 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
 
         add_filter(
             'tms/plugin-materials/page_materials/submit_button_classes',
-            fn() => 'is-primary is-borderless'
+            fn() => ''
         );
 
         add_filter(
@@ -91,12 +91,32 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         );
 
         add_filter(
-            'tms/theme/layout_events/item_icon_class',
-            fn() => 'is-black'
+            'tms/theme/single_blog/classes',
+            \Closure::fromCallable( [ $this, 'single_blog_classes' ] )
+        );
+
+        add_filter(
+            'tms/theme/blogs/info_section_classes',
+            fn() => 'has-colors-accent-secondary'
+        );
+
+        add_filter(
+            'tms/theme/blogs/info_section_button_classes',
+            fn() => 'is-primary'
+        );
+
+        add_filter(
+            'tms/theme/blogs/info_section_authors',
+            fn() => 'has-border has-border-top-1 has-border-primary'
         );
 
         add_filter(
             'tms/theme/page_events_calendar/item_classes',
+            \Closure::fromCallable( [ $this, 'event_item_classes' ] )
+        );
+
+        add_filter(
+            'tms/theme/page_events_search/item_classes',
             \Closure::fromCallable( [ $this, 'event_item_classes' ] )
         );
 
@@ -135,6 +155,26 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
             'tms/acf/block/subpages/data',
             [ $this, 'alter_block_subpages_data' ],
             30
+        );
+
+        add_filter(
+            'tms/theme/layout_events/all_events_link',
+            fn() => 'is-size-6 has-text-primary-invert is-family-secondary',
+        );
+
+        add_filter(
+            'tms/theme/layout_events/event_item',
+            fn() => '',
+        );
+
+        add_filter(
+            'tms/theme/layout_events/event_icon',
+            fn() => '',
+        );
+
+        add_filter(
+            'tms/single/related_display_categories',
+            '__return_false',
         );
     }
 
@@ -201,6 +241,21 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
             'item_inner' => 'has-text-black',
             'icon'       => 'is-primary',
         ];
+
+        return $classes;
+    }
+
+    /**
+     * Override single blog view classes.
+     *
+     * @param array $classes Classes.
+     *
+     * @return array
+     */
+    public function single_blog_classes( $classes ) : array {
+        $classes['info_section']         = 'has-colors-accent-secondary';
+        $classes['info_section_button']  = 'is-primary';
+        $classes['info_section_authors'] = 'has-border has-border-top-1 has-border-primary';
 
         return $classes;
     }
@@ -283,11 +338,11 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
     public function alter_block_quote_data( $data ) {
         $data['classes']['container'] = [];
         $data['classes']['quote']     = [
-            'has-text-primary',
             'is-size-1',
             'has-line-height-tight',
             'is-family-tovescript',
         ];
+        $data['classes']['author']    = '';
 
         if ( ! empty( $data['is_wide'] ) ) {
             $data['classes']['container'][] = 'is-align-wide';
@@ -312,7 +367,16 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
             $data['subpages'][ $key ]['classes'] .= ' has-border-1 has-border-divider-invert';
         }
 
-        $data['icon_classes'] = 'is-accent-tertiary';
+        $icon_colors_map = [
+            'black'     => 'is-accent-tertiary',
+            'white'     => 'is-primary',
+            'primary'   => 'is-primary-invert',
+            'secondary' => 'is-secondary-invert',
+        ];
+
+        $icon_color_key = $data['background_color'] ?? 'black';
+
+        $data['icon_classes'] = $icon_colors_map[ $icon_color_key ];
 
         return $data;
     }
