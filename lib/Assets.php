@@ -98,7 +98,7 @@ class Assets extends \TMS\Theme\Base\Assets implements \TMS\Theme\Base\Interface
             // Load language specific CSS file
             $language_stylesheet = "/lang_{$current_language}.css";
             \wp_enqueue_style(
-                $language_stylesheet,
+                "lang_{$current_language}",
                 DPT_ASSET_URI . $language_stylesheet,
                 [],
                 static::get_theme_asset_mod_time( $language_stylesheet ),
