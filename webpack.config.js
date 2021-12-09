@@ -22,6 +22,11 @@ const themeOutput = `${ wpThemePath }/assets/dist`;
 
 const entryPoints = {
     theme_muumimuseo: [ `${ wpThemePath }/assets/scripts/theme-muumimuseo.js` ],
+    typekit: [ `${ wpThemePath }/assets/scripts/typekit.js` ],
+    lang_ja: [ `${ wpThemePath }/assets/scripts/lang_ja.js` ],
+    lang_ko: [ `${ wpThemePath }/assets/scripts/lang_ko.js` ],
+    lang_ru: [ `${ wpThemePath }/assets/scripts/lang_ru.js` ],
+    lang_zh: [ `${ wpThemePath }/assets/scripts/lang_zh.js` ],
 };
 
 // All loaders to use on assets.
