@@ -2,7 +2,7 @@ html {
     background-color: $black;
 }
 main {
-    @media screen and (min-width: $desktop) {
+    @media screen and (min-width: 1750px) {
         background-image: url('../../assets/img/silmat-01.gif'),
         url('../../assets/img/silmat-02.gif'),
         url('../../assets/img/silmat-03.gif'),
