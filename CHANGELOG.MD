@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.12.2] – 2021-12-15
+
 ### Added
 
 - TMS-333: Support for Japanese, Chinese, Korean and Russian languages
