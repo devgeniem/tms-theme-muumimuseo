@@ -9,4 +9,10 @@
             }
         }
     }
+
+    .slick-arrow {
+        .icon {
+            fill: $black !important; // sass-lint:disable-line no-important
+        }
+    }
 }
