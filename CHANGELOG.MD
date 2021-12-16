@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
-- TMS-575: Fix modal button icon fill
+- TMS-575: Fix modal button icon fill #96
 
 ## [1.12.2] – 2021-12-15
 
