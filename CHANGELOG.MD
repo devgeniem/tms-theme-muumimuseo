@@ -7,6 +7,30 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.12.4] – 2021-12-20
+
+### Added
+
+- feat/add-favicon: Add favicon
+
+## [1.12.3] – 2021-12-16
+
+### Added
+
+- TMS-575: Fix modal button icon fill #96
+
+## [1.12.2] – 2021-12-15
+
+### Added
+
+- TMS-333: Support for Japanese, Chinese, Korean and Russian languages
+
+### Changed
+
+- TMS-563: Background eyes visible only to wide screen.
+
+## [1.12.1] – 2021-12-07
+
 ### Changed
 
 - TMS-483: Remove hero darkening and page title under hero.

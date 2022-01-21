@@ -37,6 +37,12 @@ class Assets extends \TMS\Theme\Base\Assets implements \TMS\Theme\Base\Interface
             return $mod_time;
 
         }, 10, 2 );
+
+        \add_action(
+            'wp_enqueue_scripts',
+            \Closure::fromCallable( [ $this, 'enqueue_language_assets' ] ),
+            100
+        );
     }
 
     /**
@@ -70,5 +76,34 @@ class Assets extends \TMS\Theme\Base\Assets implements \TMS\Theme\Base\Interface
      */
     public function base_theme_asset_path( $full_path, $file ) : string { // // phpcs:ignore
         return get_template_directory_uri() . '/assets/dist/' . $file;
+    }
+
+    /**
+     * Language style assets.
+     */
+    private function enqueue_language_assets() : void {
+        $assets_for_langs = [ 'ja', 'ko', 'ru', 'zh' ];
+        $current_language = function_exists( 'pll_current_language' ) ? \pll_current_language() : \get_locale();
+
+        if ( in_array( $current_language, $assets_for_langs, true ) ) {
+            // Load Typekit for custom fonts
+            \wp_enqueue_script(
+                'typekit-js',
+                DPT_ASSET_URI . '/typekit.js',
+                [],
+                static::get_theme_asset_mod_time( 'typekit.js' ),
+                true
+            );
+
+            // Load language specific CSS file
+            $language_stylesheet = "/lang_{$current_language}.css";
+            \wp_enqueue_style(
+                "lang_{$current_language}",
+                DPT_ASSET_URI . $language_stylesheet,
+                [],
+                static::get_theme_asset_mod_time( $language_stylesheet ),
+                false
+            );
+        }
     }
 }
