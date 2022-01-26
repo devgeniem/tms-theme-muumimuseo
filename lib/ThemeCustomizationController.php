@@ -176,6 +176,8 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
             'tms/single/related_display_categories',
             '__return_false',
         );
+
+        add_filter( 'tms/theme/nav_parent_link_is_trigger_only', '__return_true' );
     }
 
     /**
