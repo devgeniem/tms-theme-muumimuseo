@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+- TMS-424: Fix top level menu trigger #103
+
 ## [1.12.4] – 2021-12-20
 
 ### Added
