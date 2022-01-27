@@ -76,6 +76,8 @@ class Artwork implements PostType {
             'tms/base/breadcrumbs/after_prepare',
             Closure::fromCallable( [ $this, 'format_archive_breadcrumbs' ] ),
         );
+
+        add_filter( 'redipress/post_object', Closure::fromCallable( [ $this, 'handle_redipress_index' ] ) );
     }
 
     /**
@@ -239,5 +241,20 @@ class Artwork implements PostType {
         }
 
         return $this->get_breadcrumbs_base( true );
+    }
+
+    /**
+     * Add artists meta field into redipress index.
+     *
+     * @param WP_Post $post_item WP_Post object.
+     *
+     * @return WP_Post WP_Post object.
+     */
+    public function handle_redipress_index( $post_item ) {
+        if ( $post_item->post_type === self::SLUG && $post_item->post_status === 'publish' ) {
+            $post_item->artists = get_post_meta( $post_item->ID, 'artists', true );
+        }
+
+        return $post_item;
     }
 }
