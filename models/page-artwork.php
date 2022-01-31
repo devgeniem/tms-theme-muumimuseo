@@ -171,6 +171,6 @@ class PageArtwork extends ArchiveArtwork {
 
         $this->set_pagination_data( $the_query );
 
-        return $this->format_posts( $the_query->posts );
+        return $this->format_posts( $the_query->get_posts() );
     }
 }
