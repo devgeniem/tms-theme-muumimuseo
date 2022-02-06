@@ -266,7 +266,7 @@ class Artist implements PostType {
             if ( false === strpos( $artist_field, $artist_name ) ) {
                 $artist_field = $artist_field . ' ' . $artist_name;
 
-                $success = update_post_meta( $artwork->ID, 'artists', $artist_field );
+                update_post_meta( $artwork->ID, 'artists', $artist_field );
                 do_action( 'redipress/index_post', $artwork->ID, $artwork );
             }
         }

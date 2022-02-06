@@ -79,6 +79,14 @@ class Artwork implements PostType {
         );
 
         add_filter( 'redipress/schema_fields', function ( $fields ) {
+
+            foreach ( $fields as $schema_field ) {
+                // Bail out if artists key already exists in schema
+                if ( $schema_field->name === 'artists' ) {
+                    return $fields;
+                }
+            }
+
             $fields[] = new TextField( [
                 'name'     => 'artists',
                 'sortable' => true,
@@ -96,7 +104,9 @@ class Artwork implements PostType {
         }, 10, 3 );
 
         add_filter( 'redipress/search_fields', function ( $fields ) {
-            $fields[] = 'artists';
+            if ( ! in_array( 'artists', $fields ) ) {
+                $fields[] = 'artists';
+            }
 
             return $fields;
         } );

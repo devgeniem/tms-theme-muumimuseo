@@ -24,7 +24,8 @@ class SingleArtwork extends SingleArtist {
      * @throws Exception If global $post is not available or $id param is not defined.
      */
     public function content() {
-        $single = Query::get_acf_post();
+        $single       = Query::get_acf_post();
+        $single->meta = get_post_meta( get_the_ID(), 'artists', true );
 
         return $single;
     }
