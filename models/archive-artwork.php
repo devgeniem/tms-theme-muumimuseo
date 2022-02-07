@@ -54,6 +54,23 @@ class ArchiveArtwork extends ArchiveArtist {
             'pre_get_posts',
             [ __CLASS__, 'modify_query' ]
         );
+
+        add_filter( 'redipress/ignore_query_vars', [ __CLASS__, 'redipress_ignore_query_vars' ] );
+    }
+
+    /**
+     * Add custom query vars to the list of ignored query vars list for RediPress.
+     *
+     * @param array $vars Ignored query vars.
+     *
+     * @return array
+     */
+    private function redipress_ignore_query_vars( $vars ) {
+
+        $vars[] = self::SEARCH_QUERY_VAR;
+        $vars[] = self::FILTER_QUERY_VAR;
+
+        return $vars;
     }
 
     /**
