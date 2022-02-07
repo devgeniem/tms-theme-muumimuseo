@@ -39,6 +39,7 @@ class ArchiveArtist extends BaseModel {
             'pre_get_posts',
             [ __CLASS__, 'modify_query' ]
         );
+
     }
 
     /**
