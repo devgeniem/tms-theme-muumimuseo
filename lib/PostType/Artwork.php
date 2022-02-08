@@ -6,6 +6,7 @@
 namespace TMS\Theme\Muumimuseo\PostType;
 
 use Closure;
+use Geniem\RediPress\Entity\TextField;
 use TMS\Theme\Base\Interfaces\PostType;
 
 /**
@@ -76,6 +77,38 @@ class Artwork implements PostType {
             'tms/base/breadcrumbs/after_prepare',
             Closure::fromCallable( [ $this, 'format_archive_breadcrumbs' ] ),
         );
+
+        add_filter( 'redipress/schema_fields', function ( $fields ) {
+            foreach ( $fields as $schema_field ) {
+                // Bail out if artists key already exists in schema
+                if ( $schema_field->name === 'artists' ) {
+                    return $fields;
+                }
+            }
+
+            $fields[] = new TextField( [
+                'name'     => 'artists',
+                'sortable' => true,
+            ] );
+
+            return $fields;
+        }, PHP_INT_MAX, 1 );
+
+        add_filter( 'redipress/additional_field/artists', function ( $value, $post_id, $post ) {
+            if ( $post->post_type === Artwork::SLUG ) {
+                $value = get_post_meta( $post_id, 'artists', true );
+            }
+
+            return $value;
+        }, 10, 3 );
+
+        add_filter( 'redipress/search_fields', function ( $fields ) {
+            if ( ! in_array( 'artists', $fields, true ) ) {
+                $fields[] = 'artists';
+            }
+
+            return $fields;
+        } );
     }
 
     /**
