@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+- TMS-300: Swap order of artist short description and additional information.
+
 ## [1.12.6] - 2022-02-15
 
 ### Changed
