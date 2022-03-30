@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Fixed
+
+- TMS-728: Fix media gallery texts of featured image in artwork.
+
 ## [1.14.0] - 2022-03-15
 
 - Bump follow-redirects from 1.14.1 to 1.14.8 #105
