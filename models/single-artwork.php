@@ -187,6 +187,7 @@ class SingleArtwork extends SingleArtist {
             $item['meta'] = ImageFormatter::format( [
                 'is_clickable' => true,
                 'id'           => $item['ID'],
+                'image'        => $item,
             ] );
 
             $item['id'] = wp_unique_id( 'image-gallery-item-' );
@@ -207,6 +208,11 @@ class SingleArtwork extends SingleArtist {
      */
     protected function get_featured_media_gallery_item() {
         $featured_media_id = get_post_thumbnail_id();
+
+        if ( function_exists( 'acf_get_attachment' ) ) {
+            return acf_get_attachment( $featured_media_id );
+        }
+
         $img_src           = wp_get_attachment_image_src( $featured_media_id, 'fullhd' );
         $img_post          = get_post( $featured_media_id, ARRAY_A );
         $img_post['sizes'] = [

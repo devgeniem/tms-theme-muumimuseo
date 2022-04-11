@@ -7,6 +7,34 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Fixed
+
+- TMS-768: Duet Date Picker active text color override
+
+## [1.15.0] - 2022-04-04
+
+### Fixed
+
+- TMS-728: Fix media gallery texts of featured image in artwork.
+
+## [1.14.0] - 2022-03-15
+
+- Bump follow-redirects from 1.14.1 to 1.14.8 #105
+
+## [1.13.0] - 2022-02-24
+
+### Changed
+
+- TMS-300: Swap order of artist short description and additional information.
+
+## [1.12.6] - 2022-02-15
+
+### Changed
+
+- TMS-430: Fix related artwork logic #104
+
+## [1.12.5] – 2022-02-01
+
 ### Changed
 
 - TMS-424: Fix top level menu trigger #103

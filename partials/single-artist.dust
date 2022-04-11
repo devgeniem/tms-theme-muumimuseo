@@ -16,14 +16,14 @@
                             <article class="entry columns is-desktop is-flex-wrap-wrap">
                                 
                                  <div class="column is-6-desktop entry__content keep-vertical-spacing ">
+                                    {?content.fields.additional_information}
+                                        {>"shared/additional-info-list" data=content.fields.additional_information /}
+                                    {/content.fields.additional_information}
                                     {?content.fields.short_description}
-                                        <p class="is-family-sans-serif">
+                                        <p class="is-family-sans-serif mt-6">
                                             {content.fields.short_description|s}
                                         </p>
-                                     {/content.fields.short_description}
-                                    {?content.fields.additional_information}
-                                        {>"shared/additional-info-list" list_class="mt-6" data=content.fields.additional_information /}
-                                    {/content.fields.additional_information}
+                                    {/content.fields.short_description}
                                  </div>
 
                                 <div class="column is-4-desktop is-offset-2-desktop">
