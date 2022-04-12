@@ -1,3 +1,9 @@
+$duet-color-text-active: $white;
+
+:root {
+    --duet-color-text-active: #{$duet-color-text-active};
+}
+
 .duet-date {
     &__toggle-icon {
         color: $primary-invert !important; // sass-lint:disable-line no-important

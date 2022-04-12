@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Fixed
+
+- TMS-768: Duet Date Picker active text color override
+
 ## [1.15.0] - 2022-04-04
 
 ### Fixed
