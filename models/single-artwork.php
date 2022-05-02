@@ -27,6 +27,10 @@ class SingleArtwork extends SingleArtist {
         $single       = Query::get_acf_post();
         $single->meta = get_post_meta( get_the_ID(), 'artists', true );
 
+        if ( ! empty( $single->image ) ) {
+            $single = ImageFormatter::get_image_artist( (array) $single, (array) $single->image );
+        }
+
         return $single;
     }
 
