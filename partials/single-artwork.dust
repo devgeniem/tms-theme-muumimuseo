@@ -16,6 +16,8 @@
                                     {?content.image}
                                         <div class="entry__figure pt-2">
                                             {@image id=content.image.id size="single" /}
+
+                                            {>"ui/image/image-meta-minimal" classes="mb-3" image_title_and_artist=content.image_title_and_artist author_name=content.author_name /}
                                         </div>
                                     {/content.image}
 
@@ -43,7 +45,8 @@
                                     </div>
 
                                     <div class="column is-6-desktop">
-                                        <div class="entry__content ml-3-tablet keep-vertical-spacing is-family-sans-serif">
+                                        <div
+                                            class="entry__content ml-3-tablet keep-vertical-spacing is-family-sans-serif">
                                             {@content /}
                                         </div>
                                     </div>
