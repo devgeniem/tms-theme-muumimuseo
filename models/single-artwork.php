@@ -26,6 +26,10 @@ class SingleArtwork extends SingleArtist {
     public function content() {
         $single = Query::get_acf_post();
 
+        if ( ! empty( $single->image ) ) {
+            $single = ImageFormatter::get_image_artist( (array) $single, (array) $single->image );
+        }
+
         return $single;
     }
 
