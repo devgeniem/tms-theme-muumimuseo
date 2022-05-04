@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Fixed
 
+- TMS-813: Translate CPT name #118
 - TMS-816: Display image meta in single artwork view #116
 
 ## [1.15.1] - 2022-05-02

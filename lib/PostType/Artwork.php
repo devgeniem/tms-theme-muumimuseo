@@ -127,7 +127,7 @@ class Artwork implements PostType {
      */
     private function register() {
         $labels = [
-            'name'                  => 'Taideteokset',
+            'name'                  => _x( 'Artwork', 'theme CPT', 'tms-theme-muumimuseo' ),
             'singular_name'         => 'Taideteos',
             'menu_name'             => 'Taideteokset',
             'name_admin_bar'        => 'Taideteokset',
