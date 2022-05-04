@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Fixed
+
+- TMS-813: Translate CPT name.
+
 ## [1.15.1] - 2022-05-02
 
 ### Fixed
