@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+- TMS-224: Drupal news related styling.
+
+## [1.15.2] - 2022-06-05
+
+### Fixed
+
+- TMS-813: Translate CPT name #118
+- TMS-816: Display image meta in single artwork view #116
+
 ## [1.15.1] - 2022-05-02
 
 ### Fixed

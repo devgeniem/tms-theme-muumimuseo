@@ -1,0 +1,28 @@
+.single {
+    .topical-content {
+        .general-contact-card {
+            padding: 20px;
+            background-color: transparent;
+    
+            * {
+                color: #fff;
+            }
+        }
+
+        .attachment-list {
+            * {
+                color: #fff;
+            }
+        }
+
+        .table {
+            .table__row {
+                border-top-color: #fff;
+            }
+
+            .table__cell {
+                border-bottom-color: #fff !important;
+            }
+        }
+    }
+}
