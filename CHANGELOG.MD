@@ -7,10 +7,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-### Added
-- TMS-224: Drupal news related styling.
+## [1.16.] - 2022-05-23
 
-## [1.15.2] - 2022-06-05
+### Added
+
+- TMS-224: Drupal news related styling. #119
+
+## [1.15.2] - 2022-05-05
 
 ### Fixed
 
