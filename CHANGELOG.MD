@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+- TMS-880: Display drupal image #122
+
 ## [1.16.] - 2022-05-23
 
 ### Added
