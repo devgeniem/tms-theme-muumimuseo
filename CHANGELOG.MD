@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.16.2] - 2022-08-23
+
+- TMS-894: Fix composer
+
 ## [1.16.1] - 2022-06-21
 
 ### Changed
