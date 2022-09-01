@@ -23,6 +23,27 @@ class ThemeSupports implements \TMS\Theme\Base\Interfaces\Controller {
             'query_vars',
             \Closure::fromCallable( [ $this, 'query_vars' ] )
         );
+
+        \add_action(
+            'after_setup_theme',
+            \Closure::fromCallable( [ $this, 'unregister_nav_menus' ] ),
+            20
+        );
+    }
+
+    /**
+     * Unregister navigation menus
+     */
+    protected function unregister_nav_menus() : void {
+        $menus = get_nav_menu_locations();
+
+        if ( ! is_array( $menus ) || empty( $menus ) ) {
+            return;
+        }
+
+        foreach ( $menus as $key => $value ) {
+            \unregister_nav_menu( $key );
+        }
     }
 
     /**
