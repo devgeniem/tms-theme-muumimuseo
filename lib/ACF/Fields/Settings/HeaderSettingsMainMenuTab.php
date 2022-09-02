@@ -36,7 +36,9 @@ class HeaderSettingsMainMenuTab extends Tab {
 
         'main_links'    => [
             'label'        => 'Päävalikon linkit',
-            'instructions' => 'Lisää tähän päävalikon päätason linkit. Linkki voi viedä suoraan haluttuun sivuun tai se voi avata alavalikon, josta löytyy alatason linkkejä ja oikopolkulinkkejä.',
+            'instructions' => 'Lisää tähän päävalikon päätason linkit.
+                               Linkki voi viedä suoraan haluttuun sivuun tai se voi avata alavalikon,
+                               josta löytyy alatason linkkejä ja oikopolkulinkkejä.',
             'button'       => 'Lisää päätason linkki',
         ],
 
@@ -47,7 +49,9 @@ class HeaderSettingsMainMenuTab extends Tab {
 
         'use_submenu'   => [
             'label'        => 'Lisää alavalikko',
-            'instructions' => 'Lisää tästä päätason linkin alle alavalikko. Jos et lisää alavalikkoa, päätason linkin klikkaaminen vie käyttäjän suoraan linkin osoitteeseen.',
+            'instructions' => 'Lisää tästä päätason linkin alle alavalikko.
+                               Jos et lisää alavalikkoa, päätason linkin klikkaaminen
+                               vie käyttäjän suoraan linkin osoitteeseen.',
         ],
 
         'submenu_links' => [
