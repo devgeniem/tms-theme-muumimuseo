@@ -9,6 +9,7 @@ use \Geniem\ACF\Exception;
 use TMS\Theme\Base\Logger;
 use TMS\Theme\Muumimuseo\ACF\Fields\Settings\ArtistSettingsTab;
 use TMS\Theme\Muumimuseo\ACF\Fields\Settings\ArtworkSettingsTab;
+use TMS\Theme\Muumimuseo\ACF\Fields\Settings\HeaderSettingsMainMenuTab;
 
 /**
  * Class SettingsGroup
@@ -41,6 +42,7 @@ class SettingsGroup {
         try {
             $fields[] = new ArtworkSettingsTab( '', $key );
             $fields[] = new ArtistSettingsTab( '', $key );
+            $fields[] = new HeaderSettingsMainMenuTab( '', $key );
         }
         catch ( Exception $e ) {
             ( new Logger() )->error( $e->getMessage(), $e->getTraceAsString() );
