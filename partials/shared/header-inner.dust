@@ -27,13 +27,13 @@
                 {>"shared/header-search-toggle"  /}
             {/Header.hide_search}
 
-            {?Header.has_nav_menu}
+            {?Header.main_menu}
                 <button class="fly-out-nav__trigger {?Header.hide_search}ml-4{/Header.hide_search} {^Header.hide_main_nav}is-hidden-widescreen{/Header.hide_main_nav}"
                         data-micromodal-trigger="js-fly-out-nav">
                     {>"ui/icon" icon="burger" class="icon--large" /}
-                    <span class="is-sr-only">{Strings.s.header.open_menu|s}</span>
+                    <span class="is-sr-only">{Strings.s.header.open_menu|html}</span>
                 </button>
-            {/Header.has_nav_menu}
+            {/Header.main_menu}
 
             {>"shared/header-brand" /}
         </div>
@@ -65,7 +65,7 @@
         <div class="container">
             <div class="columns mt-0 mb-0">
                 <div class="column pt-0 pb-0">
-                    {>"ui/menu/main-menu" menu=Header.main_menu /}
+                    {>"ui/menu/main-menu" menu=Header.main_menu ul_classes="menu-depth-1 bulmally-navbar primary-nav primary-nav--dropdown" ul_id="js-primary-menu" /}
                 </div>
             </div>
         </div>
