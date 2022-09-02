@@ -55,7 +55,10 @@ class ArchiveArtwork extends ArchiveArtist {
             [ __CLASS__, 'modify_query' ]
         );
 
-        add_filter( 'redipress/ignore_query_vars', \Closure::fromCallable( [ __CLASS__, 'redipress_ignore_query_vars' ] ) );
+        add_filter(
+            'redipress/ignore_query_vars',
+            \Closure::fromCallable( [ __CLASS__, 'redipress_ignore_query_vars' ] )
+        );
     }
 
     /**

@@ -32,31 +32,31 @@ class HeaderSettingsMainMenuTab extends Tab {
      */
     protected $strings = [
 
-        'tab'              => 'Ylätunniste - päävalikko',
+        'tab'           => 'Ylätunniste - päävalikko',
 
-        'main_links'       => [
+        'main_links'    => [
             'label'        => 'Päävalikon linkit',
             'instructions' => 'Lisää tähän päävalikon päätason linkit. Linkki voi viedä suoraan haluttuun sivuun tai se voi avata alavalikon, josta löytyy alatason linkkejä ja oikopolkulinkkejä.',
             'button'       => 'Lisää päätason linkki',
         ],
 
-        'main_link'        => [
+        'main_link'     => [
             'label'        => 'Päätason linkki',
             'instructions' => '',
         ],
 
-        'use_submenu'      => [
+        'use_submenu'   => [
             'label'        => 'Lisää alavalikko',
             'instructions' => 'Lisää tästä päätason linkin alle alavalikko. Jos et lisää alavalikkoa, päätason linkin klikkaaminen vie käyttäjän suoraan linkin osoitteeseen.',
         ],
 
-        'submenu_links'    => [
+        'submenu_links' => [
             'label'        => 'Alatason linkit',
             'instructions' => 'Lisää tähän päätason linkin alle tulevat alatason linkit.',
             'button'       => 'Lisää alatason linkki',
         ],
 
-        'submenu_link'     => [
+        'submenu_link'  => [
             'label'        => 'Alatason linkki',
             'instructions' => '',
         ],
