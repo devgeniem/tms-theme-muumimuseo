@@ -8,7 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 ### Changed
-- TMS-733: Replace core menu by acf repeater.
+
+- TMS-733: Replace core menu by acf repeater. #125
 
 ## [1.16.2] - 2022-08-23
 
