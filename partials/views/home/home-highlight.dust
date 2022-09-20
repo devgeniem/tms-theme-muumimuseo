@@ -11,8 +11,8 @@
         {/featured_image}
         {?api_image_url}
             <div class="highlight-article__image-container column is-8-desktop is-relative">
-                <div class="highlight-article__image is-absolute-tablet has-top-0-tablet has-right-0-tablet has-bottom-0-tablet has-left-0-tablet">
-                    <div class="image is-16by9 is-hidden-tablet">
+                <div class="highlight-article__image is-absolute-desktop has-top-0-desktop has-right-0-desktop has-bottom-0-desktop has-left-0-desktop">
+                    <div class="image is-16by9">
                         <img class="objectfit-image is-block" src="{api_image_url|url}" loading="lazy"/>
                     </div>
                 </div>
