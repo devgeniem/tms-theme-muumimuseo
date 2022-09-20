@@ -11,6 +11,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - PIEN-7610: Handle api_image_url and fix case where featured image doesn't exist.
 
+## [1.16.3] - 2022-09-07
+
+### Changed
+
+- TMS-733: Replace core menu by acf repeater. #125
+
 ## [1.16.2] - 2022-08-23
 
 - TMS-894: Fix composer
