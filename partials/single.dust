@@ -1,0 +1,69 @@
+{>"shared/base" /}
+
+{<content}
+    <main class="main-content" id="main-content">
+        <section class="section">
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-10 is-offset-1">
+                        {#Single}
+                            <article class="entry">
+                                <header class="entry__header">
+                                    <h1 class="entry__title mt-0 mb-8 has-line-height-tight has-text-centered ">
+                                        {@title /}
+                                    </h1>
+
+                                    {?content.image}
+                                        <div class="entry__figure pt-2 has-text-centered">
+                                            {@image id=content.image.id size="large" /}
+                                        </div>
+
+                                        {>"views/single/single-meta" spacing_class="pt-5 pt-4-desktop pb-5 p-5-tablet" /}
+                                    {/content.image}
+
+                                    {?content.api_image_url}
+                                        <div class="entry__figure pt-2 has-text-centered">
+                                            <img src="{content.api_image_url|url}" loading="lazy" />
+                                        </div>
+
+                                        {>"views/single/single-meta" spacing_class="pt-5 pt-4-desktop pb-5 p-5-tablet" /}
+                                    {/content.api_image_url}
+                                </header>
+
+                                <div class="entry__content is-content-grid keep-vertical-spacing">
+                                    {^content.has_image}
+                                        {>"views/single/single-meta" spacing_class="mt-6 mb-6" /}
+                                    {/content.has_image}
+
+                                    {?content.post_excerpt}
+                                        <p class="entry__lead">
+                                            {content.post_excerpt|html}
+                                        </p>
+                                    {/content.post_excerpt}
+
+                                    {@content /}
+
+                                    {?share_links}
+                                        <div class="entry__share-links">
+                                            <h2 class="h6 mt-6 mb-6">
+                                                {Strings.s.share.share_article|html}
+                                            </h2>
+
+                                            {>"ui/share-links" share_links=share_links li_class="mr-4" /}
+                                        </div>
+                                    {/share_links}
+                                </div>
+                            </article>
+                        {/Single}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {?Single.related.posts}
+            {>"views/single/single-related" related=Single.related /}
+        {/Single.related.posts}
+
+        {>"ui/components" components=Single.components /}
+    </main>
+{/content}

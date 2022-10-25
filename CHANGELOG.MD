@@ -8,10 +8,31 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 ### Changed
+
 - TMS-733: Replace core menu by acf repeater.
+
+### Fixed
+
+- TMS-818: Fix images.
+- PIEN-7610: Handle api_image_url and fix case where featured image doesn't exist.
+
+## [1.16.5] - 2022-10-17
+
+### Fixed
+
+- PIEN-7726: Fix showing images in home page highlight.
+
+## [1.16.4] - 2022-09-20
+
 ### Fixed
 
 - PIEN-7610: Handle api_image_url and fix case where featured image doesn't exist.
+
+## [1.16.3] - 2022-09-07
+
+### Changed
+
+- TMS-733: Replace core menu by acf repeater. #125
 
 ## [1.16.2] - 2022-08-23
 

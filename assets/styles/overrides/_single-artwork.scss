@@ -11,4 +11,13 @@
             @include keep-vertical-spacing;
         }
     }
+
+    .entry {
+        &__figure {
+            img {
+                width: auto;
+                max-height: $image-max-height;
+            }
+        }
+    }
 }

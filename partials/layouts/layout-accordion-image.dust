@@ -1,0 +1,11 @@
+{?image}
+    <div class="image mt-4 mt-8-tablet {^caption}mb-4 mb-8-tablet{/caption}">
+        {@image id=image size="large" /}
+    </div>
+
+    {?caption}
+        <div class="image-caption mb-4 mb-8-tablet">
+            {caption|s}
+        </div>
+    {/caption}
+{/image}

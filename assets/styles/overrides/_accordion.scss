@@ -5,4 +5,11 @@
     .icon.is-accent{
         fill: $white !important;
     }
+
+    .image {
+        img {
+            width: auto;
+            max-height: $image-max-height;
+        }
+    }
 }

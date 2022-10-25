@@ -1,0 +1,34 @@
+<div {?anchor}id="{anchor|attr}"{/anchor} class="section content-columns">
+    <div class="container keep-vertical-spacing">
+        {#rows}
+            <div class="content-columns__item mt-6 mb-6 columns is-vcentered {item_class|s}">
+                {?image}
+                    <div class="column {img_col_class|attr}">
+                        <div class="image">
+                            {@image id=image.id size="large" class="objectfit-image" /}
+                        </div>
+                        {?display_artist}
+                            {?image_author_and_artist}
+                                <small>{image_author_and_artist|html}</small>
+                            {/image_author_and_artist}
+                        {/display_artist}
+                    </div>
+                {/image}
+
+                <div class="column {text_col_class|attr}">
+                    {?title}
+                        <h2 class="content-columns__title h4 mt-0-desktop">
+                            {title|html}
+                        </h2>
+                    {/title}
+
+                    {?description}
+                        <div class="content-columns__description mt-6 keep-vertical-spacing">
+                            {description|html}
+                        </div>
+                    {/description}
+                </div>
+            </div>
+        {/rows}
+    </div>
+</div>

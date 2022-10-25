@@ -1,0 +1,9 @@
+
+.image-block {
+    .image {
+        img {
+            width: auto;
+            max-height: $image-max-height;
+        }
+    }
+}
