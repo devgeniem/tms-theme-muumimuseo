@@ -15,7 +15,7 @@
 
                                     {?content.image}
                                         <div class="entry__figure pt-2">
-                                            {@image id=content.image.id size="single" /}
+                                            {@image id=content.image.id size="large" /}
 
                                             {>"ui/image/image-meta-minimal" classes="mb-3" image_title_and_artist=content.image_title_and_artist author_name=content.author_name /}
                                         </div>

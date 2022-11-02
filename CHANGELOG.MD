@@ -13,7 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Fixed
 
-- TMS-818: Fix images.
+- TMS-818: Fix images. #137
 - PIEN-7610: Handle api_image_url and fix case where featured image doesn't exist.
 
 ## [1.16.5] - 2022-10-17
