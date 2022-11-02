@@ -24,7 +24,7 @@
 
                     {?description}
                         <div class="content-columns__description mt-6 keep-vertical-spacing">
-                            {description|s}}
+                            {description|s}
                         </div>
                     {/description}
                 </div>
