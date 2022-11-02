@@ -37,7 +37,7 @@
 
                                     {?content.post_excerpt}
                                         <p class="entry__lead">
-                                            {content.post_excerpt|html}
+                                            {content.post_excerpt|kses}
                                         </p>
                                     {/content.post_excerpt}
 
