@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-931: Navigation accessibility fix
+
+## [1.18.0] - 2023-04-26
+
+- PIEN-8572: Add missing body-script to use
+
+## [1.17.0] - 2023-04-11
+
 - PIEN-8157: PHP 8.1
 
 ## [1.16.6] - 2022-11-02

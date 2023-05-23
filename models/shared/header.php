@@ -285,6 +285,17 @@ class Header extends Model {
     }
 
     /**
+     * Get custom body scripts from Site Settings.
+     *
+     * @return false|mixed
+     */
+    public function body_custom_scripts() {
+        $body_scripts = Settings::get_setting( 'body_scripts' );
+
+        return ( ! empty( $body_scripts ) ) ? $body_scripts : false;
+    }
+
+    /**
      * Maybe show chat.
      *
      * @return string|null
