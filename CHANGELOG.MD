@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-931: Navigation accessibility fix
+
 ## [1.18.0] - 2023-04-26
 
 - PIEN-8572: Add missing body-script to use
