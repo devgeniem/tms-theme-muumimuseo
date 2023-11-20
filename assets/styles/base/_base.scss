@@ -26,5 +26,13 @@ main {
         > p > a {
             text-decoration: underline;
         }
+
+        .button.is-no_color-invert {
+            border-color: $primary;
+
+            &:hover {
+                border-color: $color-white;
+            }
+        }
     }
 }

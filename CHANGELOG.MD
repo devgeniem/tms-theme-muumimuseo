@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.18.4] - 2023-11-21
+
+- TMS-997: Change textblock button border-color if no bg-color is selected
+
 ## [1.18.3] - 2023-10-23
 
 - TMS-970: Add image meta to content-columns component
