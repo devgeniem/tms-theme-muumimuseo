@@ -7,6 +7,11 @@
                         <div class="image">
                             {@image id=image.id size="large" class="objectfit-image" /}
                         </div>
+
+                        {@isset key1=display_caption key2=image.caption method="AND" }
+                            {>"ui/image/image-caption"  /}
+                        {/isset}
+
                         {?display_artist}
                             {?image_author_and_artist}
                                 <small>{image_author_and_artist|html}</small>
