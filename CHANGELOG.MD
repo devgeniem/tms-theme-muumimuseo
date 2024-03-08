@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1017: Add image alt-text to imported news single-article
+
 ## [1.18.4] - 2023-11-21
 
 - TMS-997: Change textblock button border-color if no bg-color is selected
