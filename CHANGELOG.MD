@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 - TMS-1015: Header accessibility fixes
+- TMS-1017: Add image alt-text to imported news single-article
 
 ## [1.18.4] - 2023-11-21
 
@@ -260,7 +261,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - TMS-336: Override pill color scheme #45
 - TMS-335: Image banner block button colour change #44
->>>>>>> TMS-348
 
 ## [1.4.0] - 2021-10-14
 
