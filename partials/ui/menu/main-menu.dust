@@ -7,15 +7,15 @@
                         <a class="navbar-link dropdown-trigger is-arrowless" aria-haspopup="true" href="#">
                             {link.title|html}
                         </a>
-                        <button class="dropdown-toggler" aria-expanded=false aria-controls="js-navbar-menu-item-dropdown-{$idx}">
-                            <span class="is-sr-only">{data.open_menu|s}</span>
+                        <button class="dropdown-toggler" aria-expanded=false aria-controls="js-navbar-menu-item-dropdown-{$idx|attr}">
+                            <span class="is-sr-only">{Header.strings.open_menu|html}</span>
 
                             <span aria-hidden="true">
                                 {>"ui/icon" icon="chevron-down" class="icon--medium" /}
                             </span>
                         </button>
                     </div>
-                    <div class="navbar-dropdown has-background-white has-text-black" id="js-navbar-menu-item-dropdown-{$idx}">
+                    <div class="navbar-dropdown has-background-white has-text-black" id="js-navbar-menu-item-dropdown-{$idx|attr}">
                         <div class="container">
                             <div class="columns">
                                 <div class="column">

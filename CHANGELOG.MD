@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.18.5] - 2024-03-18
+
+- TMS-1015: Header accessibility fixes
+
 ## [1.18.4] - 2023-11-21
 
 - TMS-997: Change textblock button border-color if no bg-color is selected
