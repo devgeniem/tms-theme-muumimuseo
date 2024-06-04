@@ -1,8 +1,11 @@
 .accordion{
-    &__row{
-        &, &:hover {border-color: $white};
+    &__row {
+        &,
+        &:hover {
+            border-color: $white
+        };
     }
-    .icon.is-accent{
+    .icon.is-accent {
         fill: $white !important;
     }
 
@@ -10,6 +13,19 @@
         img {
             width: auto;
             max-height: $image-max-height;
+        }
+    }
+
+    &__close-all,
+    &__open-all,
+    &__icon-text {
+        color: $white !important;
+    }
+
+    &__close-all,
+    &__open-all {
+        .icon {
+            fill: $white !important;
         }
     }
 }
