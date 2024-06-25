@@ -21,7 +21,7 @@ class AlterPageSettingsFields {
     /**
      * Remove overlay TrueFalse-field from page settings
      *
-     * @param Field\Group[] $fields Array of settings.
+     * @param Field\Group $group Group-object of settings.
      *
      * @return array
      */
