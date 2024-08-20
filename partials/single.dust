@@ -38,7 +38,7 @@
                                     {/content.has_image}
 
                                     {?content.post_excerpt}
-                                        <p class="entry__lead">
+                                        <p class="entry__lead is-size-5">
                                             {content.post_excerpt|kses}
                                         </p>
                                     {/content.post_excerpt}
