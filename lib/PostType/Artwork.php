@@ -63,22 +63,22 @@ class Artwork implements PostType {
      * @return void
      */
     public function hooks() : void {
-        add_action( 'init', Closure::fromCallable( [ $this, 'register' ] ), 15 );
-        add_filter( 'tms/gutenberg/blocks', Closure::fromCallable( [ $this, 'allowed_blocks' ] ), 10, 1 );
+        \add_action( 'init', Closure::fromCallable( [ $this, 'register' ] ), 15 );
+        \add_filter( 'tms/gutenberg/blocks', Closure::fromCallable( [ $this, 'allowed_blocks' ] ), 10, 1 );
 
-        add_filter(
+        \add_filter(
             'tms/base/breadcrumbs/before_prepare',
             Closure::fromCallable( [ $this, 'format_single_breadcrumbs' ] ),
             10,
             3
         );
 
-        add_filter(
+        \add_filter(
             'tms/base/breadcrumbs/after_prepare',
             Closure::fromCallable( [ $this, 'format_archive_breadcrumbs' ] ),
         );
 
-        add_filter( 'redipress/schema_fields', function ( $fields ) {
+        \add_filter( 'redipress/index/posts/schema_fields', function ( $fields ) {
             foreach ( $fields as $schema_field ) {
                 // Bail out if artists key already exists in schema
                 if ( $schema_field->name === 'artists' ) {
@@ -94,15 +94,15 @@ class Artwork implements PostType {
             return $fields;
         }, PHP_INT_MAX, 1 );
 
-        add_filter( 'redipress/additional_field/artists', function ( $value, $post_id, $post ) {
+        \add_filter( 'redipress/additional_field/artists', function ( $value, $post_id, $post ) {
             if ( $post->post_type === Artwork::SLUG ) {
-                $value = get_post_meta( $post_id, 'artists', true );
+                $value = \get_post_meta( $post_id, 'artists', true );
             }
 
             return $value;
         }, 10, 3 );
 
-        add_filter( 'redipress/search_fields', function ( $fields ) {
+        \add_filter( 'redipress/search_fields', function ( $fields ) {
             if ( ! in_array( 'artists', $fields, true ) ) {
                 $fields[] = 'artists';
             }
