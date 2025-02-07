@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1100: Show multiple locations for events if available
+
+## [1.19.0] - 2024-10-24
+
 - TMS-1075: Redipress 2 filters
 
 ## [1.18.9] - 2024-09-25
