@@ -13,9 +13,7 @@
                         {/isset}
 
                         {?display_artist}
-                            {?image_author_and_artist}
-                                <small>{image_author_and_artist|html}</small>
-                            {/image_author_and_artist}
+                            {>"ui/image/image-meta-minimal" /}
                         {/display_artist}
                     </div>
                 {/image}
