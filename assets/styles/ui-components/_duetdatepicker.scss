@@ -13,4 +13,10 @@ $duet-color-text-active: $white;
     &__next {
         color: $primary-invert !important; // sass-lint:disable-line no-important
     }
+
+    &__table {
+        th {
+            color: $color-black !important; // sass-lint:disable-line no-important
+        }
+    }
 }
