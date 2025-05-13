@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.19.3] - 2025-05-14
+
 - TMS-1131: Events search form style changes
 
 ## [1.19.2] - 2025-04-09
