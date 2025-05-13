@@ -1,10 +1,9 @@
-/*!
- *  Copyright (c) 2021. Geniem Oy
- */
-
 .page-template-page-events-search {
     form {
         .has-colors-accent-secondary {
+            color: $primary-invert !important;
+            background-color: transparent !important;
+
             button[type=submit] {
                 color: $black !important; // sass-lint:disable-line no-important
                 background-color: $primary-invert !important; // sass-lint:disable-line no-important
