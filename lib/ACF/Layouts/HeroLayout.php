@@ -51,6 +51,18 @@ class HeroLayout extends Layout {
                 'label'        => 'Kuva',
                 'instructions' => '',
             ],
+            'video'          => [
+                'label'        => 'Videotiedosto',
+                'instructions' => '',
+            ],
+            'video_caption'  => [
+                'label'        => 'Videon tekstivastine',
+                'instructions' => 'Tarkoitettu ruudunlukijoille, ei näytetä sivustolla.',
+            ],
+            'autoplay_video' => [
+                'label'        => 'Käynnistä video heti sivunlatauksessa',
+                'instructions' => '',
+            ],
             'title'         => [
                 'label'        => 'Otsikko',
                 'instructions' => '',
@@ -119,21 +131,40 @@ class HeroLayout extends Layout {
         ];
 
         $image_field = ( new Field\Image( $strings['image']['label'] ) )
-            ->set_key( "${key}_image" )
+            ->set_key( "{$key}_image" )
             ->set_name( 'image' )
             ->set_return_format( 'id' )
-            ->set_wrapper_width( 50 )
             ->set_required()
             ->set_instructions( $strings['image']['instructions'] );
 
+        $video_field = ( new Field\File( $strings['video']['label'] ) )
+            ->set_key( "{$key}_video_file" )
+            ->set_name( 'video_file' )
+            ->set_mime_types( [ 'mp4' ] )
+            ->set_wrapper_width( 33 )
+            ->set_instructions( $strings['video']['instructions'] );
+
+        $video_caption_field = ( new Field\Textarea( $strings['video_caption']['label'] ) )
+            ->set_key( "{$key}_video_caption" )
+            ->set_name( 'video_caption' )
+            ->set_wrapper_width( 33 )
+            ->set_instructions( $strings['video_caption']['instructions'] );
+
+        $autoplay_video_field = ( new Field\TrueFalse( $strings['autoplay_video']['label'] ) )
+            ->set_key( "{$key}_autoplay_video" )
+            ->set_name( 'autoplay_video' )
+            ->use_ui()
+            ->set_wrapper_width( 33 )
+            ->set_instructions( $strings['autoplay_video']['instructions'] );
+
         $title_field = ( new Field\Text( $strings['title']['label'] ) )
-            ->set_key( "${key}_title" )
+            ->set_key( "{$key}_title" )
             ->set_name( 'title' )
             ->set_wrapper_width( 50 )
             ->set_instructions( $strings['title']['instructions'] );
 
         $description_field = ( new Field\Textarea( $strings['description']['label'] ) )
-            ->set_key( "${key}_description" )
+            ->set_key( "{$key}_description" )
             ->set_name( 'description' )
             ->set_rows( 4 )
             ->set_new_lines( 'wpautop' )
@@ -141,13 +172,13 @@ class HeroLayout extends Layout {
             ->set_instructions( $strings['description']['instructions'] );
 
         $link_field = ( new Field\Link( $strings['link']['label'] ) )
-            ->set_key( "${key}_link" )
+            ->set_key( "{$key}_link" )
             ->set_name( 'link' )
             ->set_wrapper_width( 40 )
             ->set_instructions( $strings['link']['instructions'] );
 
         $opening_times_tab = ( new Field\Group( $strings['opening_times']['label'] ) )
-            ->set_key( "${key}_opening_times" )
+            ->set_key( "{$key}_opening_times" )
             ->set_name( 'opening_times' );
 
         $opening_times_tab->add_fields(
@@ -157,11 +188,11 @@ class HeroLayout extends Layout {
         $fields[] = $opening_times_tab;
 
         $ticket_tab = ( new Field\Group( $strings['tickets']['label'] ) )
-            ->set_key( "${key}_tickets" )
+            ->set_key( "{$key}_tickets" )
             ->set_name( 'tickets' );
 
         $ticket_image_field = ( new Field\Image( $strings['tickets']['image']['label'] ) )
-            ->set_key( "${key}_tickets_image" )
+            ->set_key( "{$key}_tickets_image" )
             ->set_name( 'tickets_image' )
             ->set_return_format( 'id' )
             ->set_wrapper_width( 50 )
@@ -173,7 +204,7 @@ class HeroLayout extends Layout {
         $ticket_tab->add_fields( $ticket_tab_fields );
 
         $find_us_tab = ( new Field\Group( $strings['find_us']['label'] ) )
-            ->set_key( "${key}_find_us" )
+            ->set_key( "{$key}_find_us" )
             ->set_name( 'find_us' );
 
         $find_us_tab->add_fields(
@@ -186,6 +217,9 @@ class HeroLayout extends Layout {
                     'tms/acf/layout/hero--muumimuseo/fields',
                     [
                         $image_field,
+                        $video_field,
+                        $video_caption_field,
+                        $autoplay_video_field,
                         $title_field,
                         $description_field,
                         $link_field,
@@ -216,20 +250,20 @@ class HeroLayout extends Layout {
      */
     public function get_hero_group_fields( string $key, string $group, array $strings ) : array {
         $title_field = ( new Field\Text( $strings['title']['label'] ) )
-            ->set_key( "${key}_${group}_title" )
-            ->set_name( "${group}_title" )
+            ->set_key( "{$key}_{$group}_title" )
+            ->set_name( "{$group}_title" )
             ->set_wrapper_width( 50 )
             ->set_instructions( $strings['title']['instructions'] );
 
         $text_field = ( new Field\Textarea( $strings['text']['label'] ) )
-            ->set_key( "${key}_${group}_text" )
-            ->set_name( "${group}_text" )
+            ->set_key( "{$key}_{$group}_text" )
+            ->set_name( "{$group}_text" )
             ->set_wrapper_width( 50 )
             ->set_instructions( $strings['text']['instructions'] );
 
         $button_field = ( new Field\Link( $strings['button']['label'] ) )
-            ->set_key( "${key}_${group}_button" )
-            ->set_name( "${group}_button" )
+            ->set_key( "{$key}_{$group}_button" )
+            ->set_name( "{$group}_button" )
             ->set_wrapper_width( 50 )
             ->set_instructions( $strings['button']['instructions'] );
 
