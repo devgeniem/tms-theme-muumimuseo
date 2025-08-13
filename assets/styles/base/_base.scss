@@ -36,3 +36,7 @@ main {
         }
     }
 }
+
+.pill:not(span):focus {
+    outline: .15rem dotted $primary-invert;
+}
