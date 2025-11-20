@@ -9,13 +9,6 @@
                 background-color: $primary-invert !important; // sass-lint:disable-line no-important
                 border-color: $primary-invert !important; // sass-lint:disable-line no-important
 
-                &:hover,
-                &:focus {
-                    color: $primary-invert !important; // sass-lint:disable-line no-important
-                    background-color: $primary !important; // sass-lint:disable-line no-important
-                    border-color: $primary !important; // sass-lint:disable-line no-important
-                }
-
                 .icon {
                     fill: currentColor !important; // sass-lint:disable-line no-important
                 }
