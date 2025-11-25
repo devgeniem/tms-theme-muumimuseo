@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 - TMS-1164: Remove color changing for button hover-styles
+- TMS-1219: Change call-to-action layouts image class
 
 ## [1.20.1] - 2025-08-13
 
