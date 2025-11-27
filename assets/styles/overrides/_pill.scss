@@ -1,14 +1,14 @@
 $pill-background-color: $color-vaalean-harmaa;
 $pill-color: $black;
-$pill-color-active: $primary-invert;
-$pill-color-hover: $primary;
-$pill-background-active: $primary;
+$pill-color-active: $black;
+$pill-color-hover: $black;
+$pill-background-active: $color-vaalean-harmaa;
 
-$pill-background-active-focus: $primary-dark;
-$pill-background-color-hover: $color-white;
-$pill-background-color-focus: $color-white;
-$pill-background-color-active: $color-white;
-$pill-background-color-focus: $color-white;
+$pill-background-active-focus: $color-vaalean-harmaa;
+$pill-background-color-hover: $color-vaalean-harmaa;
+$pill-background-color-focus: $color-vaalean-harmaa;
+$pill-background-color-active: $color-vaalean-harmaa;
+$pill-background-color-focus: $color-vaalean-harmaa;
 
 .pill {
     font-family: $family-primary;
