@@ -1,15 +1,4 @@
 .modal {
-    .modal-close-button {
-        &:hover,
-        &:focus {
-            color: $primary !important; // sass-lint:disable-line no-important
-
-            .icon {
-                fill: $primary !important; // sass-lint:disable-line no-important
-            }
-        }
-    }
-
     .slick-arrow {
         .icon {
             fill: $black !important; // sass-lint:disable-line no-important

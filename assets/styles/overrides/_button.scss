@@ -14,11 +14,6 @@
         border-color: $primary !important;
         color: $color-white !important;
 
-        &.is-hovered,
-        &:hover {
-            color: $color-white !important;
-        }
-
         &.is-focused,
         &:focus {
             outline: 0.125rem dashed $primary;
@@ -78,6 +73,10 @@
     }
 
     .has-colors-primary & {
+        &:hover {
+            color: $primary;
+        }
+
         &:focus {
             outline-color: $primary-invert;
         }
