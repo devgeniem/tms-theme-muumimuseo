@@ -4,4 +4,14 @@
             fill: $black !important; // sass-lint:disable-line no-important
         }
     }
+
+    .modal-close-button {
+        &,
+        &:hover,
+        &:focus {
+            background-color: $primary !important;
+            border-color: $primary !important;
+            color: $color-white !important;
+        }
+    }
 }
