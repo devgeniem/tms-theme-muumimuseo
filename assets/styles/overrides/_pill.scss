@@ -17,6 +17,10 @@ $pill-background-color-focus: $color-vaalean-harmaa;
     background-color: $pill-background-color;
     border: 2px solid $pill-border-color;
 
+    .icon {
+        fill: currentColor !important;
+    }
+
     &:not(span) {
         &:focus,
         &.is-focused {

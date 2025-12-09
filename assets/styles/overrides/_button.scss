@@ -48,7 +48,7 @@
 
             &.is-focused,
             &:focus {
-                outline: 0.125rem dashed $primary-light;
+                outline: 0.125rem dashed $primary-light !important;
             }
 
             &.is-borderless {
