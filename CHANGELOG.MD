@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.22.0] - 2026-02-03
+
 - TMS-1164: Remove color changing for button hover-styles
 
 ## [1.21.0] - 2025-12-09
