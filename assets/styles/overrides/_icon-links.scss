@@ -28,14 +28,6 @@
             color: $primary-invert !important;
             background: $primary !important;
             border-color: $primary !important;
-
-            &:hover,
-            &:active,
-            &:focus {
-                color: $primary !important;
-                background: $primary-invert !important;
-                border-color: $primary !important;
-            }
         }
     }
 }

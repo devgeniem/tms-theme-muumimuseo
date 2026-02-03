@@ -1,18 +1,17 @@
 .modal {
-    .modal-close-button {
-        &:hover,
-        &:focus {
-            color: $primary !important; // sass-lint:disable-line no-important
-
-            .icon {
-                fill: $primary !important; // sass-lint:disable-line no-important
-            }
-        }
-    }
-
     .slick-arrow {
         .icon {
             fill: $black !important; // sass-lint:disable-line no-important
+        }
+    }
+
+    .modal-close-button {
+        &,
+        &:hover,
+        &:focus {
+            background-color: $primary !important;
+            border-color: $primary !important;
+            color: $color-white !important;
         }
     }
 }

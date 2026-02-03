@@ -3,31 +3,16 @@
  */
 
 .button {
+    &.is-focused,
+    &:focus {
+        outline: 0.125rem dashed $primary;
+    }
+
     &.is-primary,
     &.is-secondary {
         background: $primary !important;
         border-color: $primary !important;
         color: $color-white !important;
-
-        &.is-hovered,
-        &:hover {
-            background: $color-white !important;
-            border-color: $color-white !important;
-            color: $primary !important;
-        }
-
-        &.is-active,
-        &:active,
-        &.is-focused,
-        &:focus {
-            background: $color-white !important;
-            border-color: $color-white !important;
-            color: $color-black !important;
-
-            .icon {
-                fill: $color-black !important;
-            }
-        }
 
         &.is-focused,
         &:focus {
@@ -36,48 +21,11 @@
 
         &.is-borderless {
             background: $color-black !important;
-
-            &.is-hovered,
-            &:hover,
-            &.is-focused,
-            &:focus,
-            &.is-active,
-            &:active {
-                background: $color-black !important;
-                border-color: transparent !important;
-                color: $color-white !important;
-
-                .icon {
-                    fill: $color-white !important;
-                }
-            }
-
-            &.is-hovered,
-            &:hover {
-                color: $primary-light !important;
-
-                .icon {
-                    fill: $primary-light !important;
-                }
-            }
         }
 
         &.is-outlined {
             background: transparent !important;
             color: $primary-light !important;
-
-            &.is-focused,
-            &:focus,
-            &.is-hovered,
-            &:hover {
-                background: transparent !important;
-                border-color: $color-white !important;
-                color: $color-white !important;
-
-                .icon {
-                    fill: $color-white !important;
-                }
-            }
 
             &.is-focused,
             &:focus {
@@ -98,37 +46,9 @@
                 fill: $color-white !important;
             }
 
-            &.is-hovered,
-            &:hover {
-                background: $color-black !important;
-                border-color: $primary-light !important;
-                color: $primary-light !important;
-
-                .icon {
-                    fill: $primary-light !important;
-                }
-            }
-
-            &.is-active,
-            &:active,
             &.is-focused,
             &:focus {
-                background: $color-black !important;
-                border-color: $primary-light !important;
-                color: $color-white !important;
-
-                .icon {
-                    fill: $color-white !important;
-                }
-            }
-
-            &.is-focused,
-            &:focus {
-                outline: 0.125rem dashed $primary-light;
-
-                .icon {
-                    fill: $color-white !important;
-                }
+                outline: 0.125rem dashed $primary-light !important;
             }
 
             &.is-borderless {
@@ -137,30 +57,6 @@
 
                 .icon {
                     fill: $color-white !important;
-                }
-
-                &.is-hovered,
-                &:hover,
-                &.is-focused,
-                &:focus,
-                &.is-active,
-                &:active {
-                    background: $color-black !important;
-                    border-color: transparent !important;
-                    color: $color-white !important;
-
-                    .icon {
-                        fill: $color-white !important;
-                    }
-                }
-
-                &.is-hovered,
-                &:hover {
-                    color: $primary-light !important;
-
-                    .icon {
-                        fill: $primary-light !important;
-                    }
                 }
             }
 
@@ -172,35 +68,15 @@
                 .icon {
                     fill: $color-white !important;
                 }
-
-                &.is-active,
-                &:active,
-                &.is-focused,
-                &:focus,
-                &.is-hovered,
-                &:hover {
-                    background: transparent !important;
-                    border-color: $primary-light !important;
-                    color: $primary-light !important;
-
-                    .icon {
-                        fill: $primary-light !important;
-                    }
-                }
-
-                &.is-focused,
-                &:focus {
-                    outline: 0.125rem dashed $primary-light;
-
-                    .icon {
-                        fill: $primary-light !important;
-                    }
-                }
             }
         }
     }
 
     .has-colors-primary & {
+        &:hover {
+            color: $primary;
+        }
+
         &:focus {
             outline-color: $primary-invert;
         }

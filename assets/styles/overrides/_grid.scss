@@ -28,14 +28,6 @@
                 color: $primary !important;
                 background: $primary-invert !important;
                 border-color: $primary-invert !important;
-
-                &:hover,
-                &:focus,
-                &:active {
-                    color: $primary-invert !important;
-                    background: $primary !important;
-                    border-color: $primary-invert !important;
-                }
             }
         }
 
@@ -45,14 +37,6 @@
                     color: $primary !important;
                     background: $primary-invert !important;
                     border-color: $primary-invert !important;
-
-                    &:hover,
-                    &:focus,
-                    &:active {
-                        color: $primary-invert !important;
-                        background: $primary !important;
-                        border-color: $primary-invert !important;
-                    }
                 }
 
                 &.has-image {
@@ -60,14 +44,6 @@
                         color: $primary-invert !important;
                         background: $primary !important;
                         border-color: $primary !important;
-
-                        &:hover,
-                        &:focus,
-                        &:active {
-                            color: $primary !important;
-                            background: $primary-invert !important;
-                            border-color: $primary-invert !important;
-                        }
                     }
 
                     .button {

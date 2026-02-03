@@ -29,10 +29,6 @@ main {
 
         .button.is-no_color-invert {
             border-color: $primary;
-
-            &:hover {
-                border-color: $color-white;
-            }
         }
     }
 }

@@ -10,12 +10,6 @@
         background: $color-muumipeikon-valkoinen !important;
         border: 1px solid $color-white !important;
 
-        &:hover,
-        &:focus {
-            text-decoration: none;
-            background: $color-muumi-haalea !important;
-        }
-
         &:focus {
             outline: .15rem solid $white !important;
             outline-offset: .25rem !important;
