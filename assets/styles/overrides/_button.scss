@@ -38,9 +38,13 @@
          */
         &-invert,
         &.is-inverted {
-            background: $color-black !important;
-            border-color: $color-white !important;
-            color: $color-white !important;
+            &,
+            &:hover,
+            &:focus {
+                background: $color-black !important;
+                border-color: $color-white !important;
+                color: $color-white !important;
+            }
 
             .icon {
                 fill: $color-white !important;
