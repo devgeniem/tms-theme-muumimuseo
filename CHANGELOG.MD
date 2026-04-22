@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- Update Node, webpack & dependency versions
+
 ## [1.22.1] - 2026-02-15
 
 - TMS-1164: Fix inverted button style
