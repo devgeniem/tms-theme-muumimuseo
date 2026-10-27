@@ -174,9 +174,9 @@ export default class Hero {
     getVideoElement() {
         const $video = this.container.find( '.hero__video' );
 
-        return $video.length === 0 ?
-            false :
-            $video.get( 0 );
+        return $video.length === 0
+            ? false
+            : $video.get( 0 );
     }
 
     /**
